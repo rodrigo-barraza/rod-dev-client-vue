@@ -4,7 +4,7 @@
         <div image-container v-for="(work, workIndex) in currentCollection" v-bind:key="workIndex" :id="work.path">
             <div container>
                 <img v-if="work.imagePath" v-on:click="fullScreen" :src="require(`@/assets/collections/${work.imagePath}.jpg`)" v:on-click/>
-                <video v-if="work.videoPath" autoplay muted controls>
+                <video id="oneVideo" v-if="work.videoPath" autoplay muted controls>
                     <source :src="require(`@/assets/collections/${work.videoPath}.mp4`)" type="video/mp4">
                      Your browser does not support the video tag.
                 </video>
@@ -55,6 +55,10 @@ export default {
         this.currentWorkParam = this.$route.params.work;
         this.currentCollection = lodash.find(ArtCollectionsCollection, {path: this.currentWorkParam}).works;
         console.log(this.currentCollection);
+        
+    },
+    mounted() {
+        console.log('mounted');
     },
     methods: {
         fullScreen(element) {

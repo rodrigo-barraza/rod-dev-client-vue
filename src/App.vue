@@ -93,4 +93,26 @@ a {
       text-decoration: underline;
   }
 }
+p {
+  margin: 0;
+  padding: 0;
+  &+p{
+    margin-top: 8px;
+  }
+}
+main {
+  &:before {
+    display: block;
+    content: '';
+    background-color: #f8f8f8;
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    transform: skewY(-2deg) translateY(-5px);
+    z-index: 2;
+    transform-origin: 0 100%;
+    top: 0;
+    height: 180px;
+  }
+}
 </style>
