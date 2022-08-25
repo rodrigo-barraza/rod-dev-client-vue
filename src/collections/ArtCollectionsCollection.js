@@ -3,7 +3,7 @@ const ArtCollectionsCollection = [
         imagePath: '1',
         name: 'Tardigrades',
         medium: 'AI generated art',
-        year: '2022',
+        year: 2022,
         path: 'tardigrades',
         works: [
             {
@@ -56,14 +56,14 @@ const ArtCollectionsCollection = [
         imagePath: '2',
         name: 'Dreamworks',
         medium: 'medium format slide film',
-        year: '2011',
+        year: 2011,
         path: 'dreamworks',
         longDescription: 'Dreamwork; images regarding the intangibility of memories, emotions, dreams and previous events in life. Memory alters, emotions change, places shift, and locations are never the same.',
         works: [
             {
                 path: 'dreamworks-001',
                 imagePath: 'dreamworks-001',
-                name: 'dreamworks #001',
+                name: 'Dreamworks #001',
                 medium: 'Medium format slide film',
                 description: 'Amalgamated memories of the beach, from a time that might have never happened. A feeling of jamais vu.',
                 year: 2010,
@@ -71,7 +71,7 @@ const ArtCollectionsCollection = [
             {
                 path: 'dreamworks-002',
                 imagePath: 'dreamworks-002',
-                name: 'dreamworks #002',
+                name: 'Dreamworks #002',
                 medium: 'Medium format slide film',
                 description: 'Seven very similar looking corners of a fenced-out backyard. A feeling of déjà vu.',
                 year: 2010,
@@ -79,7 +79,15 @@ const ArtCollectionsCollection = [
             {
                 path: 'dreamworks-003',
                 imagePath: 'dreamworks-003',
-                name: 'dreamworks #003',
+                name: 'Dreamworks #003',
+                medium: 'Medium format slide film',
+                description: 'When one is so tired that far away objects feel close while nearby objects can be seen distance away. Like vertigo that goes sideways.',
+                year: 2011,
+            },
+            {
+                path: 'dreamworks-004',
+                imagePath: 'dreamworks-004',
+                name: 'Dreamworks #004',
                 medium: 'Medium format slide film',
                 description: 'When one is so tired that far away objects feel close while nearby objects can be seen distance away. Like vertigo that goes sideways.',
                 year: 2011,
@@ -90,7 +98,7 @@ const ArtCollectionsCollection = [
         imagePath: '3',
         name: 'Persons',
         medium: 'mixed photography',
-        year: '2008-2022',
+        year: 2022,
         path: 'persons',
         works: [
             {
@@ -178,7 +186,7 @@ const ArtCollectionsCollection = [
         imagePath: '4',
         name: 'Walks',
         medium: 'photography',
-        year: '2022',
+        year: 2022,
         path: 'walks',
         works: [
             {
@@ -271,20 +279,34 @@ const ArtCollectionsCollection = [
                 medium: 'Prompt engineered CLIP-guided diffusion, AI generated art',
                 year: 2022,
             },
+            {
+                path: 'crystal-landscapes-007',
+                imagePath: 'crystal-landscapes-007',
+                name: 'Crystal Beach #002',
+                medium: 'Prompt engineered CLIP-guided diffusion, AI generated art',
+                year: 2022,
+            },
+            {
+                path: 'crystal-landscapes-008',
+                imagePath: 'crystal-landscapes-008',
+                name: 'Crystal Beach #002',
+                medium: 'Prompt engineered CLIP-guided diffusion, AI generated art',
+                year: 2022,
+            },
         ]
     },
     {
         imagePath: '6',
         name: 'Ink',
         medium: 'mixed media',
-        year: '2022',
+        year: 2022,
         path: 'tardigrades',
     },
     {
         imagePath: '7',
         name: 'Spotless',
         medium: '16mm black and white film',
-        year: '2012',
+        year: 2012,
         path: 'spotless',
         works: [
             {
@@ -301,21 +323,21 @@ const ArtCollectionsCollection = [
         imagePath: '8',
         name: 'Tardigrade',
         medium: 'generative art',
-        year: '2022',
+        year: 2022,
         path: 'tardigrades',
     },
     {
         imagePath: '9',
         name: 'Walks',
         medium: 'medium format black and white film',
-        year: '2009',
+        year: 2009,
         path: 'tardigrades',
     },
     {
         imagePath: 'nature',
         name: 'Nature',
         medium: 'photography',
-        year: '2008-2011',
+        year: 2011,
         path: 'nature',
         works: [
             {
@@ -364,7 +386,7 @@ const ArtCollectionsCollection = [
         imagePath: 'shorelines',
         name: 'Shorelines',
         medium: 'Digital photography',
-        year: '2020',
+        year: 2020,
         path: 'shorelines',
         works: [
             {
@@ -397,7 +419,7 @@ const ArtCollectionsCollection = [
         imagePath: 'urban',
         name: 'Urban',
         medium: 'Digital photography',
-        year: '2020',
+        year: 2020,
         path: 'urban',
         works: [
             {
@@ -438,7 +460,7 @@ const ArtCollectionsCollection = [
         imagePath: 'tv-date',
         name: 'Petroleum By-Product: TV Date',
         medium: 'Digital video',
-        year: '2010',
+        year: 2010,
         path: 'tv-date',
         works: [
             {
@@ -455,7 +477,7 @@ const ArtCollectionsCollection = [
         imagePath: '20448-mario',
         name: '204.48MB of Mario',
         medium: 'Installation, 3½-inch floppy disks',
-        year: 'October 2007',
+        year: 2007,
         path: '20448-mario',
         works: [
             {
@@ -464,7 +486,7 @@ const ArtCollectionsCollection = [
                 name: '204.48MB of Mario',
                 medium: 'Installation, 3½-inch floppy disks',
                 description: '',
-                year: 'October 2007',
+                year: 'Oct. 2007',
             },
         ]
     },
@@ -472,32 +494,32 @@ const ArtCollectionsCollection = [
         imagePath: 'mollusca',
         name: 'Mollusca',
         medium: 'AI generated art',
-        year: 'June 2022',
+        year: 2022,
         path: 'mollusca',
         works: [
             {
                 path: 'mollusca-001',
                 imagePath: 'mollusca-001',
                 name: 'Mollusca #001',
-                medium: 'AI generated art',
+                medium: 'Prompt engineered CLIP-guided diffusion, AI generated art',
                 description: '',
-                year: 'October 2007',
+                year: 'Oct. 2007',
             },
             {
                 path: 'mollusca-002',
                 imagePath: 'mollusca-002',
                 name: 'Mollusca #002',
-                medium: 'AI generated art',
+                medium: 'Prompt engineered CLIP-guided diffusion, AI generated art',
                 description: '',
-                year: 'October 2007',
+                year: 'Oct. 2007',
             },
             {
                 path: 'mollusca-003',
                 imagePath: 'mollusca-003',
                 name: 'Mollusca #003',
-                medium: 'AI generated art',
+                medium: 'Prompt engineered CLIP-guided diffusion, AI generated art',
                 description: '',
-                year: 'October 2007',
+                year: 'Oct. 2007',
             },
         ]
     },
@@ -505,7 +527,7 @@ const ArtCollectionsCollection = [
         imagePath: 'aura-of-home',
         name: 'The Aura of Home',
         medium: 'medium format film photography',
-        year: '2010',
+        year: 2010,
         path: 'the-aura-of-home',
         works: [
             {
@@ -546,7 +568,7 @@ const ArtCollectionsCollection = [
         imagePath: 'fashion',
         name: 'Fashion',
         medium: 'medium format film photography',
-        year: '2010',
+        year: 2010,
         path: 'fashion',
         works: [
             {

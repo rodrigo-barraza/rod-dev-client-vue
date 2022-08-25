@@ -3,10 +3,10 @@
     <div container>
       <div layout>
         <div sidebar>
-          <!-- <div image></div>
-          <div name>Rodrigo Barraza</div> -->
+          <div image></div>
+          <!-- <div name>Rodrigo Barraza</div> -->
           <div links>
-            <div title>Links</div>
+            <div title>Socials</div>
             <a link v-for="(social, socialIndex) in socials" v-bind:key="socialIndex" :class="social.type" :href="social.url" target="_blank">
               <div logo>{{social.type}}</div>
               <div>{{social.username}}</div>
@@ -15,17 +15,11 @@
         </div>
         <div main>
           <div about>
-            <div left>
+            <div image>
             </div>
-            <div right>
-              <div about-image>
-                <video autoplay loop muted>
-                  <source :src="require('@/assets/ai-art-video-done.mp4')" type="video/mp4">
-                Your browser does not support the video tag.
-                </video>
-              </div>
+            <div text>
               <div about-info>
-                <p>Rodrigo Barraza is a software engineer, artist and photographer based out of Vancouver, British Columbia, Canada. He emerged as an internet artist who works in a variety of media but focuses on AI art, photography, film, animation, visual design and illustration.</p>
+                <p><span itemprop="name">Rodrigo Barraza</span> is <span itemprop="description">a software engineer, artist and photographer based out of Vancouver, British Columbia, Canada. He emerged as an internet artist who works in a variety of media but focuses on photography, AI art, film, animation, visual design and illustration.</span></p>
                 
                 <p>When it comes to software development, Rodrigo began programming in 2004, specializing on front-end web development. After working with many startups and corporations over the years, he eventually came to lead large teams in various companies, and in 2017 started his own tech start-up, Einstein Exchange, with two other co-founders. The company focused on providing customers worldwide with a safe, secure and simple way to buy, trade and invest in virtual currencies. Since 2019, Rodrigo has been a software consultant and contractor for various startups and continues to expand his art practice.</p>
               </div>
@@ -141,6 +135,11 @@ export default {
               url: 'https://flickr.com/photos/rodrigobarraza'
             },
             {
+              type: 'linkedin',
+              username: 'rodrigobarraza',
+              url: 'https://www.linkedin.com/in/rodrigobarraza'
+            },
+            {
               type: 'discord',
               username: 'virus#1337',
             },
@@ -163,7 +162,7 @@ export default {
 [about-view] {
   position: relative;
   margin-top: 0!important;
-  padding-top: 220px;
+  padding-top: 100px;
   [container] {
     flex-direction: column;
     display: flex;
@@ -181,6 +180,7 @@ export default {
           background-position: center center;
           border: 10px solid white;
           box-sizing: border-box;
+          background-image: url("@/assets/about-portrait.jpg");
         }
         [name] {
           text-align: left;
@@ -287,6 +287,12 @@ export default {
                 background-size: 100%;
               }
             }
+            &.linkedin { 
+              [logo] {
+                background-image: url("@/assets/icons/linkedin.png");
+                background-size: 100%;
+              }
+            }
             &:hover {
               text-decoration: none;
               background: rgba(0,0,0,0.05);
@@ -314,15 +320,17 @@ export default {
         [about] {
           display: flex;
           gap: inherit;
-          [left] {
+          flex-direction: column;
+          [image] {
             border-radius: 8px;
             flex: 0 0 350px;
             height: 450px;
-            background-image: url("@/assets/about-portrait.jpg");
+            background-image: url("@/assets/collections/nature-003.jpg");
             background-size: cover;
             background-repeat: no-repeat;
+            background-position: bottom;
           }
-          [right] {
+          [text] {
             gap: inherit;
             display: flex;
             flex-direction: column;
@@ -366,10 +374,12 @@ export default {
         text-align: left;
       }
       [title] {
-        font-size: 20px;
-        text-align: left;
+        font-size: 28px;
+        text-transform: capitalize;
+        color: black;
         font-weight: 500;
-        border-bottom: 1px solid rgba(0,0,0,0.1);
+        margin-bottom: 24px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         padding-bottom: 8px;
       }
     }

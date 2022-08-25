@@ -2,7 +2,7 @@
   <main class="home">
     <div gallery>
         <div image-container v-for="(collection, collectionIndex) in collections" v-bind:key="collectionIndex">
-            <router-link image :to="`/works/${collection.path}`">
+            <router-link image :to="`/collections/${collection.path}`">
                 <img :src="require(`@/assets/${collection.imagePath}.jpg`)"/>
                 <div description>{{collection.name}}, {{collection.medium}}, {{collection.year}}</div>
             </router-link>

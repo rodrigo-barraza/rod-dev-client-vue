@@ -5,8 +5,8 @@
     <div bar2>
     </div>
     <div container>
-      https://rod.dev is the portfolio of Rodrigo Barraza, Software Engineer & Artist
-      2005-2020
+      <!-- https://rod.dev is the portfolio of Rodrigo Barraza, Software Engineer & Artist
+      2005-2020 -->
     </div>
   </footer>
 </template>
@@ -27,7 +27,7 @@ export default {
 
 <style scoped lang="scss">
 footer {
-  margin-top: 180px;
+  margin-top: 50px;
   overflow: hidden;
   position: relative;
   [bar1] {

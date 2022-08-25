@@ -41,7 +41,6 @@ export default {
   display: flex;
   flex-direction: column;
   [header] {
-    background-image: url("@/assets/ai-art-background.jpg");
     background-position: bottom;
     flex: 0 0 360px;
     display: flex;

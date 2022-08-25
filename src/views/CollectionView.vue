@@ -1,7 +1,12 @@
 <template>
-  <main work-view>
+  <main collection-view>
+    <!-- <div title-one>
+        <div container>
+            <h1>{{currentCollection.name}}</h1>
+        </div>
+    </div> -->
     <div gallery>
-        <div image-container v-for="(work, workIndex) in currentCollection" v-bind:key="workIndex" :id="work.path">
+        <div image-container v-for="(work, workIndex) in currentCollection.works" v-bind:key="workIndex" :id="work.path">
             <div container>
                 <img v-if="work.imagePath" v-on:click="fullScreen" :src="require(`@/assets/collections/${work.imagePath}.jpg`)" v:on-click/>
                 <video id="oneVideo" v-if="work.videoPath" autoplay muted controls>
@@ -9,12 +14,10 @@
                      Your browser does not support the video tag.
                 </video>
             </div>
-            <!-- <router-link image :to="`/works/${work.path}`">
-            </router-link> -->
             <div information>
                 <div container>
                     <div name>
-                        <div work-name>{{work.name}}</div>
+                        <h2>{{work.name}}</h2>
                         <div year>Created on {{work.year}}</div>
                     </div>
                     <div actions>
@@ -34,6 +37,24 @@
             </div>
         </div>
     </div>
+    <div container more-collections>
+        <div section-title>More collections</div>
+        <div collections>
+            <div collection v-for="(collection, collectionIndex) in moreCollections" v-bind:key="collectionIndex">
+                <a image :href="`/collections/${collection.path}`">
+                    <div the-image>
+                        <img :src="require(`@/assets/${collection.imagePath}.jpg`)"/>
+                        <div the-name>{{collection.name}}</div>
+                    </div>
+                    <div description>
+                        <div name>{{collection.name}}</div>
+                        <div year>{{collection.year}}</div>
+                        <div medium>{{collection.medium}}</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
   </main>
 </template>
 
@@ -42,20 +63,22 @@ import lodash from 'lodash';
 import ArtCollectionsCollection from '@/collections/ArtCollectionsCollection';
 
 export default {
-    name: 'WorkView',
+    name: 'CollectionView',
     components: {
     },
     data() {
         return {
-            currentWorkParam: '',
-            currentCollection: [],
+            currentCollectionParam: '',
+            currentCollection: {},
+            artCollections: lodash.shuffle(ArtCollectionsCollection),
+            moreCollections: {},
         }
     },
     created() {
-        this.currentWorkParam = this.$route.params.work;
-        this.currentCollection = lodash.find(ArtCollectionsCollection, {path: this.currentWorkParam}).works;
+        this.currentCollectionParam = this.$route.params.collection;
+        this.currentCollection = lodash.find(ArtCollectionsCollection, {path: this.currentCollectionParam});
         console.log(this.currentCollection);
-        
+        this.moreCollections = lodash.reject(lodash.shuffle(ArtCollectionsCollection), { name: this.currentCollection.name }).slice(0, 3);
     },
     mounted() {
         console.log('mounted');
@@ -76,7 +99,39 @@ export default {
 </script>
 
 <style scoped lang="scss">
-[work-view] {
+[collection-view] {
+    position: relative;
+    [gallery] {
+        position: relative;
+        background-color: #f0f0f0;
+        z-index: 2;
+        box-shadow: 0px 15px 30px -35px black;
+        [medium] {
+            grid-column: 2;
+            grid-row: 2 / 3;
+        }
+        [name] {
+            grid-column: 1/3;
+            grid-row: 1;
+            h2 {
+                font-size: 48px;
+                color: black;
+                font-weight: 600;
+            }
+            [year] {
+                font-size: 16px;
+                color: rgba(0,0,0,0.5);
+            }
+        }
+    }
+    [more-collections] {
+        position: sticky;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+    }
     img {
         width: auto;
         height: 100%;
@@ -90,7 +145,6 @@ export default {
         max-height: 800px;
     }
     [image-container] {
-        padding-top: 80px;
         > [container] {
             justify-content: center;
             min-height: 900px;
@@ -106,27 +160,6 @@ export default {
             grid-template-columns: 1fr 1fr;
             grid-template-rows: auto auto;
         }
-    }
-    [name] {
-        grid-column: 1/3;
-        grid-row: 1;
-        [work-name] {
-            font-size: 48px;
-            color: black;
-            font-weight: 600;
-        }
-        [year] {
-            font-size: 16px;
-            color: rgba(0,0,0,0.5);
-        }
-    }
-    [description] {
-        grid-column: 1;
-        grid-row: 2 / 3;
-    }
-    [medium] {
-        grid-column: 2;
-        grid-row: 2 / 3;
     }
     [actions] {
         grid-column: 2;
@@ -163,6 +196,108 @@ export default {
     }
     [name], [medium], [description], [description-title] {
         text-align: left;
+    }
+}
+[more-collections] {
+    [section-title] {
+        text-align: left;
+        font-size: 32px;
+        font-weight: 600;
+        color: black;
+    }
+    
+    [description] {
+        grid-column: 1;
+        grid-row: 2 / 3;
+        display: grid;
+        gap: 8px;
+        grid-template-columns: 1fr 80px;
+        [name] {
+            font-size: 18px;
+            font-weight: 400;
+        }
+        [year] {
+            text-align: right;
+        }
+        [medium] {
+            grid-column: 1/3;
+            grid-row: 2 / 3;
+        }
+    }
+}
+[collections] {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    flex-direction: row;
+    flex-wrap: wrap;
+    [collection] {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        [image] {
+            margin: 2vw;
+            flex: 1 1 100%;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            overflow: hidden;
+            background: black;
+            img {
+                transition: all 0.3s;
+                object-fit: cover;
+            }
+            &:hover {
+                text-decoration: none;
+            }
+            [the-image] {
+                position: relative;
+                height: 100%;
+                [the-name] {
+                    padding: 12px;
+                    color: white;
+                    font-size: 32px;
+                    font-weight: 600;
+                    position: absolute;
+                    right: 0;
+                    left: 0;
+                    bottom: 0;
+                    top: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    opacity: 0;
+                    transition: all 0.3s;
+                }
+            }
+            &:hover {
+                img {
+                    opacity: 0.5;
+                }
+                [the-image] {
+                    [the-name] {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        [description] {
+            width: 100%;
+            font-size: 14px;
+            text-align: left;
+            margin-left: 16px;
+            margin-top: 8px;
+            transition: all 0.3s;
+            background-color: black;
+            color: white;
+            padding: 0;
+            margin: 0;
+            padding: 24px;
+            box-sizing: border-box;
+        }
     }
 }
 </style>

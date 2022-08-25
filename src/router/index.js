@@ -11,13 +11,13 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/works',
-    name: 'works',
+    path: '/collections',
+    name: 'collections',
     component: HomeView
   },
   {
-    path: '/works/:work',
-    name: 'works',
+    path: '/collections/:collection',
+    name: 'collections',
     component: CollectionView
   },
   {
