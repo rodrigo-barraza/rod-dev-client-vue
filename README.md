@@ -1,4 +1,7 @@
 # roddev
+Rodrigo Barraza's Art and Software Engineer Portfolio
+
+Built in Vue 3.2+
 
 ## Project setup
 ```

@@ -24,15 +24,15 @@
             <nav full>
                 <ul>
                     <li ai-art><router-link to="/"  active-class="active">Collections</router-link></li>
-                    <li ai-art><router-link to="/ai-art"  active-class="active">AI Art</router-link></li>
-                    <li photography><router-link to="/photography"  active-class="active">Photography</router-link></li>
-                    <li photography><router-link to="/photography"  active-class="active">NFT Collections</router-link></li>
+                    <!-- <li ai-art><router-link to="/ai-art"  active-class="active">AI Art</router-link></li>
+                    <li photography><router-link to="/photography"  active-class="active">Photography</router-link></li> -->
+                    <!-- <li photography><router-link to="/photography"  active-class="active">NFT Collections</router-link></li> -->
                     <li about><router-link to="/about"  active-class="active">About</router-link></li>
                 </ul>
             </nav>
             <div hamburger>
                 <div>
-                    🍔
+                    ☰
                 </div>
             </div>
             <nav mini>
@@ -71,7 +71,6 @@ export default {
         handler: function(routeName) {
            this.routeName = routeName;
            const backgroundVideo = document.getElementById('background-video');
-           console.log(backgroundVideo);
            if (backgroundVideo) {
             backgroundVideo.play();
            }
@@ -173,7 +172,7 @@ header {
                             font-size: 18px;
                         }
                         &[about] {
-                            background: black;
+                            // background: black;
                             color: white;
                             border-radius: 24px;
                         }

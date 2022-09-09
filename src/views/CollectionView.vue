@@ -5,33 +5,33 @@
             <h1>{{currentCollection.name}}</h1>
         </div>
     </div> -->
-    <div gallery>
-        <div image-container v-for="(work, workIndex) in currentCollection.works" v-bind:key="workIndex" :id="work.path">
+    <div collection>
+        <div itemscope itemtype="https://schema.org/CreativeWork" image-container v-for="(work, workIndex) in currentCollection.works" v-bind:key="workIndex" :id="work.path">
             <div container>
-                <img v-if="work.imagePath" v-on:click="fullScreen" :src="require(`@/assets/collections/${work.imagePath}.jpg`)" v:on-click/>
+                <img v-if="work.imagePath" v-on:click="fullScreen" :src="require(`@/assets/collections/${currentCollection.path}/${work.imagePath}.jpg`)" v:on-click/>
                 <video id="oneVideo" v-if="work.videoPath" autoplay muted controls>
-                    <source :src="require(`@/assets/collections/${work.videoPath}.mp4`)" type="video/mp4">
+                    <source :src="require(`@/assets/collections/${currentCollection.path}/${work.videoPath}.mp4`)" type="video/mp4">
                      Your browser does not support the video tag.
                 </video>
             </div>
             <div information>
                 <div container>
                     <div name>
-                        <h2>{{work.name}}</h2>
-                        <div year>Created on {{work.year}}</div>
+                        <h2 itemprop="name">{{work.name}}</h2>
+                        <div year><span itemprop="dateCreated">{{work.year}}</span></div>
                     </div>
                     <div actions>
-                        <div copy v-on:click="copyText(work.path)">
-                            📄Copy Link
-                        </div>
+                        <button-component v-on:click="copyText(work.path)">
+                            🔗
+                        </button-component>
                     </div>
                     <div description>
                         <div title>Description</div>
-                        <div info>{{work.description}}</div>
+                        <div info itemprop="abstract">{{work.description}}</div>
                     </div>
                     <div medium>
                         <div title>Info</div>
-                        <div info>{{work.medium}}</div>
+                        <div info itemprop="material">{{work.medium}}</div>
                     </div>
                 </div>
             </div>
@@ -61,34 +61,32 @@
 <script>
 import lodash from 'lodash';
 import ArtCollectionsCollection from '@/collections/ArtCollectionsCollection';
+import ButtonComponent from '@/components/ButtonComponent';
 
 export default {
     name: 'CollectionView',
     components: {
+        ButtonComponent,
     },
     data() {
         return {
-            currentCollectionParam: '',
             currentCollection: {},
             artCollections: lodash.shuffle(ArtCollectionsCollection),
             moreCollections: {},
         }
     },
+    beforeCreate() {
+    },
     created() {
-        this.currentCollectionParam = this.$route.params.collection;
-        this.currentCollection = lodash.find(ArtCollectionsCollection, {path: this.currentCollectionParam});
-        console.log(this.currentCollection);
-        this.moreCollections = lodash.reject(lodash.shuffle(ArtCollectionsCollection), { name: this.currentCollection.name }).slice(0, 3);
+        this.currentCollection = this.$route.meta.currentCollection;
+        this.moreCollections = this.$route.meta.moreCollections;
     },
     mounted() {
-        console.log('mounted');
     },
     methods: {
         fullScreen(element) {
-            console.log(element.srcElement);
             element.srcElement.requestFullscreen();
             // var elem = document.getElementById("myvideo");
-            // console.log(elem);
         },
         copyText(text) {
             const hashPath = `${window.location.origin}${window.location.pathname}#${text}`;
@@ -101,28 +99,11 @@ export default {
 <style scoped lang="scss">
 [collection-view] {
     position: relative;
-    [gallery] {
+    > [collection] {
         position: relative;
         background-color: #f0f0f0;
         z-index: 2;
         box-shadow: 0px 15px 30px -35px black;
-        [medium] {
-            grid-column: 2;
-            grid-row: 2 / 3;
-        }
-        [name] {
-            grid-column: 1/3;
-            grid-row: 1;
-            h2 {
-                font-size: 48px;
-                color: black;
-                font-weight: 600;
-            }
-            [year] {
-                font-size: 16px;
-                color: rgba(0,0,0,0.5);
-            }
-        }
     }
     [more-collections] {
         position: sticky;
@@ -147,7 +128,6 @@ export default {
     [image-container] {
         > [container] {
             justify-content: center;
-            min-height: 900px;
         }
     }
     [information] {
@@ -159,6 +139,38 @@ export default {
             grid-gap: 64px;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: auto auto;
+            [medium] {
+                grid-column: 2;
+                grid-row: 2 / 3;
+            }
+            [name] {
+                grid-column: 1/3;
+                grid-row: 1;
+                gap: 8px;
+                display: flex;
+                flex-direction: column;
+                h2 {
+                    font-size: 48px;
+                    color: black;
+                    font-weight: 600;
+                }
+                [year] {
+                    font-size: 18px;
+                    color: rgba(0,0,0,0.9);
+                }
+            }
+            @media (max-width: 640px) {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                grid-gap: 12px;
+                [collection]:nth-of-type(2) {
+                    display: none;
+                }
+                [medium], [name], [actions] {
+                    grid-column: revert;
+                    grid-row: revert;
+                }
+            }
         }
     }
     [actions] {
@@ -168,19 +180,6 @@ export default {
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-end;
-        [copy] {
-            background: black;
-            color: white;
-            padding: 8px 16px 8px 12px;
-            border-radius: 24px;
-            cursor: pointer;
-            &:hover{
-                background: rgba(0,0,0,0.7);
-            }
-            &:active{
-                background: #44d982;
-            }
-        }
     }
     [title] {
         font-size: 28px;
@@ -193,6 +192,9 @@ export default {
     }
     [info] {
         color: black;
+        font-weight: 100;
+        line-height: 24px;
+        font-size: 16px;
     }
     [name], [medium], [description], [description-title] {
         text-align: left;
@@ -211,7 +213,7 @@ export default {
         grid-row: 2 / 3;
         display: grid;
         gap: 8px;
-        grid-template-columns: 1fr 80px;
+        grid-template-columns: 1fr 1fr;
         [name] {
             font-size: 18px;
             font-weight: 400;
@@ -297,6 +299,18 @@ export default {
             margin: 0;
             padding: 24px;
             box-sizing: border-box;
+        }
+    } 
+    @media (max-width: 960px) {
+        grid-template-columns: 1fr 1fr;
+        [collection]:last-of-type {
+            display: none;
+        }
+    }
+    @media (max-width: 640px) {
+        grid-template-columns: 1fr;
+        [collection]:nth-of-type(2) {
+            display: none;
         }
     }
 }

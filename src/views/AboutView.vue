@@ -1,5 +1,5 @@
 <template>
-  <main about-view>
+  <main about-view itemprop="creator" itemscope itemtype="http://schema.org/Person">
     <div container>
       <div layout>
         <div sidebar>
@@ -16,12 +16,18 @@
         <div main>
           <div about>
             <div image>
+              <!-- <video id="background-video" autoplay loop muted>
+                  <source :src="require('@/assets/ai-art-video-done.mp4')" type="video/mp4">
+              Your browser does not support the video tag.
+              </video> -->
             </div>
             <div text>
               <div about-info>
-                <p><span itemprop="name">Rodrigo Barraza</span> is <span itemprop="description">a software engineer, artist and photographer based out of Vancouver, British Columbia, Canada. He emerged as an internet artist who works in a variety of media but focuses on photography, AI art, film, animation, visual design and illustration.</span></p>
-                
-                <p>When it comes to software development, Rodrigo began programming in 2004, specializing on front-end web development. After working with many startups and corporations over the years, he eventually came to lead large teams in various companies, and in 2017 started his own tech start-up, Einstein Exchange, with two other co-founders. The company focused on providing customers worldwide with a safe, secure and simple way to buy, trade and invest in virtual currencies. Since 2019, Rodrigo has been a software consultant and contractor for various startups and continues to expand his art practice.</p>
+                <p><span itemprop="givenName">Rodrigo</span> <span itemprop="familyName">Barraza</span> is <span itemprop="description">a <span itemprop="jobTitle">software engineer</span>, <span itemprop="jobTitle">artist</span> and <span itemprop="jobTitle">photographer</span> based out of <span itemprop="homeLocation">Vancouver, British Columbia, Canada</span></span>. He emerged as an internet artist who works in a variety of media and focuses on photography, AI art, film, animation, visual design and illustration.</p>
+
+                <p>Rodrigo grew up with an interest in visual media and started out as a young animator and illustrator in 2001. He soon started experimenting with film photography, videography, game development and graphic design. In recent years, he has focused on the analog and digital photographic arts. Combining his passion for software development, and with the rise of artificial intelligence media since 2017, he has pivoted his practice to algorithmic and generative art, and generative artificial media through the use of CLIP-driven image synthesis. Rodrigo <span itemprop="description">holds a BFA in Photography from the <span itemprop="alumniOf">Emily Carr University of Art + Design</span> in Vancouver, Canada.</span></p>
+
+                <p>When it comes to software development, Rodrigo began programming in 2004, specializing on front-end web development and Flash web applications. After graduating from University, and working with many startups and corporations over the years, he eventually came to lead large teams in various companies, and in 2017 started his own tech start-up, <span itemprop="worksFor">Einstein Exchange</span>, with two other co-founders. The company focused on providing worldwide clients with a safe, secure and simple way to buy, trade and invest in virtual currencies. Since 2019, Rodrigo has been a software consultant and contractor for various startups.</p>
               </div>
               <div actions>
                 <div contact>Email Me</div>
@@ -29,14 +35,7 @@
             </div>
           </div>
           <div bottom>
-            <div right>
-              <div education>
-                <div title>Education</div>
-                <div info>
-                  <div main>2011 Emily Carr University of Art + Design</div>
-                  <div details>Bachelor of Fine Arts in Photography</div>
-                </div>
-              </div>
+            <div extra-info>
               <div group-exhibitions>
                 <div title>Group exhibitions</div>
                 <div info>
@@ -56,8 +55,13 @@
                   <div details>Anti-Social Gallery, Vancouver, Canada</div>
                 </div>
               </div>
-            </div>
-            <div left>
+              <div education>
+                <div title>Education</div>
+                <div info>
+                  <div main>2011 <span itemprop="affiliation">Emily Carr University of Art + Design</span></div>
+                  <div details>Bachelor of Fine Arts in Photography</div>
+                </div>
+              </div>
               <div cinematography>
                 <div title>Cinematography</div>
                 <div info>
@@ -170,15 +174,20 @@ export default {
     [layout] {
       gap: inherit;
       display: flex;
+      align-items: flex-start;
       [sidebar] {
         flex: 0 0 250px;
+        border-radius: 8px;
+        background: white;
+        padding: 20px;
+        box-shadow: 0px 15px 30px -35px black;
         [image] {
           height: 250px;
           background: red;
           border-radius: 100%;
           background-size: 100%;
           background-position: center center;
-          border: 10px solid white;
+          border: 10px solid #f0f0f0;
           box-sizing: border-box;
           background-image: url("@/assets/about-portrait.jpg");
         }
@@ -295,8 +304,14 @@ export default {
             }
             &:hover {
               text-decoration: none;
-              background: rgba(0,0,0,0.05);
+              background: #9ceaff;
               transform: translate(0, -2px);
+              color: black;
+            }
+            &:active {
+              text-decoration: none;
+              background: #9ceaff;
+              transform: translate(0);
               color: black;
             }
           }
@@ -322,13 +337,14 @@ export default {
           gap: inherit;
           flex-direction: column;
           [image] {
-            border-radius: 8px;
-            flex: 0 0 350px;
+            border-radius: 2px;
+            flex: 0 0 24px;
             height: 450px;
-            background-image: url("@/assets/collections/nature-003.jpg");
+            background-color: black;
+            // background-image: url("@/assets/collections/nature-003.jpg");
             background-size: cover;
             background-repeat: no-repeat;
-            background-position: bottom;
+            background-position: top;
           }
           [text] {
             gap: inherit;
@@ -343,6 +359,9 @@ export default {
           display: flex;
           flex-direction: column;
           justify-content: flex-start;
+          font-weight: 100;
+          line-height: 26px;
+          text-align: justify;
         }
         [about-image] {
           video {
@@ -362,16 +381,15 @@ export default {
       }
     }
     [bottom] {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto;
-      grid-gap: inherit;
-      [left] {
-        grid-template-rows: repeat(auto-fill, 40px);
+      [extra-info] {
         text-align: left;
-      }
-      [right] {
-        text-align: left;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        
+        @media (max-width: 1200px) {
+          grid-template-columns: 1fr;
+        }
       }
       [title] {
         font-size: 28px;

@@ -15,6 +15,9 @@ export default {
     HeaderComponent,
     FooterComponent,
   },
+  mounted() {
+    console.log("Well, hello there, and welcome to Rodrigo Barraza's online profile.");
+  },
   methods: {
   }
 }
@@ -65,7 +68,7 @@ html {
   width: 100%;
   max-width: calc(16px * 2 + 1400px);
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 36px;
   box-sizing: border-box;
 }
 

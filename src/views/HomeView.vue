@@ -3,8 +3,11 @@
     <div gallery>
         <div image-container v-for="(collection, collectionIndex) in collections" v-bind:key="collectionIndex">
             <router-link image :to="`/collections/${collection.path}`">
-                <img :src="require(`@/assets/${collection.imagePath}.jpg`)"/>
-                <div description>{{collection.name}}, {{collection.medium}}, {{collection.year}}</div>
+                <!-- <div theimage :style="{ 'background-image': 'url('+ require(`@/assets/${collection.imagePath}.jpg`) + ')' }"> -->
+                <div theimage>
+                    <img :src="require(`@/assets/${collection.imagePath}.jpg`)"/>
+                </div>
+                <div description>{{collection.name}}, {{collection.year}}</div>
             </router-link>
         </div>
     </div>
@@ -42,47 +45,71 @@ export default {
 }
 
 [gallery] {
+    padding: 0 2vw;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: repeat(3, 37.5vw);
+    grid-template-rows: repeat(8, 37.5vw);
     flex-direction: row;
     flex-wrap: wrap;
     // row-gap: 16px;
     // column-gap: 64px;
     // padding: 40px;
+    gap: 2vw;
     [image-container] {
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
         cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        position: relative;
         [image] {
-            margin: 2vw;
-            flex: 1 1 100%;
             background-size: cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            gap: 12px;
             img {
                 transition: all 0.3s;
-                width: calc(25vw);
-                border-radius: 16px;
+                // width: calc(25vw);
+                display: flex;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
                 &:hover {
                     opacity: 0.9;
                 }
             }
+            [theimage] {
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                overflow: hidden;
+            }
+            [description] {
+                // flex: 0 0 40px;
+                font-weight: 400;
+                color: rgba(0,0,0,0.5);
+                font-size: 14px;
+                text-align: center;
+                opacity: 0;
+                transition: all 0.2s;
+                width: auto;
+                display: flex;
+                // background: white;
+                padding: 0px;
+            }
             &:hover {
                 text-decoration: none;
             }
-        }
-        [description] {
-            width: 100%;
-            font-size: 14px;
-            text-align: left;
-            margin-left: 16px;
-            margin-top: 8px;
-            opacity: 0;
-            transition: all 0.3s;
         }
         &:hover {
             [description] {
