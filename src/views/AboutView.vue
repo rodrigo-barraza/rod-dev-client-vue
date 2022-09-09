@@ -23,7 +23,7 @@
             </div>
             <div text>
               <div about-info>
-                <p><span itemprop="givenName">Rodrigo</span> <span itemprop="familyName">Barraza</span> is <span itemprop="description">a <span itemprop="jobTitle">software engineer</span>, <span itemprop="jobTitle">artist</span> and <span itemprop="jobTitle">photographer</span> based out of <span itemprop="homeLocation">Vancouver, British Columbia, Canada</span></span>. He emerged as an internet artist who works in a variety of media and focuses on photography, AI art, film, animation, visual design and illustration.</p>
+                <p><span full-name><span itemprop="givenName">Rodrigo</span> <span itemprop="familyName">Barraza</span></span> is <span itemprop="description">a <span itemprop="jobTitle">software engineer</span>, <span itemprop="jobTitle">artist</span> and <span itemprop="jobTitle">photographer</span> based out of <span itemprop="homeLocation">Vancouver, British Columbia, Canada</span></span>. He emerged as an internet artist who works in a variety of media and focuses on photography, AI art, film, animation, visual design and illustration.</p>
 
                 <p>Rodrigo grew up with an interest in visual media and started out as a young animator and illustrator in 2001. He soon started experimenting with film photography, videography, game development and graphic design. In recent years, he has focused on the analog and digital photographic arts. Combining his passion for software development, and with the rise of artificial intelligence media since 2017, he has pivoted his practice to algorithmic and generative art, and generative artificial media through the use of CLIP-driven image synthesis. Rodrigo <span itemprop="description">holds a BFA in Photography from the <span itemprop="alumniOf">Emily Carr University of Art + Design</span> in Vancouver, Canada.</span></p>
 
@@ -36,6 +36,13 @@
           </div>
           <div bottom>
             <div extra-info>
+              <div group-exhibitions>
+                <div title>Released Code</div>
+                <div info>
+                  <div main>Pristine Disco Diffusion</div>
+                  <div details>Nomad Gallery, Vancouver, Canada</div>
+                </div>
+              </div>
               <div group-exhibitions>
                 <div title>Group exhibitions</div>
                 <div info>
@@ -176,6 +183,10 @@ export default {
       display: flex;
       align-items: flex-start;
       [sidebar] {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
         flex: 0 0 250px;
         border-radius: 8px;
         background: white;
@@ -183,6 +194,7 @@ export default {
         box-shadow: 0px 15px 30px -35px black;
         [image] {
           height: 250px;
+          width: 250px;
           background: red;
           border-radius: 100%;
           background-size: 100%;
@@ -362,6 +374,10 @@ export default {
           font-weight: 100;
           line-height: 26px;
           text-align: justify;
+          [full-name] {
+            background-color: black;
+            color: white;
+          }
         }
         [about-image] {
           video {
@@ -399,6 +415,25 @@ export default {
         margin-bottom: 24px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         padding-bottom: 8px;
+      }
+    }
+  }
+  @media (max-width: 640px) {
+    [container] {
+      [layout] {
+        flex-direction: column;
+        [sidebar] {
+          width: 100%;
+          [image] {
+            height: 175px;
+            width: 175px;
+          }
+          [links] {
+            [link] {
+              justify-content: center;
+            }
+          }
+        }
       }
     }
   }

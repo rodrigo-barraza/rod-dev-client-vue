@@ -6,7 +6,7 @@
         </div>
     </div> -->
     <div collection>
-        <div itemscope itemtype="https://schema.org/CreativeWork" image-container v-for="(work, workIndex) in currentCollection.works" v-bind:key="workIndex" :id="work.path">
+        <div itemscope itemtype="https://schema.org/CreativeWork" work v-for="(work, workIndex) in currentCollection.works" v-bind:key="workIndex" :id="work.path">
             <div container>
                 <img v-if="work.imagePath" v-on:click="fullScreen" :src="require(`@/assets/collections/${currentCollection.path}/${work.imagePath}.jpg`)" v:on-click/>
                 <video id="oneVideo" v-if="work.videoPath" autoplay muted controls>
@@ -25,16 +25,21 @@
                             🔗
                         </button-component>
                     </div>
-                    <div description>
-                        <div title>Description</div>
-                        <div info itemprop="abstract">{{work.description}}</div>
-                    </div>
                     <div medium>
-                        <div title>Info</div>
+                        <div title>Medium</div>
                         <div info itemprop="material">{{work.medium}}</div>
+                    </div>
+                    <div description v-if="work.description">
+                        <div title>Description</div>
+                        <p info itemprop="abstract" v-html="work.description"></p>
                     </div>
                 </div>
             </div>
+        </div>
+        <div collection-deets>
+            <h1>{{currentCollection.name}}</h1>
+            <div>{{currentCollection.medium}}, {{currentCollection.year}}</div>
+            <p description v-html="currentCollection.description"></p>
         </div>
     </div>
     <div container more-collections>
@@ -125,9 +130,21 @@ export default {
         width: 100%;
         max-height: 800px;
     }
-    [image-container] {
+    [work] {
         > [container] {
             justify-content: center;
+        }
+    }
+    [collection-deets] {
+        padding: 0 0 200px 0;
+        margin: 0 0 100px 0;
+        h1 {
+            font-size: 48px;
+            color: black;
+            font-weight: 600;
+        }
+        p {
+            text-align: center;
         }
     }
     [information] {
@@ -139,10 +156,6 @@ export default {
             grid-gap: 64px;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: auto auto;
-            [medium] {
-                grid-column: 2;
-                grid-row: 2 / 3;
-            }
             [name] {
                 grid-column: 1/3;
                 grid-row: 1;
@@ -150,7 +163,7 @@ export default {
                 display: flex;
                 flex-direction: column;
                 h2 {
-                    font-size: 48px;
+                    font-size: 42px;
                     color: black;
                     font-weight: 600;
                 }
@@ -169,6 +182,9 @@ export default {
                 [medium], [name], [actions] {
                     grid-column: revert;
                     grid-row: revert;
+                }
+                [actions] {
+                    align-items: start;
                 }
             }
         }
@@ -220,10 +236,6 @@ export default {
         }
         [year] {
             text-align: right;
-        }
-        [medium] {
-            grid-column: 1/3;
-            grid-row: 2 / 3;
         }
     }
 }

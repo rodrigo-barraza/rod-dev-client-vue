@@ -102,6 +102,10 @@ p {
   &+p{
     margin-top: 8px;
   }
+  a {
+    font-weight: 400;
+    color: #655ffa;
+  }
 }
 main {
   &:before {
