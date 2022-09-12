@@ -2,10 +2,10 @@
   <header :class="[routeName]">
     <div fixed>
         <div background>
-            <video id="background-video" autoplay muted>
+            <!-- <video id="background-video" autoplay muted>
                 <source :src="require('@/assets/ai-art-video-done.mp4')" type="video/mp4">
             Your browser does not support the video tag.
-            </video>
+            </video> -->
         </div>
         <div stripe>
         </div>
@@ -85,7 +85,7 @@ export default {
 <style scoped lang="scss">
 header {
     [fixed] {
-        height: 150px;
+        height: 120px;
         display: flex;
         flex-direction: column;
         [background] {
@@ -139,6 +139,7 @@ header {
                 display: flex;
                 a {
                     display: flex;
+                    align-items: center;
                     [logo] {
                         flex: 0 0 32px;
                         height: 32px;
@@ -148,10 +149,22 @@ header {
                     }
                     [text] {
                         flex: 0 0 280px;
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
                     }
                     &:hover {
                         [logo] {
                             background-image: url("@/assets/logo-animated.gif");
+                        }
+                    }
+                    @media (max-width: 480px) {
+                        [logo] {
+                            flex: 0 0 5vw;
+                            height: 5vw;
+                        }
+                        [text] {
+                            font-size: 5vw;
                         }
                     }
                 }
@@ -185,10 +198,10 @@ header {
             [hamburger] {
                 display: none;
                 width: 100px;
+                justify-content: flex-end;
                 div {
                     cursor: pointer;
                     border-radius: 10px;
-                    padding: 2px 8px 8px 8px;
                     background-color: rgba(0,0,0,0.05);
                 }
             }
@@ -226,12 +239,12 @@ header {
         }
         @media (max-width: 800px) {
             [container] {
+                padding: 0 4vw;
                 nav {
                     display: none;
                 }
                 [hamburger] {
                     display: flex;
-                    justify-content: center;
                     align-items: center;
                     font-size: 30px;
                 }
@@ -243,7 +256,6 @@ header {
                     [hamburger] {
                         font-size: 18px;
                         div {
-                            background-color: rgba(255,255,255,0.3);
                         }
                     }
                 }

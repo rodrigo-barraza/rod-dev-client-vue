@@ -29,44 +29,44 @@
 
                 <p>When it comes to software development, Rodrigo began programming in 2004, specializing on front-end web development and Flash web applications. After graduating from University, and working with many startups and corporations over the years, he eventually came to lead large teams in various companies, and in 2017 started his own tech start-up, <span itemprop="worksFor">Einstein Exchange</span>, with two other co-founders. The company focused on providing worldwide clients with a safe, secure and simple way to buy, trade and invest in virtual currencies. Since 2019, Rodrigo has been a software consultant and contractor for various startups.</p>
               </div>
-              <div actions>
+              <!-- <div actions>
                 <div contact>Email Me</div>
-              </div>
+              </div> -->
             </div>
           </div>
           <div bottom>
             <div extra-info>
-              <div group-exhibitions>
-                <div title>Released Code</div>
+              <div education>
+                <div title>Education</div>
                 <div info>
-                  <div main>Pristine Disco Diffusion</div>
-                  <div details>Nomad Gallery, Vancouver, Canada</div>
+                  <div main><span itemprop="affiliation">Emily Carr University of Art + Design, 2011</span></div>
+                  <div details>Bachelor of Fine Arts in Photography</div>
+                </div>
+              </div>
+              <div group-exhibitions>
+                <div title>Recent Code</div>
+                <div info>
+                  <div main><a href="https://colab.research.google.com/github/rodrigo-barraza/pristine-disco-diffusion/blob/master/rodrigos-pristine-disco-diffusion.ipynb" target="_blank">Pristine Disco Diffusion</a></div>
+                  <div details>Google Colab Notebook</div>
                 </div>
               </div>
               <div group-exhibitions>
                 <div title>Group exhibitions</div>
                 <div info>
-                  <div main>2011 Grand Opening Night</div>
+                  <div main>Grand Opening Night, 2011</div>
                   <div details>Nomad Gallery, Vancouver, Canada</div>
                 </div>
                 <div info>
-                  <div main>2011 Five Rooms Photography Exhibition</div>
+                  <div main>Five Rooms Photography Exhibition, 2011</div>
                   <div details>The Waldorf Hotel, Vancouver, Canada</div>
                 </div>
                 <div info>
-                  <div main>2011 Degree Exhibition</div>
+                  <div main>Degree Exhibition, 2011</div>
                   <div details>Emily Carr University of Art & Design, Vancouver, Canada</div>
                 </div>
                 <div info>
-                  <div main>2010 Selfish Motives and Panchromatic Desires</div>
+                  <div main>Selfish Motives and Panchromatic Desires, 2010</div>
                   <div details>Anti-Social Gallery, Vancouver, Canada</div>
-                </div>
-              </div>
-              <div education>
-                <div title>Education</div>
-                <div info>
-                  <div main>2011 <span itemprop="affiliation">Emily Carr University of Art + Design</span></div>
-                  <div details>Bachelor of Fine Arts in Photography</div>
                 </div>
               </div>
               <div cinematography>
@@ -172,8 +172,6 @@ export default {
 <style scoped lang="scss">
 [about-view] {
   position: relative;
-  margin-top: 0!important;
-  padding-top: 100px;
   [container] {
     flex-direction: column;
     display: flex;
@@ -334,6 +332,9 @@ export default {
         flex-direction: column;
         gap: inherit;
         [education], [cinematography], [group-exhibitions] {
+          background-color: white;
+          padding: 32px;
+          border-radius: 4px;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
@@ -343,11 +344,26 @@ export default {
               color: rgba(0,0,0,0.5);
             }
           }
+          [main] {
+            font-size: 18px;
+            a {
+              color: #655ffa;
+              font-weight: 400;
+              text-decoration: none;
+              &:hover {
+                color: #f10000;
+              }
+              &:active {
+                color: #00b83e;
+              }
+            }
+          }
         }
         [about] {
           display: flex;
-          gap: inherit;
           flex-direction: column;
+          background-color: white;
+          border-radius: 4px;
           [image] {
             border-radius: 2px;
             flex: 0 0 24px;
@@ -359,20 +375,18 @@ export default {
             background-position: top;
           }
           [text] {
+            padding: 32px;
             gap: inherit;
             display: flex;
             flex-direction: column;
           }
         }
         [about-info] {
-          font-size: 18px;
           text-align: left;
           flex: 1 1 100%;
           display: flex;
           flex-direction: column;
           justify-content: flex-start;
-          font-weight: 100;
-          line-height: 26px;
           text-align: justify;
           [full-name] {
             background-color: black;
@@ -429,6 +443,10 @@ export default {
             width: 175px;
           }
           [links] {
+            width: 100%;
+            [title] {
+              text-align: center;
+            }
             [link] {
               justify-content: center;
             }

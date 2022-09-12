@@ -1,0 +1,15 @@
+Options +FollowSymLinks
+RewriteEngine on
+RewriteBase /
+RewriteCond %{HTTP_HOST} !^www.monochro.me$ [NC]
+RewriteRule ^(.*)$ http://www.monochro.me/$1 [L,R=301]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
+#ErrorDocument 404 /
+#ErrorDocument 401 /
+#ErrorDocument 403 /
+#ErrorDocument 404 /
+#ErrorDocument 500 /
+DirectoryIndex index.php
+AddHandler php-stable .php

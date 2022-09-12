@@ -6,6 +6,14 @@
         </div>
     </div> -->
     <div collection>
+        <div collection-deets>
+            <div container>
+                <h1>{{currentCollection.name}}</h1>
+                <p>{{currentCollection.medium}}, {{currentCollection.year}}</p>
+                <p ekphrasis>{{currentCollection.ekphrasis}}</p>
+                <p description v-html="currentCollection.description"></p>
+            </div>
+        </div>
         <div itemscope itemtype="https://schema.org/CreativeWork" work v-for="(work, workIndex) in currentCollection.works" v-bind:key="workIndex" :id="work.path">
             <div container>
                 <img v-if="work.imagePath" v-on:click="fullScreen" :src="require(`@/assets/collections/${currentCollection.path}/${work.imagePath}.jpg`)" v:on-click/>
@@ -14,32 +22,22 @@
                      Your browser does not support the video tag.
                 </video>
             </div>
-            <div information>
+            <div information v-if="currentCollection.works.length >= 2">
                 <div container>
                     <div name>
                         <h2 itemprop="name">{{work.name}}</h2>
-                        <div year><span itemprop="dateCreated">{{work.year}}</span></div>
+                        <p year><span itemprop="dateCreated">{{work.medium}}, {{work.year}}</span></p>
                     </div>
                     <div actions>
                         <button-component v-on:click="copyText(work.path)">
                             🔗
                         </button-component>
                     </div>
-                    <div medium>
-                        <div title>Medium</div>
-                        <div info itemprop="material">{{work.medium}}</div>
-                    </div>
                     <div description v-if="work.description">
-                        <div title>Description</div>
                         <p info itemprop="abstract" v-html="work.description"></p>
                     </div>
                 </div>
             </div>
-        </div>
-        <div collection-deets>
-            <h1>{{currentCollection.name}}</h1>
-            <div>{{currentCollection.medium}}, {{currentCollection.year}}</div>
-            <p description v-html="currentCollection.description"></p>
         </div>
     </div>
     <div container more-collections>
@@ -123,7 +121,8 @@ export default {
         height: 100%;
         object-fit: contain;
         max-width: 100%;
-        max-height: 900px;
+        // max-height: 900px; // default
+        max-height: 90vh;
         cursor: pointer;
     }
     video {
@@ -133,40 +132,51 @@ export default {
     [work] {
         > [container] {
             justify-content: center;
+            // margin-top: 64px;
+            // margin-bottom: 64px;
+            padding: 64px 0;
         }
     }
     [collection-deets] {
-        padding: 0 0 200px 0;
-        margin: 0 0 100px 0;
-        h1 {
-            font-size: 48px;
-            color: black;
-            font-weight: 600;
-        }
-        p {
-            text-align: center;
+        [container] {
+            // max-width: 800px;
+            background: white;
+            padding: 64px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 4px;
+            // max-width: 600px;
+            // background: white;
+            // padding: 128px 64px;
+            text-align: left;
+            p {
+                margin-top: 12px;
+                text-align: center;
+                font-size: 18px;
+                line-height: 26px;
+                text-align: justify;
+                &[ekphrasis] {
+                    font-style: italic;
+                }
+            }
         }
     }
     [information] {
-        background: white;
-        padding: 64px 0;
-        margin: 64px 0;
+        margin: 0;
         [container] {
             display: grid;
-            grid-gap: 64px;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: auto auto;
+            background: white;
+            padding: 64px;
+            max-width: 800px;
+            border-radius: 4px;
             [name] {
                 grid-column: 1/3;
                 grid-row: 1;
                 gap: 8px;
                 display: flex;
                 flex-direction: column;
-                h2 {
-                    font-size: 42px;
-                    color: black;
-                    font-weight: 600;
-                }
                 [year] {
                     font-size: 18px;
                     color: rgba(0,0,0,0.9);
@@ -207,13 +217,22 @@ export default {
         padding-bottom: 8px;
     }
     [info] {
-        color: black;
-        font-weight: 100;
-        line-height: 24px;
-        font-size: 16px;
     }
     [name], [medium], [description], [description-title] {
         text-align: left;
+    }
+    [description] {
+        grid-column: 1/3;
+    }
+    @media (max-width: 800px) {
+        [work] {
+            > [container] {
+                justify-content: center;
+                // margin-top: 64px;
+                // margin-bottom: 64px;
+                padding: 8vw 0 4vw 0;
+            }
+        }
     }
 }
 [more-collections] {
@@ -259,7 +278,6 @@ export default {
             align-items: center;
             border-radius: 12px;
             overflow: hidden;
-            background: black;
             img {
                 transition: all 0.3s;
                 object-fit: cover;

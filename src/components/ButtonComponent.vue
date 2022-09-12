@@ -22,11 +22,11 @@ export default {
 
 <style scoped lang="scss">
 [button-component] {
-    font-size: 24px;
+    font-size: 12px;
     background-color: #323232;
     text-shadow: 0px 0px 0px #dbdbdb;
     color: transparent;
-    padding: 12px 24px;
+    padding: 6px 12px;
     border-radius: 24px;
     cursor: pointer;
     user-select: none;

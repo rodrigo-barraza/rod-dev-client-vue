@@ -1,0 +1,1043 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" 
+  xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+
+<url>
+  <loc>http://www.monochro.me/</loc>
+  <changefreq>daily</changefreq>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>http://www.monochro.me/who/</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>http://www.monochro.me/contact/</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>http://www.monochro.me/walks</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority> 
+  <image:image>
+       <image:loc>http://www.monochro.me/images/walks-1.jpg</image:loc> 
+       <image:title>Dreamwork - Early beach days</image:title>
+       <image:caption>Layers of sand, sea and sky on photographic film.</image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license>http://www.monochro.me/who</image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/walks-2.jpg</image:loc> 
+       <image:title>Dreamwork - Early beach days</image:title>
+       <image:caption>Layers of sand, sea and sky on photographic film.</image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license>http://www.monochro.me/who</image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/walks-3.jpg</image:loc> 
+       <image:title>Dreamwork - Early beach days</image:title>
+       <image:caption>Layers of sand, sea and sky on photographic film.</image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license>http://www.monochro.me/who</image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/walks-4.jpg</image:loc> 
+       <image:title>Dreamwork - Early beach days</image:title>
+       <image:caption>Layers of sand, sea and sky on photographic film.</image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license>http://www.monochro.me/who</image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/walks-5.jpg</image:loc> 
+       <image:title>Dreamwork - Early beach days</image:title>
+       <image:caption>Layers of sand, sea and sky on photographic film.</image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license>http://www.monochro.me/who</image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/walks-6.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+</url>
+<url>
+  <loc>http://www.monochro.me/dreamwork</loc>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/dreamwork-1.jpg</image:loc> 
+       <image:title>Dreamwork - Early beach days</image:title>
+       <image:caption>Layers of sand, sea and sky on photographic film.</image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license>http://www.monochro.me/who</image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/dreamwork-2.jpg</image:loc> 
+       <image:title>Dreamwork - Multiple personalities</image:title>
+       <image:caption>Various people and places captured through multiple exposures.</image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license>http://www.monochro.me/who</image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/dreamwork-3.jpg</image:loc> 
+       <image:title>Dreamwork - Every corner in a yard</image:title>
+       <image:caption>Multiple exposure photographic series.</image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license>http://www.monochro.me/who</image:license>
+    </image:image>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.monochro.me/rip-apart</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/rip-apart-101.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/rip-apart-102.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/rip-apart-103.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/rip-apart-104.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/rip-apart-105.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/rip-apart-106.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/rip-apart-107.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/rip-apart-108.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/rip-apart-109.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/rip-apart-1010.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/rip-apart-1011.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/rip-apart-1012.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/rip-apart-1013.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/rip-apart-1014.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/rip-apart-1015.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/rip-apart-1016.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/rip-apart-1017.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/rip-apart-1018.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/rip-apart-1019.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/rip-apart-1020.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/home-21.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/rip-apart-1022.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/rip-apart-1023.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/rip-apart-1024.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+</url>
+<url>
+  <loc>http://www.monochro.me/spotless</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
+  <video:video>
+       <video:thumbnail_loc>http://www.monochro.me/thumbnail/spotless.jpg</video:thumbnail_loc> 
+       <video:title>Spotless</video:title>
+       <video:description>A 16mm short film shot in black and white stock. Ave Maria by Bach/Gounod in stereo sound. In collaboration with Ewa Chruscicka.</video:description>
+       <video:content_loc>https://vimeo.com/73240612</video:content_loc>
+       <video:player_loc allow_embed="yes" autoplay="ap=0">http://player.vimeo.com/video/73240612</video:player_loc>
+       <video:duration>179</video:duration>
+       <video:rating>5.0</video:rating> 
+       <video:view_count>5302</video:view_count>    
+       <video:publication_date>2011-11-21T19:20:30+08:00</video:publication_date>
+       <video:family_friendly>yes</video:family_friendly>
+       <video:gallery_loc title="Cooking Videos">http://www.monochro.me</video:gallery_loc>
+       <video:uploader info="http://www.monochro.me/who">Rodrigo Barraza</video:uploader>
+       <video:live>no</video:live>
+     </video:video> 
+</url>
+<url>
+  <loc>http://www.monochro.me/home</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/home-1.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/home-2.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/home-3.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/home-4.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+</url>
+<url>
+  <loc>http://www.monochro.me/urban</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/urban-1.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/urban-2.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/urban-3.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/urban-4.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/urban-5.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/urban-6.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/urban-7.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/urban-8.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/urban-9.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/urban-10.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/urban-11.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/urban-12.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/urban-13.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/urban-14.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/urban-15.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/urban-16.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/urban-17.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/urban-18.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/urban-19.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/urban-20.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+</url>
+<url>
+  <loc>http://www.monochro.me/light</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/light-1.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/light-2.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/light-3.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+</url>
+<url>
+  <loc>http://www.monochro.me/person</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/person-1.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/person-2.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/person-3.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/person-4.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/person-5.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/person-6.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/person-7.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/person-8.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/person-9.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/person-10.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/person-11.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/person-12.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/person-13.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/person-14.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/person-15.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/person-16.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/person-17.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/person-18.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/person-19.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/person-20.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/home-21.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/person-22.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+</url>
+<url>
+  <loc>http://www.monochro.me/imaginary-objects</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/imaginary-objects-1.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/imaginary-objects-2.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/imaginary-objects-3.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/imaginary-objects-4.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/imaginary-objects-5.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/imaginary-objects-6.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/imaginary-objects-7.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/imaginary-objects-8.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/imaginary-objects-9.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/imaginary-objects-10.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/home-11.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/imaginary-objects-12.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+</url>
+<url>
+  <loc>http://www.monochro.me/faces</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/faces-1.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/faces-2.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/faces-3.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/faces-4.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/faces-5.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/faces-6.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/faces-7.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/faces-8.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/faces-9.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/faces-10.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+</url>
+<url>
+  <loc>http://www.monochro.me/imaginary-landscapes</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.monochro.me/hallow</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/imaginary-landscapes-1.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/imaginary-landscapes-2.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/imaginary-landscapes-3.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/imaginary-landscapes-4.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/imaginary-landscapes-5.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/imaginary-landscapes-6.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/imaginary-landscapes-7.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/imaginary-landscapes-8.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/imaginary-landscapes-9.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/imaginary-landscapes-10.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+</url>
+<url>
+  <loc>http://www.monochro.me/plantae</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/plantae-1.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/plantae-2.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/plantae-3.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/plantae-4.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/plantae-5.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/plantae-6.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/plantae-7.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/plantae-8.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/plantae-9.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/plantae-10.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+</url>
+<url>
+  <loc>http://www.monochro.me/tv-date</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
+  <video:video>
+       <video:thumbnail_loc>http://www.monochro.me/thumbnail/tv-date.jpg</video:thumbnail_loc> 
+       <video:title>Tv Date</video:title>
+       <video:description>Digital video signal with stereo sound. A music video shot in high definition for local Vancouver band Petroleum By-Product. In collaboration with Director Davide Di Saro', Cinematographer Ewa Chruscicka, and Videographer Owen Ellis.</video:description>
+       <video:content_loc>https://vimeo.com/58578905</video:content_loc>
+       <video:player_loc allow_embed="yes" autoplay="ap=0">http://player.vimeo.com/video/58578905</video:player_loc>
+       <video:duration>221</video:duration>
+       <video:rating>4.2</video:rating> 
+       <video:view_count>5302</video:view_count>    
+       <video:publication_date>2010-11-21T19:20:30+08:00</video:publication_date>
+       <video:family_friendly>yes</video:family_friendly>
+       <video:gallery_loc title="Cooking Videos">http://www.monochro.me</video:gallery_loc>
+       <video:uploader info="http://www.monochro.me/who">Rodrigo Barraza</video:uploader>
+       <video:live>no</video:live>
+     </video:video> 
+</url>
+<url>
+  <loc>http://www.monochro.me/ink</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/ink-1.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/ink-2.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/ink-3.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/ink-4.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/ink-5.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/ink-6.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  <image:image>
+       <image:loc>http://www.monochro.me/images/ink-7.jpg</image:loc> 
+       <image:title></image:title>
+       <image:caption></image:caption>
+       <image:geo_location>Vancouver, Canada</image:geo_location>
+       <image:license></image:license>
+    </image:image>
+  </url>
+</urlset>

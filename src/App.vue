@@ -47,7 +47,7 @@ html {
             flex: 0 0 auto;
         }
         > main {
-            margin: 100px 0 0 0;
+            margin: 5vw 0 0 0;
             flex: 1 1 auto;
         }
         > footer {
@@ -99,6 +99,11 @@ a {
 p {
   margin: 0;
   padding: 0;
+  font-size: 18px;
+  color: black;
+  font-weight: 100;
+  line-height: 26px;
+  text-align: justify;
   &+p{
     margin-top: 8px;
   }
@@ -115,5 +120,15 @@ main {
 h1, h2, h3, h4, h5 {
   padding: 0;
   margin: 0;
+}
+h1 {
+  font-size: 48px;
+  font-weight: 600;
+  color: black;
+}
+h2 {
+  font-size: 32px;
+  font-weight: 500;
+  color: black;
 }
 </style>
