@@ -2,42 +2,52 @@
   <main collection-view>
     <!-- <div title-one>
         <div container>
-            <h1>{{currentCollection.name}}</h1>
+            <h1>{{collection.title}}</h1>
         </div>
     </div> -->
-    <div collection>
+    <div collection
+    itemscope itemtype="https://schema.org/Collection" :itemid="`https://rod.dev${$route.fullPath}`">
         <div collection-deets>
             <div container>
-                <h1>{{currentCollection.name}}</h1>
-                <p>{{currentCollection.medium}}, {{currentCollection.year}}</p>
-                <p ekphrasis>{{currentCollection.ekphrasis}}</p>
-                <p description v-html="currentCollection.description"></p>
+                <div>
+                    <h1 itemprop="name">{{collection.title}}</h1>
+                    <span itemprop="dateCreated">{{collection.year}}</span>
+                </div>
+                <p>{{collection.medium}}</p>
+                <p duration>{{collection.duration}}</p>
+                <p v-if="collection.ekphrasis" ekphrasis>{{collection.ekphrasis}}</p>
+                <p v-if="collection.description" itemprop="abstract" description v-html="collection.description"></p>
+                <!-- <link v-for="(work, workIndex) in collection.works" v-bind:key="workIndex"
+                itemprop="hasPart" itemscope itemtype="https://schema.org/CreativeWork" :itemid="work.path" /> -->
             </div>
         </div>
-        <div itemscope itemtype="https://schema.org/CreativeWork" work v-for="(work, workIndex) in currentCollection.works" v-bind:key="workIndex" :id="work.path">
+        <div work
+        v-for="(work, workIndex) in collection.works" v-bind:key="workIndex" :id="work.path" :class="collection.orientation" 
+        itemscope itemtype="https://schema.org/CreativeWork" :itemid="`https://rod.dev${$route.fullPath}#${work.path}`" itemprop="hasPart">
             <div container>
-                <img v-if="work.imagePath" v-on:click="fullScreen" :src="require(`@/assets/collections/${currentCollection.path}/${work.imagePath}.jpg`)" v:on-click/>
-                <video id="oneVideo" v-if="work.videoPath" autoplay muted controls>
-                    <source :src="require(`@/assets/collections/${currentCollection.path}/${work.videoPath}.mp4`)" type="video/mp4">
+                <img v-if="work.imagePath" v-on:click="fullScreen"
+                :src="require(`@/assets/collections/${collection.path}/${work.imagePath}.jpg`)"
+                :alt="work.description"
+                :title="`${collection.title} - ${work.title}, ${work.medium}, ${work.year}. ${work.description}`"
+                itemprop="image"/>
+                <video id="oneVideo" autoplay muted :controls="collection.videoControls" loop poster=""
+                v-if="work.videoPath"
+                itemprop="video">
+                    <source :src="require(`@/assets/collections/${collection.path}/${work.videoPath}.mp4`)" type="video/mp4">
                      Your browser does not support the video tag.
                 </video>
-            </div>
-            <div information v-if="currentCollection.works.length >= 2">
-                <div container>
-                    <div name>
-                        <h2 itemprop="name">{{work.name}}</h2>
-                        <p year><span itemprop="dateCreated">{{work.medium}}, {{work.year}}</span></p>
+                <div card v-if="collection.works.length >= 2">
+                    <div>
+                        <h2 itemprop="name">{{work.title}}</h2>
+                        <span year itemprop="dateCreated">{{work.year}}</span>
                     </div>
-                    <div actions>
-                        <button-component v-on:click="copyText(work.path)">
-                            🔗
-                        </button-component>
-                    </div>
-                    <div description v-if="work.description">
-                        <p info itemprop="abstract" v-html="work.description"></p>
-                    </div>
+                    <p>{{work.medium}}</p>
+                    <p v-if="work.duration">{{work.duration}}</p>
+                    <p ekphrasis v-if="work.ekphrasis">{{work.ekphrasis}}</p>
+                    <p info itemprop="abstract" v-if="work.description" v-html="work.description"></p>
                 </div>
             </div>
+            <!-- <link itemprop="isPartOf" itemscope itemtype="https://schema.org/Collection" :itemid="$route.fullPath" /> -->
         </div>
     </div>
     <div container more-collections>
@@ -45,12 +55,13 @@
         <div collections>
             <div collection v-for="(collection, collectionIndex) in moreCollections" v-bind:key="collectionIndex">
                 <a image :href="`/collections/${collection.path}`">
-                    <div the-image>
+                    <img :src="require(`@/assets/${collection.imagePath}.jpg`)"/>
+                    <!-- <div the-image>
                         <img :src="require(`@/assets/${collection.imagePath}.jpg`)"/>
-                        <div the-name>{{collection.name}}</div>
-                    </div>
+                        <div the-name>{{collection.title}}</div>
+                    </div> -->
                     <div description>
-                        <div name>{{collection.name}}</div>
+                        <div name>{{collection.title}}</div>
                         <div year>{{collection.year}}</div>
                         <div medium>{{collection.medium}}</div>
                     </div>
@@ -64,24 +75,24 @@
 <script>
 import lodash from 'lodash';
 import ArtCollectionsCollection from '@/collections/ArtCollectionsCollection';
-import ButtonComponent from '@/components/ButtonComponent';
+// import ButtonComponent from '@/components/ButtonComponent';
 
 export default {
     name: 'CollectionView',
     components: {
-        ButtonComponent,
+        // ButtonComponent,
     },
     data() {
         return {
-            currentCollection: {},
+            collection: {},
             artCollections: lodash.shuffle(ArtCollectionsCollection),
-            moreCollections: {},
+            moreCollections: {}
         }
     },
     beforeCreate() {
     },
     created() {
-        this.currentCollection = this.$route.meta.currentCollection;
+        this.collection = this.$route.meta.collection;
         this.moreCollections = this.$route.meta.moreCollections;
     },
     mounted() {
@@ -107,6 +118,9 @@ export default {
         background-color: #f0f0f0;
         z-index: 2;
         box-shadow: 0px 15px 30px -35px black;
+        gap: 32px;
+        display: flex;
+        flex-direction: column;
     }
     [more-collections] {
         position: sticky;
@@ -116,48 +130,109 @@ export default {
         display: flex;
         flex-direction: column;
     }
-    img {
-        width: auto;
-        height: 100%;
-        object-fit: contain;
-        max-width: 100%;
-        // max-height: 900px; // default
-        max-height: 90vh;
-        cursor: pointer;
-    }
     video {
         width: 100%;
         max-height: 800px;
     }
     [work] {
+        background: #f0f0f0;
         > [container] {
             justify-content: center;
-            // margin-top: 64px;
-            // margin-bottom: 64px;
-            padding: 64px 0;
+            align-items: flex-start;
+            padding: 0;
+            display: grid;
+            grid-template-columns: auto auto;
+            gap: 32px;
+            [card] {
+                max-width: 400px;
+                // flex: 0 0 400px;
+                background: white;
+                background: linear-gradient(180deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.3) 30%, rgba(255,255,255,0) 100%);
+                padding: 32px;
+                border-radius: 4px;
+                box-sizing: border-box;
+                > div {
+                    font-size: 32px;
+                    color: black;
+                    text-align: left;
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 0px 8px;
+                    h2 {
+                        display: inline;
+                    }
+                    [year] {
+                        font-weight: 100;
+                        @media (max-width: 1432px) {
+                            font-size: calc(1.35vw + 13px);
+                        }
+                        @media (max-width: 640px) {
+                            font-size: 24px;
+                        }
+                    }
+                }
+            }
+        }
+        // &:nth-of-type(2n+1) {
+        //     [card] {
+        //         order: -1;
+        //     }
+        // }
+        &:last-of-type {
+            background: linear-gradient(180deg, rgba(240,240,240,1) 0%, rgba(255,255,255,1) 90%, rgba(255,255,255,1) 100%);
+            padding-bottom: 64px;
+        }
+        img {
+            height: default;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            max-width: 100%;
+            max-height: 90vh;
+            cursor: pointer;
+        }
+        &.horizontal, &.square {
+            > [container] {
+                gap: 0;
+                grid-template-rows: auto auto;
+                grid-template-columns: auto;
+                [card] {
+                    max-width: 100%;
+                }
+            }
         }
     }
     [collection-deets] {
+        background: linear-gradient(180deg, rgba(240,240,240,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 100%);
         [container] {
-            // max-width: 800px;
-            background: white;
-            padding: 64px;
+            padding: 0 32px 32px 32px;
             display: flex;
             flex-direction: column;
             border-radius: 4px;
-            // max-width: 600px;
-            // background: white;
-            // padding: 128px 64px;
-            text-align: left;
+            [duration] {
+                margin: 0;
+            }
+            div {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0px 8px;
+                span {
+                    font-weight: 100;
+                    font-size: 48px;
+                    color: black;
+                    @media (max-width: 1432px) {
+                        font-size: calc(3vw + 5px);
+                    }
+                    @media (max-width: 640px) {
+                        font-size: 28px;
+                    }
+                }
+            }
             p {
-                margin-top: 12px;
                 text-align: center;
-                font-size: 18px;
                 line-height: 26px;
                 text-align: justify;
-                &[ekphrasis] {
-                    font-style: italic;
-                }
             }
         }
     }
@@ -207,16 +282,10 @@ export default {
         justify-content: flex-start;
         align-items: flex-end;
     }
-    [title] {
-        font-size: 28px;
-        text-transform: capitalize;
-        color: black;
-        font-weight: 500;
-        margin-bottom: 24px;
-        border-bottom: 1px solid rgba(0,0,0,0.1);
-        padding-bottom: 8px;
-    }
     [info] {
+    }
+    [ekphrasis] {
+        font-style: italic;
     }
     [name], [medium], [description], [description-title] {
         text-align: left;
@@ -227,18 +296,32 @@ export default {
     @media (max-width: 800px) {
         [work] {
             > [container] {
-                justify-content: center;
                 // margin-top: 64px;
                 // margin-bottom: 64px;
-                padding: 8vw 0 4vw 0;
+            }
+        }
+    }
+    @media (max-width: 640px) {
+        [work] {
+            > [container] {
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr auto;
+                grid-gap: 0;
+                [card] {
+                    margin: 0;
+                    max-width: unset;
+                }
             }
         }
     }
 }
 [more-collections] {
+    margin-top: 64px;
+    padding-bottom: 64px;
     [section-title] {
+        text-transform: uppercase;
         text-align: left;
-        font-size: 32px;
+        font-size: 18px;
         font-weight: 600;
         color: black;
     }
@@ -261,24 +344,27 @@ export default {
 [collections] {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    // grid-template-rows: 420px;
     flex-direction: row;
     flex-wrap: wrap;
+    grid-gap: 32px;
     [collection] {
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
         cursor: pointer;
         [image] {
-            margin: 2vw;
+            // margin: 2vw;
             flex: 1 1 100%;
             background-size: cover;
-            display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border-radius: 12px;
             overflow: hidden;
+            display: grid;
+            grid-template-rows: auto auto;
+            justify-content: initial;
             img {
+                width: 100%;
+                height: 100%;
                 transition: all 0.3s;
                 object-fit: cover;
             }
@@ -323,8 +409,8 @@ export default {
             margin-left: 16px;
             margin-top: 8px;
             transition: all 0.3s;
-            background-color: black;
-            color: white;
+            background-color: white;
+            color: black;
             padding: 0;
             margin: 0;
             padding: 24px;

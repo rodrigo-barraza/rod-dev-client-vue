@@ -23,7 +23,6 @@ export default {
 }
 </script>
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 html {
     min-height: 100%;
     display: flex;
@@ -47,7 +46,7 @@ html {
             flex: 0 0 auto;
         }
         > main {
-            margin: 5vw 0 0 0;
+            margin: 32px 0 0 0;
             flex: 1 1 auto;
         }
         > footer {
@@ -105,16 +104,16 @@ p {
   line-height: 26px;
   text-align: justify;
   &+p{
-    margin-top: 8px;
+    margin-top: 16px;
   }
   a {
     font-weight: 400;
     color: #655ffa;
   }
 }
-main {
-  &:before {
-  }
+
+h1, h2, h3, h4, h5, p {
+  text-align: left;
 }
 
 h1, h2, h3, h4, h5 {
@@ -130,5 +129,112 @@ h2 {
   font-size: 32px;
   font-weight: 500;
   color: black;
+}
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 1432px) {
+  h1 {
+    font-size: calc(3vw + 5px);
+  }
+  h2 {
+    font-size: calc(1.35vw + 13px);
+  }
+  p {
+    font-size: calc(0.25vw + 14px);
+  }
+}
+@media (max-width: 640px) {
+  h1 {
+    font-size: 28px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  p {
+    font-size: 16px;
+  }
+}
+[social] {
+  &.instagram { 
+    [logo] {
+      background-image: url("@/assets/icons/instagram.png");
+      background-size: 100%;
+    }
+  }
+  &.facebook { 
+    [logo] {
+      background-image: url("@/assets/icons/facebook.png");
+      background-size: 100%;
+    }
+  }
+  &.twitter { 
+    [logo] {
+      background-image: url("@/assets/icons/twitter.png");
+      background-size: 100%;
+    }
+  }
+  &.github { 
+    [logo] {
+      background-image: url("@/assets/icons/github.png");
+      background-size: 100%;
+    }
+  }
+  &.deviantart { 
+    [logo] {
+      background-image: url("@/assets/icons/deviantart.png");
+      background-size: 100%;
+    }
+  }
+  &.behance { 
+    [logo] {
+      background-image: url("@/assets/icons/behance.png");
+      background-size: 100%;
+    }
+  }
+  &.flickr { 
+    [logo] {
+      background-image: url("@/assets/icons/flickr.png");
+      background-size: 100%;
+    }
+  }
+  &.foundationapp { 
+    [logo] {
+      background-image: url("@/assets/icons/foundationapp.png");
+      background-size: 100%;
+    }
+  }
+  &.opensea { 
+    [logo] {
+      background-image: url("@/assets/icons/opensea.png");
+      background-size: 100%;
+    }
+  }
+  &.superrare { 
+    [logo] {
+      background-image: url("@/assets/icons/superrare.png");
+      background-size: 100%;
+    }
+  }
+  &.discord { 
+    [logo] {
+      background-image: url("@/assets/icons/discord.png");
+      background-size: 100%;
+    }
+  }
+  &.keybase { 
+    [logo] {
+      background-image: url("@/assets/icons/keybase.png");
+      background-size: 100%;
+    }
+  }
+  &.linkedin { 
+    [logo] {
+      background-image: url("@/assets/icons/linkedin.png");
+      background-size: 100%;
+    }
+  }
 }
 </style>

@@ -5,9 +5,9 @@
         <div sidebar>
           <div image></div>
           <!-- <div name>Rodrigo Barraza</div> -->
-          <div links>
+          <div socials>
             <div title>Socials</div>
-            <a link v-for="(social, socialIndex) in socials" v-bind:key="socialIndex" :class="social.type" :href="social.url" target="_blank">
+            <a social v-for="(social, socialIndex) in socials" v-bind:key="socialIndex" :class="social.type" :href="social.url" target="_blank">
               <div logo>{{social.type}}</div>
               <div>{{social.username}}</div>
             </a>
@@ -36,56 +36,22 @@
           </div>
           <div bottom>
             <div extra-info>
-              <div education>
-                <div title>Education</div>
-                <div info>
-                  <div main><span itemprop="affiliation">Emily Carr University of Art + Design, 2011</span></div>
-                  <div details>Bachelor of Fine Arts in Photography</div>
-                </div>
-              </div>
-              <div group-exhibitions>
-                <div title>Recent Code</div>
-                <div info>
-                  <div main><a href="https://colab.research.google.com/github/rodrigo-barraza/pristine-disco-diffusion/blob/master/rodrigos-pristine-disco-diffusion.ipynb" target="_blank">Pristine Disco Diffusion</a></div>
-                  <div details>Google Colab Notebook</div>
-                </div>
-              </div>
-              <div group-exhibitions>
-                <div title>Group exhibitions</div>
-                <div info>
-                  <div main>Grand Opening Night, 2011</div>
-                  <div details>Nomad Gallery, Vancouver, Canada</div>
-                </div>
-                <div info>
-                  <div main>Five Rooms Photography Exhibition, 2011</div>
-                  <div details>The Waldorf Hotel, Vancouver, Canada</div>
-                </div>
-                <div info>
-                  <div main>Degree Exhibition, 2011</div>
-                  <div details>Emily Carr University of Art & Design, Vancouver, Canada</div>
-                </div>
-                <div info>
-                  <div main>Selfish Motives and Panchromatic Desires, 2010</div>
-                  <div details>Anti-Social Gallery, Vancouver, Canada</div>
-                </div>
-              </div>
-              <div cinematography>
-                <div title>Cinematography</div>
-                <div info>
-                  <div main>2012 Spotless, Short film</div>
-                  <div details>Director</div>
-                </div>
-                <div info>
-                  <div main>2011 Book of Kings, Short film</div>
-                  <div details>Cinematographer</div>
-                </div>
-                <div info>
-                  <div main>2010 Rip Apart, Music video</div>
-                  <div details>Camera operator</div>
-                </div>
-                <div info>
-                  <div main>2010 TV Date, Music video</div>
-                  <div details>Camera operator</div>
+              <div collection v-for="(collection, collectionIndex) in aboutCollections" v-bind:key="collectionIndex">
+                <div title>{{collection.name}}</div>
+                <div object 
+                v-for="(object, objectIndex) in collection.collections" v-bind:key="objectIndex">
+                  <p v-if="object.url">
+                    <a object-title :href="object.url" target="_blank">{{object.name}}</a>
+                    <span>{{object.year}}</span>
+                  </p>
+                  <p v-if="!object.url">
+                    <span object-title>{{object.name}}</span>
+                    <span>{{object.year}}</span>
+                  </p>
+                  <p>
+                    <span v-if="object.venue">{{object.venue}}</span>
+                    <span v-if="object.location">{{object.location}}</span>
+                  </p>
                 </div>
               </div>
             </div>
@@ -97,6 +63,7 @@
 </template>
 
 <script>
+import SocialsCollection from '@/collections/SocialsCollection';
 
 export default {
     name: 'WorkView',
@@ -104,62 +71,90 @@ export default {
     },
     data() {
         return {
-          socials: [
+          socials: SocialsCollection,
+          aboutCollections: [
             {
-              type: 'instagram',
-              username: 'rodrigo.dreams',
-              url: 'https://www.instagram.com/rodrigo.dreams/'
+              name: 'institutions',
+              collections: [
+                {
+                  name: 'Bachelor of Fine Arts in Photography',
+                  year: '2011',
+                  venue: 'Emily Carr University of Art + Design',
+                  location: 'Vancouver, Canada'
+                },
+              ]
             },
             {
-              type: 'foundationapp',
-              username: '@rodrigobarraza',
-              url: 'https://foundation.app/@rodrigobarraza'
+              name: 'Recent Code',
+              collections: [
+                {
+                  name: 'Pristine Disco Diffusion',
+                  year: 'Ongoing',
+                  venue: 'Google Colab Notebook',
+                  url: 'https://colab.research.google.com/github/rodrigo-barraza/pristine-disco-diffusion/blob/master/rodrigos-pristine-disco-diffusion.ipynb',
+                },
+              ]
             },
             {
-              type: 'superrare',
-              username: 'rodrigobarraza',
-              url: 'https://superrare.com/rodrigobarraza'
+              name: 'Group Exhibitions',
+              collections: [
+                {
+                  name: 'Fotografías del Mundo',
+                  year: '2019',
+                  venue: 'Museo de Arte de Lima',
+                  location: 'Lima, Peru',
+                },
+                {
+                  name: 'Five Rooms Photography Exhibition',
+                  year: '2011',
+                  venue: 'The Waldorf Hotel',
+                  location: 'Vancouver, Canada',
+                },
+                {
+                  name: 'Graduation Degree Exhibition',
+                  year: '2011',
+                  venue: 'Emily Carr University of Art & Design',
+                  location: 'Vancouver, Canada',
+                },
+                {
+                  name: 'Selfish Motives and Panchromatic Desires',
+                  year: '2010',
+                  venue: 'Anti-Social Gallery',
+                  location: 'Vancouver, Canada',
+                },
+              ]
             },
             {
-              type: 'opensea',
-              username: 'rodrigobarraza',
-              url: 'https://opensea.io/rodrigobarraza'
+              name: 'cinematography',
+              collections: [
+                {
+                  name: 'Spotless',
+                  year: '2012',
+                  venue: 'director',
+                  location: 'short film',
+                  url: '/collections/spotless',
+                },
+                {
+                  name: 'Book of Kings',
+                  year: '2011',
+                  venue: 'cinematographer',
+                  location: 'short film',
+                },
+                {
+                  name: 'Rip Apart',
+                  year: '2010',
+                  venue: 'lighting technician',
+                  location: 'music video',
+                },
+                {
+                  name: 'TV Date',
+                  year: '2010',
+                  venue: 'lighting technician',
+                  location: 'music video',
+                },
+              ]
             },
-            {
-              type: 'facebook',
-              username: 'barraza.rodrigo',
-              url: 'https://www.facebook.com/barraza.rodrigo'
-            },
-            {
-              type: 'behance',
-              username: 'rodrigobarraza',
-              url: 'https://www.behance.net/rodrigobarraza'
-            },
-            {
-              type: 'deviantart',
-              username: 'bioviral',
-              url: 'https://www.deviantart.com/bioviral'
-            },
-            {
-              type: 'flickr',
-              username: 'rodrigobarraza',
-              url: 'https://flickr.com/photos/rodrigobarraza'
-            },
-            {
-              type: 'linkedin',
-              username: 'rodrigobarraza',
-              url: 'https://www.linkedin.com/in/rodrigobarraza'
-            },
-            {
-              type: 'discord',
-              username: 'virus#1337',
-            },
-            {
-              type: 'keybase',
-              username: 'rodrigobarraza',
-              url: 'https://keybase.io/rodrigobarraza'
-            },
-          ]
+          ],
         }
     },
     created() {
@@ -170,12 +165,17 @@ export default {
 </script>
 
 <style scoped lang="scss">
+// margin: 0;
+// font-size: calc(0.25vw + 14px);
+// line-height: 15px;
+// color: rgba(0,0,0,0.5);
 [about-view] {
   position: relative;
   [container] {
     flex-direction: column;
     display: flex;
     grid-gap: 24px;
+    padding: 0;
     [layout] {
       gap: inherit;
       display: flex;
@@ -193,7 +193,7 @@ export default {
         [image] {
           height: 250px;
           width: 250px;
-          background: red;
+          background: black;
           border-radius: 100%;
           background-size: 100%;
           background-position: center center;
@@ -207,7 +207,7 @@ export default {
           font-weight: 500;
           margin-top: 12px;
         }
-        [links] {
+        [socials] {
           display: grid;
           gap: 0px;
           [title] {
@@ -218,7 +218,7 @@ export default {
             margin-bottom: 12px;
             padding-bottom: 12px;
           }
-          [link] {
+          [social] {
             display: flex;
             justify-content: flex-start;
             align-items: center;
@@ -233,84 +233,6 @@ export default {
               color: transparent;
               border-radius: 100%;
               margin-right: 8px;
-            }
-            &.instagram { 
-              [logo] {
-                background-image: url("@/assets/icons/instagram.png");
-                background-size: 100%;
-              }
-            }
-            &.facebook { 
-              [logo] {
-                background-image: url("@/assets/icons/facebook.png");
-                background-size: 100%;
-              }
-            }
-            &.twitter { 
-              [logo] {
-                background-image: url("@/assets/icons/twitter.png");
-                background-size: 100%;
-              }
-            }
-            &.github { 
-              [logo] {
-                background-image: url("@/assets/icons/github.png");
-                background-size: 100%;
-              }
-            }
-            &.deviantart { 
-              [logo] {
-                background-image: url("@/assets/icons/deviantart.png");
-                background-size: 100%;
-              }
-            }
-            &.behance { 
-              [logo] {
-                background-image: url("@/assets/icons/behance.png");
-                background-size: 100%;
-              }
-            }
-            &.flickr { 
-              [logo] {
-                background-image: url("@/assets/icons/flickr.png");
-                background-size: 100%;
-              }
-            }
-            &.foundationapp { 
-              [logo] {
-                background-image: url("@/assets/icons/foundationapp.png");
-                background-size: 100%;
-              }
-            }
-            &.opensea { 
-              [logo] {
-                background-image: url("@/assets/icons/opensea.png");
-                background-size: 100%;
-              }
-            }
-            &.superrare { 
-              [logo] {
-                background-image: url("@/assets/icons/superrare.png");
-                background-size: 100%;
-              }
-            }
-            &.discord { 
-              [logo] {
-                background-image: url("@/assets/icons/discord.png");
-                background-size: 100%;
-              }
-            }
-            &.keybase { 
-              [logo] {
-                background-image: url("@/assets/icons/keybase.png");
-                background-size: 100%;
-              }
-            }
-            &.linkedin { 
-              [logo] {
-                background-image: url("@/assets/icons/linkedin.png");
-                background-size: 100%;
-              }
             }
             &:hover {
               text-decoration: none;
@@ -331,21 +253,44 @@ export default {
         display: flex;
         flex-direction: column;
         gap: inherit;
-        [education], [cinematography], [group-exhibitions] {
+        [collection] {
           background-color: white;
           padding: 32px;
           border-radius: 4px;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
-          gap: 8px;
+          gap: 12px;
+          [title] {}
+          [object] {
+            p {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 0 4px;
+              &:nth-of-type(2) {
+                color: rgba(0,0,0,0.85);
+                margin: 0;
+                span:nth-of-type(1) {
+                  font-weight: 400;
+                }
+                span:nth-of-type(2) {
+                  font-style: italic;
+                }
+              }
+              [object-title] {
+                font-weight: 400;
+              }
+            }
+          }
           [info] {
             [details] {
               color: rgba(0,0,0,0.5);
+              margin: 0;
+              line-height: 15px;
+              font-size: calc(0.2vw + 14px);
             }
           }
           [main] {
-            font-size: 18px;
             a {
               color: #655ffa;
               font-weight: 400;
@@ -426,7 +371,7 @@ export default {
         text-transform: capitalize;
         color: black;
         font-weight: 500;
-        margin-bottom: 24px;
+        margin-bottom: 12px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         padding-bottom: 8px;
       }
@@ -439,15 +384,15 @@ export default {
         [sidebar] {
           width: 100%;
           [image] {
-            height: 175px;
-            width: 175px;
+            height: 100px;
+            width: 100px;
           }
-          [links] {
+          [socials] {
             width: 100%;
             [title] {
               text-align: center;
             }
-            [link] {
+            [social] {
               justify-content: center;
             }
           }

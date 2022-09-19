@@ -1,13 +1,24 @@
 <template>
   <main class="home">
+    <div container>
+        <h1>The visual portfolio of Rodrigo Barraza, a Vancouver Photographer, Software Engineer and Artist</h1>
+    </div>
     <div gallery>
-        <div image-container v-for="(collection, collectionIndex) in collections" v-bind:key="collectionIndex">
+        <div image-container
+        v-for="(collection, collectionIndex) in collections" v-bind:key="collectionIndex"
+        itemscope itemtype="https://schema.org/Collection" :itemid="`https://rod.dev/${collection.path}`">
             <router-link image :to="`/collections/${collection.path}`">
                 <!-- <div theimage :style="{ 'background-image': 'url('+ require(`@/assets/${collection.imagePath}.jpg`) + ')' }"> -->
                 <div theimage>
-                    <img :src="require(`@/assets/${collection.imagePath}.jpg`)"/>
+                    <img :src="require(`@/assets/${collection.imagePath}.jpg`)"
+                    :alt="collection.description"
+                    :title="`Rodrigo Barraza, ${collection.title}, ${collection.medium}, ${collection.year}. ${collection.description}`"/>
+                    <div inside-description>
+                        <div name itemprop="name">{{collection.title}}</div>
+                        <div year itemprop="dateCreated">{{collection.year}}</div>
+                    </div>
                 </div>
-                <div description>{{collection.name}}, {{collection.year}}</div>
+                <!-- <div description>{{collection.title}}, {{collection.year}}</div> -->
             </router-link>
         </div>
     </div>
@@ -84,15 +95,37 @@ export default {
                 width: 100%;
                 height: 100%;
                 object-fit: contain;
-                &:hover {
-                    opacity: 0.9;
-                }
             }
             [theimage] {
                 background-size: contain;
                 background-position: center;
                 background-repeat: no-repeat;
                 overflow: hidden;
+                [inside-description] {
+                    pointer-events: none;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 3vw;
+                    font-size: 3vw;
+                    font-weight: 500;
+                    color: white;
+                    opacity: 0;
+                    transition: all 0.3s;
+                    [year] {
+                        font-weight: 300;
+                    }
+                    
+                    @media (max-width: 640px) {
+                        font-size: 4vw;
+                    }
+                }
             }
             [description] {
                 // flex: 0 0 40px;
@@ -112,6 +145,17 @@ export default {
             }
         }
         &:hover {
+            [image] {
+                [theimage] {
+                    img {
+                        transform: scale(1.05);
+                        filter: brightness(0.3);
+                    }
+                    [inside-description] {
+                        opacity: 1;
+                    }
+                }
+            }
             [description] {
                 opacity: 1;
             }
@@ -175,6 +219,11 @@ export default {
                 // background-image: url("../assets/9.jpg");   
             }
         }
+    }
+    
+    @media (max-width: 640px) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(8, 50vw);
     }
 }
 

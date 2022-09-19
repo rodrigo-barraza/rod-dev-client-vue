@@ -1,10 +1,12 @@
+
+import lodash from 'lodash';
 import { createRouter, createWebHistory } from 'vue-router'
+import ArtCollectionsCollection from '@/collections/ArtCollectionsCollection';
+import SEOConstants from '@/constants/SEOConstants';
 import HomeView from '../views/HomeView.vue'
 import AIArtView from '../views/AIArtView.vue'
 import CollectionView from '../views/CollectionView.vue'
 import AboutView from '../views/AboutView.vue'
-import lodash from 'lodash';
-import ArtCollectionsCollection from '@/collections/ArtCollectionsCollection';
 
 const routes = [
   {
@@ -45,7 +47,7 @@ const routes = [
     }
   },
   {
-    path: '/about',
+    path: '/rodrigo-barraza',
     name: 'about',
     component: AboutView,
     meta: {
@@ -63,8 +65,8 @@ const router = createRouter({
 })
 
 router.beforeEach(to => {
-    let documentTitle = 'Rodrigo Barraza - Artist, Software Engineer, Photographer';
-    let documentDescription = 'Default description';
+    let documentTitle;
+    let documentDescription;
     let documentKeywords = 'testing, testing2';
     if (to.name === 'collection') {
         const currentCollectionParam = to.params.collection;
@@ -72,14 +74,15 @@ router.beforeEach(to => {
         const moreCollections = lodash.reject(lodash.shuffle(ArtCollectionsCollection), { name: currentCollection.name }).slice(0, 3);
         to.meta.currentCollection = currentCollection;
         to.meta.moreCollections = moreCollections;
-        documentTitle = `Rodrigo Barraza - ${to.meta.title} - ${currentCollection.name}`;
+        documentTitle = `Rodrigo Barraza - ${to.meta.title} - ${currentCollection.title}`;
         documentDescription = currentCollection.description;
         documentKeywords = currentCollection.keywords;
     } else if (to.meta.title) {
         documentTitle = `Rodrigo Barraza - ${to.meta.title}`;
         documentDescription = "Default description";
     } else {
-        documentTitle = 'Rodrigo Barraza - Artist, Software Engineer, Photographer'
+        documentTitle = SEOConstants.defaultDocumentTitle;
+        documentDescription = SEOConstants.defaultDocumentDescription;
     }
     document.title = documentTitle;
     document.querySelector('meta[name="description"]').setAttribute("content", documentDescription);

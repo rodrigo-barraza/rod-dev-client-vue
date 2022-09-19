@@ -7,16 +7,16 @@
             Your browser does not support the video tag.
             </video> -->
         </div>
-        <div stripe>
-        </div>
+        <!-- <div stripe>
+        </div> -->
     </div>
-    <div floaty  :class="[{'tiny': isPageYOffsetAtZero > 35}, routeName]">
+    <div floaty :class="[{'tiny': isPageYOffsetAtZero > 35}, routeName]">
         <div container>
             <div name>
-                <router-link to="/">
-                    <div logo>
+                <router-link title="Rodrigo Barraza" to="/">
+                    <div logo :class="[{'loading': isDocumentLoading === true}]">
                     </div>
-                    <div text>
+                    <div text v-on:click="closeMobileMenu">
                         RODRIGO BARRAZA
                     </div>
                 </router-link>
@@ -27,27 +27,43 @@
                     <!-- <li ai-art><router-link to="/ai-art"  active-class="active">AI Art</router-link></li>
                     <li photography><router-link to="/photography"  active-class="active">Photography</router-link></li> -->
                     <!-- <li photography><router-link to="/photography"  active-class="active">NFT Collections</router-link></li> -->
-                    <li about><router-link to="/about"  active-class="active">About</router-link></li>
+                    <li about><router-link to="/rodrigo-barraza"  active-class="active">About</router-link></li>
                 </ul>
             </nav>
             <div hamburger>
-                <div>
-                    ☰
+                <div v-on:click="toggleMobileMenu">
+                    <span v-if="!isMobileMenuOpen">☰</span>
+                    <span v-if="isMobileMenuOpen">✖</span>
                 </div>
             </div>
             <nav mini>
                 <ul>
                     <li ai-art><router-link to="/ai-art" active-class="active">AI Art</router-link></li>
                     <li photography><router-link to="/photography" active-class="active">Photography</router-link></li>
-                    <li about><router-link to="/about" active-class="active">About</router-link></li>
+                    <li about><router-link to="/rodrigo-barraza" active-class="active">About</router-link></li>
                 </ul>
             </nav>
         </div>
+    </div>
+    <div overlay v-if="isMobileMenuOpen">
+        <nav shrink>
+            <ul>
+                <li ai-art><router-link to="/" v-on:click="toggleMobileMenu" active-class="active">Collections</router-link></li>
+                <li about><router-link to="/rodrigo-barraza" v-on:click="toggleMobileMenu" active-class="active">About</router-link></li>
+            </ul>
+        </nav>
+        <ul socials>
+            <li social v-for="(social, socialIndex) in socialsCollection" v-bind:key="socialIndex" :class="social.type">
+                <div logo></div>
+            </li>
+        </ul>
     </div>
   </header>
 </template>
 
 <script>
+import SocialsCollection from '@/collections/SocialsCollection';
+
 export default {
     name: 'HeaderComponent',
     props: {
@@ -56,14 +72,30 @@ export default {
         return {
             isPageYOffsetAtZero: 0,
             routeName: '',
+            isMobileMenuOpen: false,
+            socialsCollection: SocialsCollection,
+            isDocumentLoading: true,
         }
     },
     created() {
         window.addEventListener('scroll', this.isScrolling);
+        document.onreadystatechange = () => {
+            if (document.readyState === 'complete') {
+                this.isDocumentLoading = false;
+            } else if (document.readyState === 'interactive') {
+                this.isDocumentLoading = true;
+            }
+        };
     },
     methods: {
         isScrolling() {
             this.isPageYOffsetAtZero = window.pageYOffset;
+        },
+        toggleMobileMenu() {
+            this.isMobileMenuOpen = !this.isMobileMenuOpen;
+        },
+        closeMobileMenu() {
+            this.isMobileMenuOpen = false;
         },
     },
     watch: { 
@@ -83,6 +115,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
 header {
     [fixed] {
         height: 120px;
@@ -115,7 +152,7 @@ header {
         }
     }
     [floaty] {
-        z-index: 3;
+        z-index: 4;
         position: fixed;
         right: 0;
         left: 0;
@@ -146,9 +183,12 @@ header {
                         background-image: url("@/assets/logo-rodrigo.png");
                         background-size: 100%;
                         image-rendering: pixelated;
+                        &.loading {
+                            background-image: url("@/assets/logo-animated.gif");
+                        }
                     }
                     [text] {
-                        flex: 0 0 280px;
+                        flex: 0 0 auto;
                         display: flex;
                         justify-content: flex-start;
                         align-items: center;
@@ -158,18 +198,19 @@ header {
                             background-image: url("@/assets/logo-animated.gif");
                         }
                     }
-                    @media (max-width: 480px) {
+                    @media (max-width: 400px) {
                         [logo] {
                             flex: 0 0 5vw;
                             height: 5vw;
                         }
                         [text] {
-                            font-size: 5vw;
+                            font-size: 6vw;
                         }
                     }
                 }
             }
             nav {
+                flex: 0 0 auto;
                 padding: 0;
                 display: flex;
                 justify-content: center;
@@ -237,7 +278,7 @@ header {
             //     }
             // }
         }
-        @media (max-width: 800px) {
+        @media (max-width: 640px) {
             [container] {
                 padding: 0 4vw;
                 nav {
@@ -262,6 +303,42 @@ header {
             }
         }
 
+    }
+    [overlay] {
+        animation: fadein 1s;
+        background: black;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 2;
+         display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 10vw;
+        z-index: 3;
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 5vw;
+        }
+        [socials] {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            bottom: 20px;
+            [social] {
+                background: white;
+                [logo] {
+                    height: 30px;
+                    width: 30px;
+                }
+            }
+        }
     }
 }
 </style>
