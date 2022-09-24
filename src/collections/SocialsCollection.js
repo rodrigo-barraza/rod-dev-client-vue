@@ -2,7 +2,7 @@ const ArtCollectionsCollection = [
     {
         type: 'instagram',
         username: 'rodrigo.dreams',
-        url: 'https://www.instagram.com/rodrigo.dreams/'
+        url: 'https://www.instagram.com/rodrigo.dreams'
     },
     {
         type: 'foundationapp',

@@ -2,7 +2,7 @@
   <main collection-view>
     <!-- <div title-one>
         <div container>
-            <h1>{{collection.title}}</h1>
+            <h1>{{currentCollection.title}}</h1>
         </div>
     </div> -->
     <div collection
@@ -10,33 +10,33 @@
         <div collection-deets>
             <div container>
                 <div>
-                    <h1 itemprop="name">{{collection.title}}</h1>
-                    <span itemprop="dateCreated">{{collection.year}}</span>
+                    <h1 itemprop="name">{{currentCollection.title}}</h1>
+                    <span itemprop="dateCreated">{{currentCollection.year}}</span>
                 </div>
-                <p>{{collection.medium}}</p>
-                <p duration>{{collection.duration}}</p>
-                <p v-if="collection.ekphrasis" ekphrasis>{{collection.ekphrasis}}</p>
-                <p v-if="collection.description" itemprop="abstract" description v-html="collection.description"></p>
-                <!-- <link v-for="(work, workIndex) in collection.works" v-bind:key="workIndex"
+                <p>{{currentCollection.medium}}</p>
+                <p duration>{{currentCollection.duration}}</p>
+                <p v-if="currentCollection.ekphrasis" ekphrasis>{{currentCollection.ekphrasis}}</p>
+                <p v-if="currentCollection.description" itemprop="abstract" description v-html="currentCollection.description"></p>
+                <!-- <link v-for="(work, workIndex) in currentCollection.works" v-bind:key="workIndex"
                 itemprop="hasPart" itemscope itemtype="https://schema.org/CreativeWork" :itemid="work.path" /> -->
             </div>
         </div>
         <div work
-        v-for="(work, workIndex) in collection.works" v-bind:key="workIndex" :id="work.path" :class="collection.orientation" 
+        v-for="(work, workIndex) in currentCollection.works" v-bind:key="workIndex" :id="work.path" :class="currentCollection.orientation" 
         itemscope itemtype="https://schema.org/CreativeWork" :itemid="`https://rod.dev${$route.fullPath}#${work.path}`" itemprop="hasPart">
             <div container>
-                <img v-if="work.imagePath" v-on:click="fullScreen"
-                :src="require(`@/assets/collections/${collection.path}/${work.imagePath}.jpg`)"
+                <img v-if="work.imagePath" v-on:click="imageFullscreen($event, currentCollection, work)"
+                :src="require(`@/assets/collections/${currentCollection.path}/${work.imagePath}.jpg`)"
                 :alt="work.description"
-                :title="`${collection.title} - ${work.title}, ${work.medium}, ${work.year}. ${work.description}`"
+                :title="`${currentCollection.title} - ${work.title}, ${work.medium}, ${work.year}. ${work.description}`"
                 itemprop="image"/>
-                <video id="oneVideo" autoplay muted :controls="collection.videoControls" loop poster=""
+                <video id="oneVideo" autoplay muted :controls="currentCollection.videoControls" loop poster=""
                 v-if="work.videoPath"
                 itemprop="video">
-                    <source :src="require(`@/assets/collections/${collection.path}/${work.videoPath}.mp4`)" type="video/mp4">
+                    <source :src="require(`@/assets/collections/${currentCollection.path}/${work.videoPath}.mp4`)" type="video/mp4">
                      Your browser does not support the video tag.
                 </video>
-                <div card v-if="collection.works.length >= 2">
+                <div card v-if="currentCollection.works.length >= 2">
                     <div>
                         <h2 itemprop="name">{{work.title}}</h2>
                         <span year itemprop="dateCreated">{{work.year}}</span>
@@ -54,18 +54,17 @@
         <div section-title>More collections</div>
         <div collections>
             <div collection v-for="(collection, collectionIndex) in moreCollections" v-bind:key="collectionIndex">
-                <a image :href="`/collections/${collection.path}`">
-                    <img :src="require(`@/assets/${collection.imagePath}.jpg`)"/>
+                <router-link link :to="`/collections/${collection.path}`">
                     <!-- <div the-image>
                         <img :src="require(`@/assets/${collection.imagePath}.jpg`)"/>
                         <div the-name>{{collection.title}}</div>
                     </div> -->
+                    <div image><img :src="require(`@/assets/${collection.imagePath}.jpg`)"/></div>
                     <div description>
-                        <div name>{{collection.title}}</div>
-                        <div year>{{collection.year}}</div>
-                        <div medium>{{collection.medium}}</div>
+                        <div><span title>{{collection.title}}</span> <span year>{{collection.year}}</span></div>
+                        <div><span medium>{{collection.medium}}</span></div>
                     </div>
-                </a>
+                </router-link>
             </div>
         </div>
     </div>
@@ -74,6 +73,7 @@
 
 <script>
 import lodash from 'lodash';
+import EventLibrary from '@/libraries/EventLibrary';
 import ArtCollectionsCollection from '@/collections/ArtCollectionsCollection';
 // import ButtonComponent from '@/components/ButtonComponent';
 
@@ -84,7 +84,7 @@ export default {
     },
     data() {
         return {
-            collection: {},
+            currentCollection: {},
             artCollections: lodash.shuffle(ArtCollectionsCollection),
             moreCollections: {}
         }
@@ -92,21 +92,35 @@ export default {
     beforeCreate() {
     },
     created() {
-        this.collection = this.$route.meta.collection;
-        this.moreCollections = this.$route.meta.moreCollections;
+        this.loadData();
     },
     mounted() {
     },
     methods: {
-        fullScreen(element) {
+        imageFullscreen(element, collection, work) {
             element.srcElement.requestFullscreen();
-            // var elem = document.getElementById("myvideo");
+            EventLibrary.postEventImageFullscreen(`/${collection.path}/${work.imagePath}.jpg`);
         },
         copyText(text) {
             const hashPath = `${window.location.origin}${window.location.pathname}#${text}`;
             navigator.clipboard.writeText(hashPath);
         },
+        loadData() {
+            this.currentCollection = this.$route.meta.currentCollection;
+            this.moreCollections = this.$route.meta.moreCollections;
+        },
     },
+    watch: {
+        '$route.fullPath': {
+            handler: function(oldRoute, newRoute) {
+                if (newRoute) {
+                    this.loadData();
+                }
+            },
+            deep: true,
+            immediate: true
+        }
+    }
 }
 </script>
 
@@ -115,7 +129,7 @@ export default {
     position: relative;
     > [collection] {
         position: relative;
-        background-color: #f0f0f0;
+        // background-color: #f0f0f0;
         z-index: 2;
         box-shadow: 0px 15px 30px -35px black;
         gap: 32px;
@@ -123,7 +137,7 @@ export default {
         flex-direction: column;
     }
     [more-collections] {
-        position: sticky;
+        // position: sticky;
         bottom: 0;
         left: 0;
         z-index: 1;
@@ -135,7 +149,6 @@ export default {
         max-height: 800px;
     }
     [work] {
-        background: #f0f0f0;
         > [container] {
             justify-content: center;
             align-items: flex-start;
@@ -144,13 +157,20 @@ export default {
             grid-template-columns: auto auto;
             gap: 32px;
             [card] {
-                max-width: 400px;
+                box-shadow: 0px 15px 30px -35px black;
+                width: 450px;
                 // flex: 0 0 400px;
                 background: white;
                 background: linear-gradient(180deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.3) 30%, rgba(255,255,255,0) 100%);
                 padding: 32px;
                 border-radius: 4px;
                 box-sizing: border-box;
+                @media (max-width: 1432px) {
+                    width: 33vw;
+                }
+                @media (max-width: 640px) {
+                    width: 100%;
+                }
                 > div {
                     font-size: 32px;
                     color: black;
@@ -180,7 +200,7 @@ export default {
         // }
         &:last-of-type {
             background: linear-gradient(180deg, rgba(240,240,240,1) 0%, rgba(255,255,255,1) 90%, rgba(255,255,255,1) 100%);
-            padding-bottom: 64px;
+            // padding-bottom: 64px;
         }
         img {
             height: default;
@@ -191,22 +211,27 @@ export default {
             max-width: 100%;
             max-height: 90vh;
             cursor: pointer;
+            transition: 0.3s all;
+            &:hover {
+                filter: brightness(0.9);
+                transform: scale(1.01);
+            }
         }
         &.horizontal, &.square {
             > [container] {
-                gap: 0;
+                gap: 12px 0;
                 grid-template-rows: auto auto;
                 grid-template-columns: auto;
                 [card] {
-                    max-width: 100%;
+                    width: 100%;
                 }
             }
         }
     }
     [collection-deets] {
-        background: linear-gradient(180deg, rgba(240,240,240,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 100%);
+        // background: linear-gradient(180deg, rgba(240,240,240,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 100%);
         [container] {
-            padding: 0 32px 32px 32px;
+            padding: 0 32px 0 32px;
             display: flex;
             flex-direction: column;
             border-radius: 4px;
@@ -217,9 +242,12 @@ export default {
                 display: flex;
                 flex-wrap: wrap;
                 gap: 0px 8px;
+                h1, span {
+                    text-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+                }
                 span {
-                    font-weight: 100;
                     font-size: 48px;
+                    font-weight: 100;
                     color: black;
                     @media (max-width: 1432px) {
                         font-size: calc(3vw + 5px);
@@ -317,116 +345,133 @@ export default {
 }
 [more-collections] {
     margin-top: 64px;
-    padding-bottom: 64px;
+    // padding-bottom: 64px;
     [section-title] {
         text-transform: uppercase;
         text-align: left;
         font-size: 18px;
         font-weight: 600;
         color: black;
+
+        font-size: 28px;
+        text-transform: capitalize;
+        color: black;
+        font-weight: 500;
+        margin-bottom: 12px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding-bottom: 8px;
     }
-    
-    [description] {
-        grid-column: 1;
-        grid-row: 2 / 3;
+    [collections] {
         display: grid;
-        gap: 8px;
-        grid-template-columns: 1fr 1fr;
-        [name] {
-            font-size: 18px;
-            font-weight: 400;
-        }
-        [year] {
-            text-align: right;
-        }
-    }
-}
-[collections] {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    // grid-template-rows: 420px;
-    flex-direction: row;
-    flex-wrap: wrap;
-    grid-gap: 32px;
-    [collection] {
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        cursor: pointer;
-        [image] {
-            // margin: 2vw;
-            flex: 1 1 100%;
-            background-size: cover;
+        grid-template-columns: 1fr 1fr 1fr;
+        // grid-template-rows: 420px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        grid-gap: 32px;
+        [collection] {
+            box-sizing: border-box;
+            display: flex;
             flex-direction: column;
-            overflow: hidden;
-            display: grid;
-            grid-template-rows: auto auto;
-            justify-content: initial;
-            img {
-                width: 100%;
-                height: 100%;
-                transition: all 0.3s;
-                object-fit: cover;
-            }
-            &:hover {
-                text-decoration: none;
-            }
-            [the-image] {
-                position: relative;
-                height: 100%;
-                [the-name] {
-                    padding: 12px;
-                    color: white;
-                    font-size: 32px;
-                    font-weight: 600;
-                    position: absolute;
-                    right: 0;
-                    left: 0;
-                    bottom: 0;
-                    top: 0;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    opacity: 0;
-                    transition: all 0.3s;
+            cursor: pointer;
+            [link] {
+                // margin: 2vw;
+                flex: 1 1 100%;
+                background-size: cover;
+                flex-direction: column;
+                display: grid;
+                grid-template-rows: auto auto;
+                justify-content: initial;
+                gap: 8px;
+                [image] {
+                    overflow: hidden;
+                    height: 50vw;
+                    max-height: 30vh;
+                    pointer-events: none;
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        transition: all 0.3s;
+                        object-fit: cover;
+                    }
                 }
-            }
-            &:hover {
-                img {
-                    opacity: 0.5;
+                [description] {
+                    box-shadow: 0px 15px 30px -35px black;
+                    width: 100%;
+                    font-size: 14px;
+                    text-align: left;
+                    margin-left: 16px;
+                    margin-top: 8px;
+                    transition: all 0.3s;
+                    background-color: white;
+                    color: black;
+                    padding: 0;
+                    margin: 0;
+                    padding: 24px;
+                    box-sizing: border-box;
+                    box-shadow: 0px 15px 30px -35px black;
+                    grid-column: 1;
+                    grid-row: 2 / 3;
+                    display: grid;
+                    gap: 8px;
+                    grid-template-rows: 1fr 1fr;
+                    [title] {
+                        font-size: 18px;
+                        font-weight: 400;
+                    }
+                    [year] {
+                        font-size: 18px;
+                    }
+                    [description] {
+                        
+                    }
+                }
+                &:hover {
+                    text-decoration: none;
                 }
                 [the-image] {
+                    position: relative;
+                    height: 100%;
                     [the-name] {
-                        opacity: 1;
+                        padding: 12px;
+                        color: white;
+                        font-size: 32px;
+                        font-weight: 600;
+                        position: absolute;
+                        right: 0;
+                        left: 0;
+                        bottom: 0;
+                        top: 0;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        opacity: 0;
+                        transition: all 0.3s;
+                    }
+                }
+                &:hover {
+                    img {
+                        transform: scale(1.05);
+                        filter: brightness(0.3);
+                    }
+                    [the-image] {
+                        [the-name] {
+                            opacity: 1;
+                        }
                     }
                 }
             }
+        } 
+        @media (max-width: 960px) {
+            grid-template-columns: 1fr 1fr;
+            [collection]:last-of-type {
+                display: none;
+            }
         }
-        [description] {
-            width: 100%;
-            font-size: 14px;
-            text-align: left;
-            margin-left: 16px;
-            margin-top: 8px;
-            transition: all 0.3s;
-            background-color: white;
-            color: black;
-            padding: 0;
-            margin: 0;
-            padding: 24px;
-            box-sizing: border-box;
-        }
-    } 
-    @media (max-width: 960px) {
-        grid-template-columns: 1fr 1fr;
-        [collection]:last-of-type {
-            display: none;
-        }
-    }
-    @media (max-width: 640px) {
-        grid-template-columns: 1fr;
-        [collection]:nth-of-type(2) {
-            display: none;
+        @media (max-width: 640px) {
+            grid-template-columns: 1fr;
+            [collection]:nth-of-type(2) {
+                display: none;
+            }
         }
     }
 }

@@ -3,7 +3,10 @@
     <div container>
       <div layout>
         <div sidebar>
-          <div image></div>
+          <img v-on:mouseover="hoverPortrait" :style="{ 'transform': `rotate(${portraitRotateDegrees}deg)`}" :src="require(`@/assets/about-portrait.jpg`)"
+            alt="A black and white photograph of Rodrigo Barraza"
+            title="A black and white photograph of Rodrigo Barraza"
+            itemprop="image"/>
           <!-- <div name>Rodrigo Barraza</div> -->
           <div socials>
             <div title>Socials</div>
@@ -15,19 +18,19 @@
         </div>
         <div main>
           <div about>
-            <div image>
+            <!-- <div image> -->
               <!-- <video id="background-video" autoplay loop muted>
                   <source :src="require('@/assets/ai-art-video-done.mp4')" type="video/mp4">
               Your browser does not support the video tag.
               </video> -->
-            </div>
+            <!-- </div> -->
             <div text>
               <div about-info>
-                <p><span full-name><span itemprop="givenName">Rodrigo</span> <span itemprop="familyName">Barraza</span></span> is <span itemprop="description">a <span itemprop="jobTitle">software engineer</span>, <span itemprop="jobTitle">artist</span> and <span itemprop="jobTitle">photographer</span> based out of <span itemprop="homeLocation">Vancouver, British Columbia, Canada</span></span>. He emerged as an internet artist who works in a variety of media and focuses on photography, AI art, film, animation, visual design and illustration.</p>
+                <p><span full-name><span itemprop="givenName">Rodrigo</span> <span itemprop="familyName">Barraza</span></span> is <span itemprop="description">a <span itemprop="jobTitle">software engineer</span>, <span itemprop="jobTitle">artist</span> and <span itemprop="jobTitle">photographer</span> based out of <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="addressLocality">Vancouver</span>, <span itemprop="addressRegion">British Columbia</span>, <span itemprop="addressCountry">Canada</span></span></span>. He emerged as an internet artist who works in a variety of media and focuses on photography, AI art, film, animation, visual design and illustration.</p>
 
-                <p>Rodrigo grew up with an interest in visual media and started out as a young animator and illustrator in 2001. He soon started experimenting with film photography, videography, game development and graphic design. In recent years, he has focused on the analog and digital photographic arts. Combining his passion for software development, and with the rise of artificial intelligence media since 2017, he has pivoted his practice to algorithmic and generative art, and generative artificial media through the use of CLIP-driven image synthesis. Rodrigo <span itemprop="description">holds a BFA in Photography from the <span itemprop="alumniOf">Emily Carr University of Art + Design</span> in Vancouver, Canada.</span></p>
+                <p>Rodrigo grew up with an interest in visual media and started out as a young animator and illustrator in 2001. He soon started experimenting with film photography, videography, game development and graphic design. In recent years, he has focused on the analog and digital photographic arts. Combining his passion for software development, and with the rise of artificial intelligence media since 2017, he has pivoted his practice to algorithmic and generative art, and generative artificial media through the use of CLIP-driven image synthesis. Rodrigo holds a BFA in Photography from the Emily Carr University of Art + Design in Vancouver, Canada.</p>
 
-                <p>When it comes to software development, Rodrigo began programming in 2004, specializing on front-end web development and Flash web applications. After graduating from University, and working with many startups and corporations over the years, he eventually came to lead large teams in various companies, and in 2017 started his own tech start-up, <span itemprop="worksFor">Einstein Exchange</span>, with two other co-founders. The company focused on providing worldwide clients with a safe, secure and simple way to buy, trade and invest in virtual currencies. Since 2019, Rodrigo has been a software consultant and contractor for various startups.</p>
+                <p>When it comes to software development, Rodrigo began programming in 2004, specializing on front-end web development and Flash web applications. After graduating from University, and working with many startups and corporations over the years, he eventually came to lead large teams in various companies, and in 2017 started his own tech start-up, Einstein Exchange, with two other co-founders. The company focused on providing worldwide clients with a safe, secure and simple way to buy, trade and invest in virtual currencies. Since 2019, Rodrigo has been a software consultant and contractor for various startups.</p>
               </div>
               <!-- <div actions>
                 <div contact>Email Me</div>
@@ -36,7 +39,7 @@
           </div>
           <div bottom>
             <div extra-info>
-              <div collection v-for="(collection, collectionIndex) in aboutCollections" v-bind:key="collectionIndex">
+              <div collection v-for="(collection, collectionIndex) in aboutCollections" v-bind:key="collectionIndex" :itemprop="collection.name == 'institutions' ? 'alumniOf' : null" itemscope :itemtype="collection.name == 'institutions' ? 'https://schema.org/CollegeOrUniversity' : null">
                 <div title>{{collection.name}}</div>
                 <div object 
                 v-for="(object, objectIndex) in collection.collections" v-bind:key="objectIndex">
@@ -49,7 +52,7 @@
                     <span>{{object.year}}</span>
                   </p>
                   <p>
-                    <span v-if="object.venue">{{object.venue}}</span>
+                    <span :itemprop="collection.name == 'institutions' ? 'name' : null" v-if="object.venue">{{object.venue}}</span>
                     <span v-if="object.location">{{object.location}}</span>
                   </p>
                 </div>
@@ -71,6 +74,7 @@ export default {
     },
     data() {
         return {
+          portraitRotateDegrees: 0,
           socials: SocialsCollection,
           aboutCollections: [
             {
@@ -160,6 +164,11 @@ export default {
     created() {
     },
     methods: {
+        hoverPortrait() {
+          const randomNumber = Math.floor(Math.random() * 20) + 1;
+          const plusOrMinus = Math.random() < 0.5 ? -1 : 1;
+          this.portraitRotateDegrees = this.portraitRotateDegrees + (randomNumber * plusOrMinus);
+        }
     },
 }
 </script>
@@ -190,16 +199,25 @@ export default {
         background: white;
         padding: 20px;
         box-shadow: 0px 15px 30px -35px black;
-        [image] {
+        img {
           height: 250px;
           width: 250px;
           background: black;
           border-radius: 100%;
           background-size: 100%;
           background-position: center center;
-          border: 10px solid #f0f0f0;
+          color: #f0f0f0;
+          border: 10px solid;
           box-sizing: border-box;
-          background-image: url("@/assets/about-portrait.jpg");
+          object-fit: cover;
+          transition: all 0.3s;
+          cursor: pointer;
+          &:hover {
+            color: #9ceaff;
+          }
+          &:active {
+            color: yellow;
+          }
         }
         [name] {
           text-align: left;
@@ -261,6 +279,7 @@ export default {
           flex-direction: column;
           align-items: flex-start;
           gap: 12px;
+          position: relative;
           [title] {}
           [object] {
             p {
@@ -310,7 +329,7 @@ export default {
           background-color: white;
           border-radius: 4px;
           [image] {
-            border-radius: 2px;
+            border-radius: 2px 2px 0 0;
             flex: 0 0 24px;
             height: 450px;
             background-color: black;
@@ -334,7 +353,8 @@ export default {
           justify-content: flex-start;
           text-align: justify;
           [full-name] {
-            background-color: black;
+            padding: 3px;
+            background-color: #3390ff;
             color: white;
           }
         }
@@ -360,8 +380,29 @@ export default {
         text-align: left;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 40px;
-        
+        gap: 24px;
+        [collection] {
+          &:nth-of-type(1) {
+            [title] {
+              color: #ff4e4e;
+            }
+          }
+          &:nth-of-type(2) {
+            [title] {
+              color: #758aff;
+            }
+          }
+          &:nth-of-type(3) {
+            [title] {
+              color: #46d85d;
+            }
+          }
+          &:nth-of-type(4) {
+            [title] {
+              color: #fec010;
+            }
+          }
+        }
         @media (max-width: 1200px) {
           grid-template-columns: 1fr;
         }
@@ -383,9 +424,9 @@ export default {
         flex-direction: column;
         [sidebar] {
           width: 100%;
-          [image] {
-            height: 100px;
-            width: 100px;
+          img {
+            height: 150px;
+            width: 150px;
           }
           [socials] {
             width: 100%;

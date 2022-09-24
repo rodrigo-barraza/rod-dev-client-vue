@@ -13,21 +13,21 @@
     <div floaty :class="[{'tiny': isPageYOffsetAtZero > 35}, routeName]">
         <div container>
             <div name>
-                <router-link title="Rodrigo Barraza" to="/">
+                <router-link title="Rodrigo Barraza" to="/" v-on:click="closeMobileMenu">
                     <div logo :class="[{'loading': isDocumentLoading === true}]">
                     </div>
-                    <div text v-on:click="closeMobileMenu">
+                    <div text>
                         RODRIGO BARRAZA
                     </div>
                 </router-link>
             </div>
             <nav full>
                 <ul>
-                    <li ai-art><router-link to="/"  active-class="active">Collections</router-link></li>
+                    <li ai-art><router-link to="/" active-class="active" v-on:click="closeMobileMenu('/collections')">Collections</router-link></li>
                     <!-- <li ai-art><router-link to="/ai-art"  active-class="active">AI Art</router-link></li>
                     <li photography><router-link to="/photography"  active-class="active">Photography</router-link></li> -->
                     <!-- <li photography><router-link to="/photography"  active-class="active">NFT Collections</router-link></li> -->
-                    <li about><router-link to="/rodrigo-barraza"  active-class="active">About</router-link></li>
+                    <li about><router-link to="/rodrigo-barraza" active-class="active" v-on:click="closeMobileMenu('/rodrigo-barraza')">About</router-link></li>
                 </ul>
             </nav>
             <div hamburger>
@@ -48,8 +48,8 @@
     <div overlay v-if="isMobileMenuOpen">
         <nav shrink>
             <ul>
-                <li ai-art><router-link to="/" v-on:click="toggleMobileMenu" active-class="active">Collections</router-link></li>
-                <li about><router-link to="/rodrigo-barraza" v-on:click="toggleMobileMenu" active-class="active">About</router-link></li>
+                <li ai-art><router-link to="/" v-on:click="closeMobileMenu('/collections')" active-class="active">Collections</router-link></li>
+                <li about><router-link to="/rodrigo-barraza" v-on:click="closeMobileMenu('/rodrigo-barraza')" active-class="active">About</router-link></li>
             </ul>
         </nav>
         <ul socials>
@@ -62,6 +62,7 @@
 </template>
 
 <script>
+import EventLibrary from '@/libraries/EventLibrary';
 import SocialsCollection from '@/collections/SocialsCollection';
 
 export default {
@@ -92,6 +93,11 @@ export default {
             this.isPageYOffsetAtZero = window.pageYOffset;
         },
         toggleMobileMenu() {
+            if (this.isMobileMenuOpen == false) {
+                EventLibrary.postEventMenuOpen();
+            } else {
+                EventLibrary.postEventMenuClose();
+            }
             this.isMobileMenuOpen = !this.isMobileMenuOpen;
         },
         closeMobileMenu() {
@@ -110,7 +116,7 @@ export default {
         deep: true,
         immediate: true
       }
-}   
+    }   
 }
 </script>
 
@@ -126,7 +132,6 @@ header {
         display: flex;
         flex-direction: column;
         [background] {
-            background-color: black;
             flex: 1 1 100%;
             overflow: hidden;
 
@@ -183,6 +188,7 @@ header {
                         background-image: url("@/assets/logo-rodrigo.png");
                         background-size: 100%;
                         image-rendering: pixelated;
+                        pointer-events: none;
                         &.loading {
                             background-image: url("@/assets/logo-animated.gif");
                         }
@@ -192,6 +198,7 @@ header {
                         display: flex;
                         justify-content: flex-start;
                         align-items: center;
+                        pointer-events: none;
                     }
                     &:hover {
                         [logo] {
@@ -243,7 +250,6 @@ header {
                 div {
                     cursor: pointer;
                     border-radius: 10px;
-                    background-color: rgba(0,0,0,0.05);
                 }
             }
             

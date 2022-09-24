@@ -3,10 +3,10 @@ const ArtCollectionsCollection = [
         imagePath: 'tardigrades',
         title: 'Tardigrades',
         type: 'ai',
-        medium: 'AI generated art',
+        medium: 'CLIP-guided diffusion, AI generated images',
         year: 2022,
         path: 'tardigrades',
-        description: 'Tardigrade is a series of aritificial intelligence generated images of animals in the phylum Tardigrada.',
+        description: 'This series of aritificial intelligence generated images is an exploration into the nature of CLIP-guided diffusion and the collection of neural network architectures that build upon it. Along side each piece is an ekphrasis, which has been composed by the use of GPT-3 autoregressive language models. Tardigrades (Tardigrada) were chosen as the subject to render.',
         keywords: 'ai art, artificial intelligence, machine learning, tardigrade, tardigrada',
         works: [
             {
@@ -14,7 +14,7 @@ const ArtCollectionsCollection = [
                 imagePath: 'tardigrade-001',
                 title: 'Diamond Tardigrade No. 001',
                 medium: 'CLIP-guided diffusion',
-                description: 'The vitrum tardigradum is a species that carries around a home made out of transparent diamonds. They are found in a variety of habitats, but prefer to live in moist environments. Vitrum tardigradum are able to live for long periods of time without food or water, and can even withstand being frozen or boiled.',
+                ekphrasis: 'This species of Tardigrada has been known to carry around a home made out of transparent crystals. Found in a variety of habitats, the usually prefer to live in moist environments.',
                 year: '2022',
             },
             {
@@ -494,6 +494,7 @@ const ArtCollectionsCollection = [
         path: 'spotless',
         description: 'In collaboration with <a href="http://ewachruscicka.ca" target="_blank">Ewa Chruscicka</a>, Spotless is a 16mm short film shot in black-and-white stock. Ave Maria by Bach/Gounod in stereo sound.',
         videoControls: true,
+        orientation: 'horizontal',
         works: [
             {
                 path: 'spotless',
@@ -907,18 +908,19 @@ const ArtCollectionsCollection = [
     },
     {
         imagePath: 'fashion',
-        title: 'Fashion',
+        title: 'Portraiture',
         type: 'photography',
         medium: 'medium format film photography',
-        year: '2008-2021',
+        year: 'Ongoing',
         path: 'fashion',
         works: [
             {
                 path: 'fashion-001',
                 imagePath: 'fashion-001',
-                title: 'Goldkid and Kleenz',
+                title: 'FINE',
                 medium: 'medium format film photography',
-                description: '',
+                ekphrasis: "Fine, fine. Everywhere that I go, fine fine. I'm the one in control, fine, fine.",
+                description: "A quick shoot, out by East Vancouver, for <a href='https://www.instagram.com/osmoses/' target='_blank'>Buni Kor</a>'s FINE, featuring <a href='https://www.instagram.com/the.goldkid/' target='_blank'>Gold Kid</a>. <button-component></button-component>",
                 year: 2021,
             },
             {
@@ -927,6 +929,7 @@ const ArtCollectionsCollection = [
                 title: 'Book of Kings',
                 medium: 'full-frame 35 mm digital sensor',
                 ekphrasis: "A young man is freed from his father's tyranny by a mysterious figure, only to find himself with a horrible curse.",
+                description: "A photograph of Cameron Crosby and Tomislav Pejic in Ali Hasan's film, The Book of Kings, 2011.",
                 year: 2011,
             },
             {
@@ -956,9 +959,9 @@ const ArtCollectionsCollection = [
             {
                 path: 'fashion-005',
                 imagePath: 'fashion-005',
-                title: 'Red Kleenz',
+                title: 'Red Wires',
                 medium: 'medium format film photography',
-                description: '',
+                description: 'Kleenz',
                 year: 2010,
             },
             {

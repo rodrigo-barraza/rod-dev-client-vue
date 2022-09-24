@@ -1,7 +1,7 @@
 <template>
   <main class="home">
     <div container>
-        <h1>The visual portfolio of Rodrigo Barraza, a Vancouver Photographer, Software Engineer and Artist</h1>
+        <h1><span full-name>Rodrigo Barraza</span>: <span>photographer</span>, <span>software engineer</span>, <span>artist</span>.</h1>
     </div>
     <div gallery>
         <div image-container
@@ -46,6 +46,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
 .home {
   font-family: Ubuntu;
   -webkit-font-smoothing: antialiased;
@@ -53,6 +54,32 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin: 180px 0 0 0;
+  h1 {
+    color: #f0f0f0;
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 80px;
+    text-align: left;
+    width: 700px;
+    text-shadow: 10px 10px 0px rgb(255 255 255 / 20%);
+    font-weight: 100;
+    @media (max-width: 1432px) {
+        font-size: 3.5vw;
+        width: 50vw;
+    }
+    @media (max-width: 400px) {
+        font-size: 6vw;
+        width: 100%;
+    }
+  }
+  [full-name] {
+    background-color: #005dcc;
+  }
+  [container] {
+    @media (max-width: 640px) {
+        padding: 0 4vw;
+    }
+  }
 }
 
 [gallery] {
@@ -101,6 +128,7 @@ export default {
                 background-position: center;
                 background-repeat: no-repeat;
                 overflow: hidden;
+                pointer-events: none;
                 [inside-description] {
                     pointer-events: none;
                     position: absolute;

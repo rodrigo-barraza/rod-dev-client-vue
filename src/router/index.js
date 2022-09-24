@@ -4,7 +4,6 @@ import { createRouter, createWebHistory } from 'vue-router'
 import ArtCollectionsCollection from '@/collections/ArtCollectionsCollection';
 import SEOConstants from '@/constants/SEOConstants';
 import HomeView from '../views/HomeView.vue'
-import AIArtView from '../views/AIArtView.vue'
 import CollectionView from '../views/CollectionView.vue'
 import AboutView from '../views/AboutView.vue'
 
@@ -26,22 +25,6 @@ const routes = [
     path: '/collections/:collection',
     name: 'collection',
     component: CollectionView,
-    meta: {
-      title: 'Collections'
-    }
-  },
-  {
-    path: '/photography',
-    name: 'photography',
-    component: HomeView,
-    meta: {
-      title: 'Collections'
-    }
-  },
-  {
-    path: '/ai-art',
-    name: 'ai-art',
-    component: AIArtView,
     meta: {
       title: 'Collections'
     }
