@@ -26,11 +26,13 @@
         itemscope itemtype="https://schema.org/CreativeWork" :itemid="`https://rod.dev${$route.fullPath}#${work.path}`" itemprop="hasPart">
             <div container>
                 <img v-if="work.imagePath" v-on:click="imageFullscreen($event, currentCollection, work)"
-                :src="require(`@/assets/collections/${currentCollection.path}/${work.imagePath}.jpg`)"
+                v-bind:key="work.title"
+                :src="renderPath($event, currentCollection.path, work.imagePath)"
                 :alt="work.description"
                 :title="`${currentCollection.title} - ${work.title}, ${work.medium}, ${work.year}. ${work.description}`"
                 itemprop="image"/>
                 <video id="oneVideo" autoplay muted :controls="currentCollection.videoControls" loop poster=""
+                :key="work.title"
                 v-if="work.videoPath"
                 itemprop="video">
                     <source :src="require(`@/assets/collections/${currentCollection.path}/${work.videoPath}.mp4`)" type="video/mp4">
@@ -54,12 +56,27 @@
         <div section-title>More collections</div>
         <div collections>
             <div collection v-for="(collection, collectionIndex) in moreCollections" v-bind:key="collectionIndex">
-                <router-link link :to="`/collections/${collection.path}`">
+                <router-link link :to="`/collections/${collection.path}`" 
+                @mouseover="onMouseover"
+                @mouseleave="onMouseleave">
                     <!-- <div the-image>
                         <img :src="require(`@/assets/${collection.imagePath}.jpg`)"/>
                         <div the-name>{{collection.title}}</div>
                     </div> -->
-                    <div image><img :src="require(`@/assets/${collection.imagePath}.jpg`)"/></div>
+                    <div image>
+                        <img v-if="!collection.works[0].videoPath && collection.imagePath" :src="require(`@/assets/${collection.imagePath}.jpg`)"/>
+                        <img v-if="!collection.works[0].videoPath && !collection.imagePath" :src="require(`@/assets/collections/${collection.path}/${collection.works[0].imagePath}.jpg`)"/>
+                        <video v-if="collection.works[0].videoPath" muted loop
+                        itemprop="video"
+                        :poster="collection.imagePath ? require(`@/assets/${collection.imagePath}.jpg`) : ''">
+                            <source :src="require(`@/assets/collections/${collection.path}/${collection.works[0].videoPath}.mp4`)" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div overlay>
+                            <div titl>{{collection.title}}</div>
+                            <div yea>{{collection.year}}</div>
+                        </div>
+                    </div>
                     <div description>
                         <div><span title>{{collection.title}}</span> <span year>{{collection.year}}</span></div>
                         <div><span medium>{{collection.medium}}</span></div>
@@ -97,8 +114,14 @@ export default {
     mounted() {
     },
     methods: {
-        imageFullscreen(element, collection, work) {
-            element.srcElement.requestFullscreen();
+        renderPath(e, collectionPath, imagePath) {
+            console.log(e, collectionPath, imagePath);
+            // @/assets/collections/${currentCollection.path}/${work.imagePath}.jpg
+            let path = require(`@/assets/collections/${collectionPath}/${imagePath}.jpg`);
+            return path;
+        },
+        imageFullscreen(event, collection, work) {
+            event.srcElement.requestFullscreen();
             EventLibrary.postEventImageFullscreen(`/${collection.path}/${work.imagePath}.jpg`);
         },
         copyText(text) {
@@ -109,17 +132,32 @@ export default {
             this.currentCollection = this.$route.meta.currentCollection;
             this.moreCollections = this.$route.meta.moreCollections;
         },
+        onMouseover(event) {
+            if (event.target.firstElementChild?.firstElementChild?.tagName === 'VIDEO') {
+                event.target.firstElementChild.firstElementChild.play();
+            }
+        },
+        onMouseleave(event) {
+            if (event.target.firstElementChild?.firstElementChild?.tagName === 'VIDEO') {
+                event.target.firstElementChild.firstElementChild.load();
+            }
+        },
     },
     watch: {
-        '$route.fullPath': {
-            handler: function(oldRoute, newRoute) {
-                if (newRoute) {
-                    this.loadData();
-                }
-            },
-            deep: true,
-            immediate: true
-        }
+        // '$route': {
+        //     handler: function() {
+        //         function clearSource(item) {
+        //             item.src = '';
+        //         }
+        //         const allCollectionImages = document.querySelectorAll('[work] img');
+        //         allCollectionImages.forEach(clearSource);
+        //         setTimeout(this.loadData, 1);
+        //         // if (newRoute === 'collection') {
+        //         // }
+        //     },
+        //     deep: true,
+        //     immediate: true
+        // }
     }
 }
 </script>
@@ -144,10 +182,6 @@ export default {
         display: flex;
         flex-direction: column;
     }
-    video {
-        width: 100%;
-        max-height: 800px;
-    }
     [work] {
         > [container] {
             justify-content: center;
@@ -156,12 +190,18 @@ export default {
             display: grid;
             grid-template-columns: auto auto;
             gap: 32px;
+            video {
+                width: 100%;
+                max-height: 800px;
+                background: rgba(0,0,0,0.05);
+            }
             [card] {
                 box-shadow: 0px 15px 30px -35px black;
                 width: 450px;
                 // flex: 0 0 400px;
                 background: white;
-                background: linear-gradient(180deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.3) 30%, rgba(255,255,255,0) 100%);
+                // background: linear-gradient(180deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.3) 30%, rgba(255,255,255,0) 100%);
+                background: linear-gradient(180deg, #f8f8f8 0%, #f5f5f5 30%, #f0f0f0 100%);
                 padding: 32px;
                 border-radius: 4px;
                 box-sizing: border-box;
@@ -210,11 +250,15 @@ export default {
             object-fit: contain;
             max-width: 100%;
             max-height: 90vh;
+            min-width: 15vw;
+            min-height: 15vw;
             cursor: pointer;
             transition: 0.3s all;
+            background: rgba(0,0,0,0.05);
             &:hover {
                 filter: brightness(0.9);
                 transform: scale(1.01);
+                box-shadow: 8px 8px 32px -12px black;
             }
         }
         &.horizontal, &.square {
@@ -230,6 +274,7 @@ export default {
     }
     [collection-deets] {
         // background: linear-gradient(180deg, rgba(240,240,240,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 100%);
+        text-shadow: 10px 10px 0px rgb(255 255 255 / 20%);
         [container] {
             padding: 0 32px 0 32px;
             display: flex;
@@ -242,13 +287,10 @@ export default {
                 display: flex;
                 flex-wrap: wrap;
                 gap: 0px 8px;
-                h1, span {
-                    text-shadow: 10px 10px 0 rgba(0,0,0,0.1);
-                }
                 span {
                     font-size: 48px;
                     font-weight: 100;
-                    color: black;
+                    color: white;
                     @media (max-width: 1432px) {
                         font-size: calc(3vw + 5px);
                     }
@@ -256,6 +298,12 @@ export default {
                         font-size: 28px;
                     }
                 }
+            }
+            h1 {
+                background: #005dcc;
+            }
+            h1, p {
+                color: white;
             }
             p {
                 text-align: center;
@@ -386,12 +434,50 @@ export default {
                     overflow: hidden;
                     height: 50vw;
                     max-height: 30vh;
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                     pointer-events: none;
+                    video {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                    }
                     img {
                         height: 100%;
                         width: 100%;
                         transition: all 0.3s;
                         object-fit: cover;
+                        background: rgba(0,0,0,0.05);
+                    }
+                    [overlay] {
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        font-size: 32px;
+                        // font-weight: 500;
+                        color: white;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        filter: opacity(0);
+                        transition: all 0.3s;
+                        pointer-events: none;
+                        [titl] {
+                            font-weight: 500;
+                        }
+                        @media (max-width: 1432px) {
+                            font-size: calc(1.4vw + 12px);
+                        }
+                        @media (max-width: 640px) {
+                            font-size: calc(2.4vw + 12px);
+                        }
+                        // @media (max-width: 640px) {
+                        // }
                     }
                 }
                 [description] {
@@ -414,6 +500,7 @@ export default {
                     display: grid;
                     gap: 8px;
                     grid-template-rows: 1fr 1fr;
+                    border-radius: 4px;
                     [title] {
                         font-size: 18px;
                         font-weight: 400;
@@ -449,9 +536,12 @@ export default {
                     }
                 }
                 &:hover {
-                    img {
+                    img, video {
                         transform: scale(1.05);
                         filter: brightness(0.3);
+                    }
+                    [overlay] {
+                        filter: opacity(1);
                     }
                     [the-image] {
                         [the-name] {
@@ -469,8 +559,11 @@ export default {
         }
         @media (max-width: 640px) {
             grid-template-columns: 1fr;
+            [collection]:last-of-type {
+                display: block;
+            }
             [collection]:nth-of-type(2) {
-                display: none;
+                // display: none;
             }
         }
     }

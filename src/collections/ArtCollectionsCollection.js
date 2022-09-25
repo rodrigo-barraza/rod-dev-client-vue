@@ -1,11 +1,11 @@
 const ArtCollectionsCollection = [
     {
-        imagePath: 'tardigrades',
         title: 'Tardigrades',
         type: 'ai',
         medium: 'CLIP-guided diffusion, AI generated images',
         year: 2022,
         path: 'tardigrades',
+        ekphrasis: 'Once men turned their thinking over to machines in the hope that this would set them free. But that only permitted other men with machines to enslave them.',
         description: 'This series of aritificial intelligence generated images is an exploration into the nature of CLIP-guided diffusion and the collection of neural network architectures that build upon it. Along side each piece is an ekphrasis, which has been composed by the use of GPT-3 autoregressive language models. Tardigrades (Tardigrada) were chosen as the subject to render.',
         keywords: 'ai art, artificial intelligence, machine learning, tardigrade, tardigrada',
         works: [
@@ -56,7 +56,6 @@ const ArtCollectionsCollection = [
         ]
     },
     {
-        imagePath: 'dreamwork',
         title: 'Dreamwork',
         type: 'photography',
         medium: 'medium format color reversal film',
@@ -115,7 +114,6 @@ const ArtCollectionsCollection = [
         ]
     },
     {
-        imagePath: 'cops',
         title: 'Cops',
         type: 'photography',
         medium: '35mm black-and-white film',
@@ -151,99 +149,66 @@ const ArtCollectionsCollection = [
         ]
     },
     {
-        imagePath: 'persons',
-        title: 'Persons',
+        title: 'Color Stroll',
         type: 'photography',
-        medium: 'medium format color negative film',
-        year: 2011,
-        path: 'persons',
+        medium: 'medium format color negative and color reversal film',
+        year: 2010,
+        path: 'strolls',
+        ekphrasis: 'xxx',
+        description: 'This is a collection of photographs shot on black-and-white medium format slide film.',
         orientation: 'square',
-        description: '',
         works: [
             {
-                path: 'persons-001',
-                imagePath: 'persons-001',
-                title: 'The Model',
+                path: '2010-120-fuji-provia-100f-perisids',
+                imagePath: '2010-120-fuji-provia-100f-perisids',
+                title: '23.5 degrees',
+                medium: 'medium format color reversal film',
+                description: '',
+                year: 2010,
+            },
+            {
+                path: '120_provia_beams',
+                imagePath: '120_provia_beams',
+                title: 'Gleam',
+                medium: 'medium format color reversal film',
+                description: '',
+                year: 2010,
+            },
+            {
+                path: '2010-120-fuji-provia-100f-building',
+                imagePath: '2010-120-fuji-provia-100f-building',
+                title: 'Nook',
+                medium: 'medium format color reversal film',
+                description: '',
+                year: 2010,
+            },
+            {
+                path: 'runs-001',
+                imagePath: 'runs-001',
+                title: 'Wicker and Wood',
                 medium: 'medium format color negative film',
                 description: '',
-                year: 2011,
+                year: 2010,
             },
             {
-                path: 'persons-002',
-                imagePath: 'persons-002',
-                title: 'The Writer',
-                medium: 'medium format color negative film',
+                path: '120_provia_lightShowGood',
+                imagePath: '120_provia_lightShowGood',
+                title: 'Lasers',
+                medium: 'medium format color reversal film',
                 description: '',
-                year: 2011,
+                year: 2010,
             },
             {
-                path: 'persons-003',
-                imagePath: 'persons-003',
-                title: 'The Art Teacher',
-                medium: 'medium format color negative film',
-                year: 2011,
-            },
-            {
-                path: 'persons-004',
-                imagePath: 'persons-004',
-                title: 'The Landlord',
-                medium: 'medium format color negative film',
-                year: 2011,
-            },
-            {
-                path: 'persons-005',
-                imagePath: 'persons-005',
-                title: 'The Lawer',
-                medium: 'medium format color negative film',
-                year: 2011,
-                description: '"If I see this online, I will sue you"'
-            },
-            {
-                path: 'persons-006',
-                imagePath: 'persons-006',
-                title: 'The Vagabonds',
-                medium: 'medium format color negative film',
-                year: 2011,
-            },
-            {
-                path: 'persons-007',
-                imagePath: 'persons-007',
-                title: 'The Actor',
-                medium: 'medium format color negative film',
-                year: 2011,
-            },
-            {
-                path: 'persons-008',
-                imagePath: 'persons-008',
-                title: 'The Courier',
-                medium: 'medium format color negative film',
-                year: 2011,
-            },
-            {
-                path: 'persons-009',
-                imagePath: 'persons-009',
-                title: 'The Clerk',
-                medium: 'medium format color negative film',
-                year: 2011,
-            },
-            {
-                path: 'persons-010',
-                imagePath: 'persons-010',
-                title: 'The Landscaper',
-                medium: 'medium format color negative film',
-                year: 2011,
-            },
-            {
-                path: 'persons-011',
-                imagePath: 'persons-011',
-                title: 'The Engineer',
-                medium: 'medium format color negative film',
-                year: 2011,
+                path: 'skeleton',
+                imagePath: 'skeleton',
+                title: 'Mr. Skeletal',
+                medium: 'medium format color reversal film',
+                description: '',
+                year: 2010,
             },
         ]
     },
     {
-        imagePath: 'walks',
         title: 'Monochromatic Walks',
         type: 'photography',
         medium: 'medium format black-and-white film',
@@ -346,68 +311,6 @@ const ArtCollectionsCollection = [
         ]
     },
     {
-        imagePath: '2010-120-fuji-provia-100f-perisids',
-        title: 'Color Stroll',
-        type: 'photography',
-        medium: 'medium format color negative and color reversal film',
-        year: 2010,
-        path: 'strolls',
-        ekphrasis: 'xxx',
-        description: 'This is a collection of photographs shot on black-and-white medium format slide film.',
-        orientation: 'square',
-        works: [
-            {
-                path: '2010-120-fuji-provia-100f-perisids',
-                imagePath: '2010-120-fuji-provia-100f-perisids',
-                title: '23.5 degrees',
-                medium: 'medium format color reversal film',
-                description: '',
-                year: 2010,
-            },
-            {
-                path: '120_provia_beams',
-                imagePath: '120_provia_beams',
-                title: 'Gleam',
-                medium: 'medium format color reversal film',
-                description: '',
-                year: 2010,
-            },
-            {
-                path: '2010-120-fuji-provia-100f-building',
-                imagePath: '2010-120-fuji-provia-100f-building',
-                title: 'Nook',
-                medium: 'medium format color reversal film',
-                description: '',
-                year: 2010,
-            },
-            {
-                path: 'runs-001',
-                imagePath: 'runs-001',
-                title: 'Wicker and Wood',
-                medium: 'medium format color negative film',
-                description: '',
-                year: 2010,
-            },
-            {
-                path: '120_provia_lightShowGood',
-                imagePath: '120_provia_lightShowGood',
-                title: 'Lasers',
-                medium: 'medium format color reversal film',
-                description: '',
-                year: 2010,
-            },
-            {
-                path: 'skeleton',
-                imagePath: 'skeleton',
-                title: 'Mr. Skeletal',
-                medium: 'medium format color reversal film',
-                description: '',
-                year: 2010,
-            },
-        ]
-    },
-    {
-        imagePath: 'crystal-landscapes',
         title: 'Crystal Landscapes',
         type: 'ai',
         medium: 'CLIP-guided diffusion',
@@ -476,6 +379,89 @@ const ArtCollectionsCollection = [
             // },
         ]
     },
+    {
+        title: 'Persons',
+        type: 'photography',
+        medium: 'medium format color negative film',
+        year: 2011,
+        path: 'persons',
+        orientation: 'square',
+        description: '',
+        works: [
+            {
+                path: 'persons-001',
+                imagePath: 'persons-001',
+                title: 'The Model',
+                medium: 'medium format color negative film',
+                description: '',
+                year: 2011,
+            },
+            {
+                path: 'persons-002',
+                imagePath: 'persons-002',
+                title: 'The Writer',
+                medium: 'medium format color negative film',
+                description: '',
+                year: 2011,
+            },
+            {
+                path: 'persons-003',
+                imagePath: 'persons-003',
+                title: 'The Art Teacher',
+                medium: 'medium format color negative film',
+                year: 2011,
+            },
+            {
+                path: 'persons-004',
+                imagePath: 'persons-004',
+                title: 'The Landlord',
+                medium: 'medium format color negative film',
+                year: 2011,
+            },
+            {
+                path: 'persons-006',
+                imagePath: 'persons-006',
+                title: 'The Vagabonds',
+                medium: 'medium format color negative film',
+                year: 2011,
+            },
+            {
+                path: 'persons-007',
+                imagePath: 'persons-007',
+                title: 'The Actor',
+                medium: 'medium format color negative film',
+                year: 2011,
+            },
+            {
+                path: 'persons-008',
+                imagePath: 'persons-008',
+                title: 'The Courier',
+                medium: 'medium format color negative film',
+                year: 2011,
+            },
+            {
+                path: 'persons-009',
+                imagePath: 'persons-009',
+                title: 'The Clerk',
+                medium: 'medium format color negative film',
+                year: 2011,
+            },
+            {
+                path: 'persons-010',
+                imagePath: 'persons-010',
+                title: 'The Landscaper',
+                medium: 'medium format color negative film',
+                year: 2011,
+            },
+            {
+                path: 'persons-011',
+                imagePath: 'persons-011',
+                title: 'The Engineer',
+                medium: 'medium format color negative film',
+                year: 2011,
+            },
+        ]
+    },
     // {
     //     imagePath: 'ink',
     //     title: 'Ink',
@@ -515,7 +501,6 @@ const ArtCollectionsCollection = [
     //     path: 'tardigrades',
     // },
     {
-        imagePath: 'nature',
         title: 'Nature',
         type: 'photography',
         medium: 'full-frame 35 mm digital sensor and 35mm color reversal film',
@@ -582,7 +567,6 @@ const ArtCollectionsCollection = [
         ]
     },
     {
-        imagePath: 'urban',
         title: 'Urban',
         type: 'photography',
         medium: 'Digital photography',
@@ -680,7 +664,6 @@ const ArtCollectionsCollection = [
         ],
     },
     {
-        imagePath: 'ainimations',
         title: 'Ainimations',
         type: 'ai',
         medium: 'bla bla',
@@ -785,7 +768,7 @@ const ArtCollectionsCollection = [
     },
     {
         imagePath: 'tv-date',
-        title: 'Petroleum By-Product: TV Date',
+        title: 'TV Date',
         type: 'video',
         medium: '3 minutes, 30 seconds. Digital video',
         year: 2010,
@@ -821,7 +804,6 @@ const ArtCollectionsCollection = [
         ]
     },
     {
-        imagePath: 'mollusca',
         title: 'Mollusca',
         type: 'ai',
         medium: 'AI generated art',
@@ -855,19 +837,19 @@ const ArtCollectionsCollection = [
         ]
     },
     {
-        imagePath: 'aura-of-home',
         title: 'The Aura of Home',
         orientation: 'square',
         type: 'photography',
-        medium: 'medium format film photography',
+        medium: 'medium format color negative film',
         year: 2010,
         path: 'the-aura-of-home',
-        description: 'The Aura of Home; An on going photographic series, touching on the notions and ideas of what it means to be at home. In collaboration with <a href="https://www.instagram.com/audioappalled/" target="_blank">Adam Johannesson</a>.',
+        ekphrasis: "Waking up in the morning is the hardest part about losing someone. Something about sleep convinces you that you'll wake up with a fresh start, but every morning I wake up, and remember you're gone.",
+        description: 'The Aura of Home is a series of medium format color negative film series, touching on the notions and ideas of what it means to be at home. In collaboration with <a href="https://www.instagram.com/audioappalled/" target="_blank">Adam Johannesson</a>.',
         works: [
             {
                 path: 'aura-of-home-001',
                 imagePath: 'aura-of-home-001',
-                title: 'Greg',
+                title: 'Tom',
                 medium: 'medium format color negative film',
                 description: '',
                 year: 2010,
@@ -875,7 +857,7 @@ const ArtCollectionsCollection = [
             {
                 path: 'aura-of-home-002',
                 imagePath: 'aura-of-home-002',
-                title: 'Kayla',
+                title: 'Chaya',
                 medium: 'medium format color negative film',
                 description: '',
                 year: 2010,
@@ -907,7 +889,6 @@ const ArtCollectionsCollection = [
         ]
     },
     {
-        imagePath: 'fashion',
         title: 'Portraiture',
         type: 'photography',
         medium: 'medium format film photography',
@@ -1103,7 +1084,6 @@ const ArtCollectionsCollection = [
         ]
     },
     {
-        imagePath: 'cities',
         title: 'Cities',
         type: 'photography',
         medium: 'digital photography',
@@ -1162,11 +1142,10 @@ const ArtCollectionsCollection = [
         ]
     },
     {
-        imagePath: 'aerial',
         title: 'Aerial',
         type: 'photography',
         medium: 'digital photography',
-        year: 2020,
+        year: '2017-2020',
         path: 'aerial',
         works: [
             {
@@ -1175,7 +1154,7 @@ const ArtCollectionsCollection = [
                 title: 'Aerial No. 001',
                 medium: 'full-frame 35 mm digital sensor',
                 description: '',
-                year: 2010,
+                year: 2018,
             },
             {
                 path: 'aerial-1N6A0104',
@@ -1183,7 +1162,7 @@ const ArtCollectionsCollection = [
                 title: 'Aerial No. 002',
                 medium: 'full-frame 35 mm digital sensor',
                 description: '',
-                year: 2010,
+                year: 2020,
             },
             {
                 path: 'aerial-1N6A0110',
@@ -1191,7 +1170,7 @@ const ArtCollectionsCollection = [
                 title: 'Aerial No. 003',
                 medium: 'full-frame 35 mm digital sensor',
                 description: '',
-                year: 2010,
+                year: 2019,
             },
             {
                 path: 'aerial-1N6A1737',
@@ -1199,12 +1178,11 @@ const ArtCollectionsCollection = [
                 title: 'Aerial No. 004',
                 medium: 'full-frame 35 mm digital sensor',
                 description: '',
-                year: 2010,
+                year: 2017,
             },
         ],
     },
     {
-        imagePath: 'layers',
         title: 'Layers',
         type: 'photography',
         medium: 'digital photography',
@@ -1246,7 +1224,6 @@ const ArtCollectionsCollection = [
         ],
     },
     {
-        imagePath: 'artifacts',
         title: 'Artifacts',
         type: 'photography',
         medium: 'photography',
@@ -1350,6 +1327,85 @@ const ArtCollectionsCollection = [
                 year: 2010,
             },
         ],
+    },
+    {
+        title: 'Slashed',
+        type: 'photography',
+        medium: 'medium format color negative film',
+        year: 2010,
+        path: 'slashed',
+        orientation: 'square',
+        ekphrasis: "We don't make mistakes—we have happy accidents.",
+        description: '',
+        works: [
+            {
+                path: '2010-120-fuji-pro-160s-mr-wang',
+                imagePath: '2010-120-fuji-pro-160s-mr-wang',
+                title: 'Mr. Wang',
+                medium: 'medium format color negative film',
+                description: '',
+                year: 2010,
+            },
+            {
+                path: '2010-120-fuji-pro-160s-arabians',
+                imagePath: '2010-120-fuji-pro-160s-arabians',
+                title: 'Arabian Brothers',
+                medium: 'medium format color negative film',
+                description: '',
+                year: 2010,
+            },
+            {
+                path: '2010-120-fuji-pro-160s-business',
+                imagePath: '2010-120-fuji-pro-160s-business',
+                title: 'The Business Man',
+                medium: 'medium format color negative film',
+                year: 2010,
+                ekphrasis: 'If I see this online, I will sue you!'
+            },
+            {
+                path: '2010-120-fuji-pro-160s-old-lady',
+                imagePath: '2010-120-fuji-pro-160s-old-lady',
+                title: 'Beth',
+                medium: 'medium format color negative film',
+                year: 2010,
+            },
+            {
+                path: '2010-120-fuji-pro-160s-construction-2',
+                imagePath: '2010-120-fuji-pro-160s-construction-2',
+                title: 'Sanitation Worker',
+                medium: 'medium format color negative film',
+                year: 2010
+            },
+            {
+                path: '2010-120-fuji-pro-160s-manager-1',
+                imagePath: '2010-120-fuji-pro-160s-manager-1',
+                title: 'Landlord',
+                medium: 'medium format color negative film',
+                year: 2010,
+            },
+            {
+                path: '2010-120-fuji-pro-160s-south-african-couple',
+                imagePath: '2010-120-fuji-pro-160s-south-african-couple',
+                title: 'The Couple',
+                medium: 'medium format color negative film',
+                year: 2010,
+                ekphrasis: "... of course, we're just visiting from South Africa.",
+            },
+            {
+                path: '2010-120-fuji-pro-160s-tree-cutter',
+                imagePath: '2010-120-fuji-pro-160s-tree-cutter',
+                title: 'Landscaper',
+                medium: 'medium format color negative film',
+                year: 2010,
+            },
+            {
+                path: '2010-120-fuji-pro-160s-powerline-worker',
+                imagePath: '2010-120-fuji-pro-160s-powerline-worker',
+                title: 'Lineworker',
+                medium: 'medium format color negative film',
+                year: 2010,
+            },
+        ]
     },
 ];
 

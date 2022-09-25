@@ -1,18 +1,34 @@
 <template>
   <main class="home">
-    <div container>
-        <h1><span full-name>Rodrigo Barraza</span>: <span>photographer</span>, <span>software engineer</span>, <span>artist</span>.</h1>
+    <div container itemprop="creator" itemscope itemtype="http://schema.org/Person">
+        <h1>
+            <span full-name><span itemprop="givenName">Rodrigo</span> <span itemprop="familyName">Barraza</span></span>: <span itemprop="jobTitle">photographer</span>, <span itemprop="jobTitle">software engineer</span>, <span itemprop="jobTitle">artist</span>.
+        </h1>
     </div>
     <div gallery>
         <div image-container
         v-for="(collection, collectionIndex) in collections" v-bind:key="collectionIndex"
         itemscope itemtype="https://schema.org/Collection" :itemid="`https://rod.dev/${collection.path}`">
-            <router-link image :to="`/collections/${collection.path}`">
+            <router-link image :to="`/collections/${collection.path}`"
+            @mouseover="onMouseover"
+            @mouseleave="onMouseleave">
                 <!-- <div theimage :style="{ 'background-image': 'url('+ require(`@/assets/${collection.imagePath}.jpg`) + ')' }"> -->
                 <div theimage>
-                    <img :src="require(`@/assets/${collection.imagePath}.jpg`)"
+                    <img v-if="!collection.works[0].videoPath && collection.imagePath" :src="require(`@/assets/${collection.imagePath}.jpg`)"
                     :alt="collection.description"
                     :title="`Rodrigo Barraza, ${collection.title}, ${collection.medium}, ${collection.year}. ${collection.description}`"/>
+
+                    <img v-if="!collection.works[0].videoPath && !collection.imagePath" :src="require(`@/assets/collections/${collection.path}/${collection.works[0].imagePath}.jpg`)"
+                    :alt="collection.description"
+                    :title="`Rodrigo Barraza, ${collection.title}, ${collection.medium}, ${collection.year}. ${collection.description}`"/>
+
+                    <video v-if="collection.works[0].videoPath" muted loop
+                    itemprop="video"
+                    :poster="collection.imagePath ? require(`@/assets/${collection.imagePath}.jpg`) : ''">
+                        <source :src="require(`@/assets/collections/${collection.path}/${collection.works[0].videoPath}.mp4`)" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    
                     <div inside-description>
                         <div name itemprop="name">{{collection.title}}</div>
                         <div year itemprop="dateCreated">{{collection.year}}</div>
@@ -41,6 +57,16 @@ export default {
         goToPath() {
             this.isPageYOffsetAtZero = window.pageYOffset;
         },
+        onMouseover(event) {
+            if (event.target.firstElementChild.firstElementChild.tagName === 'VIDEO') {
+                event.target.firstElementChild.firstElementChild.play();
+            }
+        },
+        onMouseleave(event) {
+            if (event.target.firstElementChild.firstElementChild.tagName === 'VIDEO') {
+                event.target.firstElementChild.firstElementChild.load();
+            }
+        },
     },
 }
 </script>
@@ -67,8 +93,8 @@ export default {
         font-size: 3.5vw;
         width: 50vw;
     }
-    @media (max-width: 400px) {
-        font-size: 6vw;
+    @media (max-width: 640px) {
+        font-size: 5.5vw;
         width: 100%;
     }
   }
@@ -122,6 +148,16 @@ export default {
                 width: 100%;
                 height: 100%;
                 object-fit: contain;
+                background: rgba(0,0,0,0.05);
+            }
+            video {
+                top: 0;
+                right: 0;
+                left: 0;
+                border: 0;
+                height: 100%;
+                max-width: 100%;
+                transition: all 0.3s;
             }
             [theimage] {
                 background-size: contain;
@@ -175,7 +211,7 @@ export default {
         &:hover {
             [image] {
                 [theimage] {
-                    img {
+                    img, video {
                         transform: scale(1.05);
                         filter: brightness(0.3);
                     }

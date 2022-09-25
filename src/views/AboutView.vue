@@ -12,7 +12,8 @@
             <div title>Socials</div>
             <a social v-for="(social, socialIndex) in socials" v-bind:key="socialIndex" :class="social.type" :href="social.url" target="_blank">
               <div logo>{{social.type}}</div>
-              <div>{{social.username}}</div>
+              <!-- <div social-name>{{social.username}}</div> -->
+              <div social-name>{{social.name}}</div>
             </a>
           </div>
         </div>
@@ -174,10 +175,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-// margin: 0;
-// font-size: calc(0.25vw + 14px);
-// line-height: 15px;
-// color: rgba(0,0,0,0.5);
 [about-view] {
   position: relative;
   [container] {
@@ -202,7 +199,7 @@ export default {
         img {
           height: 250px;
           width: 250px;
-          background: black;
+          background: rgba(0,0,0,0.05);
           border-radius: 100%;
           background-size: 100%;
           background-position: center center;
@@ -243,20 +240,27 @@ export default {
             font-size: 18px;
             font-weight: 500;
             cursor: pointer;
-            padding: 8px;
-            border-radius: 8px;
+            padding: 8px 16px;
+            border-radius: 4px;
             [logo] {
               width: 30px;
               height: 30px;
               color: transparent;
               border-radius: 100%;
               margin-right: 8px;
+              filter: grayscale(1) opacity(0.8);
             }
             &:hover {
               text-decoration: none;
-              background: #9ceaff;
+              background: #3390ff;
               transform: translate(0, -2px);
               color: black;
+              [logo] {
+                filter: none;
+              }
+              [social-name] {
+                color: white;
+              }
             }
             &:active {
               text-decoration: none;
@@ -333,7 +337,6 @@ export default {
             flex: 0 0 24px;
             height: 450px;
             background-color: black;
-            // background-image: url("@/assets/collections/nature-003.jpg");
             background-size: cover;
             background-repeat: no-repeat;
             background-position: top;
@@ -429,12 +432,19 @@ export default {
             width: 150px;
           }
           [socials] {
-            width: 100%;
+            // width: 100%;
             [title] {
-              text-align: center;
+              // text-align: center;
             }
             [social] {
-              justify-content: center;
+              // justify-content: center;
+              // display: grid;
+              // grid-template-columns: 30px 100px;
+              // gap: 8px;
+              
+            }
+            [social-name] {
+              // text-align: left;
             }
           }
         }

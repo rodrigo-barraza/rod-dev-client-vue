@@ -1,15 +1,19 @@
-import EventApiLibrary from '@/libraries/EventApiLibrary'
+// import crypto from 'crypto';
+import EventApiLibrary from '@/libraries/EventApiLibrary';
+import { v4 as uuidv4 } from 'uuid';
+
 
 function createSession() {
     const timestamp = Math.round(+new Date() / 1000);
     
     const local = {
-        id:crypto.randomUUID(),
+        // id:crypto.randomUUID(),
+        id: uuidv4(),
         timestamp: timestamp
     }
 
     const session = {
-        id:crypto.randomUUID(),
+        id: uuidv4(),
         timestamp: timestamp
     }
 

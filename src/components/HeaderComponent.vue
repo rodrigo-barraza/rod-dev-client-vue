@@ -182,6 +182,7 @@ header {
                 a {
                     display: flex;
                     align-items: center;
+                    gap: 8px;
                     [logo] {
                         flex: 0 0 32px;
                         height: 32px;
@@ -338,7 +339,6 @@ header {
             position: absolute;
             bottom: 20px;
             [social] {
-                background: white;
                 [logo] {
                     height: 30px;
                     width: 30px;
