@@ -53,8 +53,10 @@
             </ul>
         </nav>
         <ul socials>
-            <li social v-for="(social, socialIndex) in socialsCollection" v-bind:key="socialIndex" :class="social.type">
-                <div logo></div>
+            <li social
+            v-for="(social, socialIndex) in socialsCollection" v-bind:key="socialIndex"
+            :class="social.type">
+                <a :href="social.url" target="_blank"><div logo></div></a>
             </li>
         </ul>
     </div>
@@ -338,10 +340,27 @@ header {
             flex-direction: row;
             position: absolute;
             bottom: 20px;
+            background-color: #e8e8e8;
+            padding: 8px 32px;
+            border-radius: 30px;
+            gap: 0;
             [social] {
-                [logo] {
-                    height: 30px;
-                    width: 30px;
+                a {
+                    display: block;
+                    border-radius: 8px;
+                    padding: 8px;
+                    [logo] {
+                        display: block;
+                        height: 30px;
+                        width: 30px;
+                        filter: grayscale(1) opacity(0.9);
+                    }
+                    &:hover {
+                        text-decoration: none;
+                        background: #3390ff;
+                        transform: translate(0, -2px);
+                        color: black;
+                    }
                 }
             }
         }

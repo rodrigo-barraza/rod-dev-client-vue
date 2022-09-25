@@ -2,7 +2,9 @@
   <!-- <nav></nav> -->
   <div css-blue-stripe :style="stripeStyle" :class="stripeClass"></div>
   <header-component/>
-  <router-view/>
+  <!-- CollectionView doesn't seem to update when routed to this same view, so we have to assign a key to
+  router-view to ensure that the component is always re-rendered when routed to -->
+  <router-view :key="$route.fullPath"/>
   <footer-component/>
 </template>
 
@@ -250,7 +252,7 @@ html {
             flex: 1 1 auto;
         }
         > footer {
-            flex: 0 0 200px;
+            // flex: 0 0 200px;
         }
     }
   }

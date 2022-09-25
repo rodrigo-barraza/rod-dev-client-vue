@@ -101,9 +101,9 @@ export default {
     },
     data() {
         return {
-            currentCollection: {},
+            currentCollection: this.$route.meta.currentCollection,
             artCollections: lodash.shuffle(ArtCollectionsCollection),
-            moreCollections: {}
+            moreCollections: this.$route.meta.moreCollections,
         }
     },
     beforeCreate() {
@@ -129,8 +129,6 @@ export default {
             navigator.clipboard.writeText(hashPath);
         },
         loadData() {
-            this.currentCollection = this.$route.meta.currentCollection;
-            this.moreCollections = this.$route.meta.moreCollections;
         },
         onMouseover(event) {
             if (event.target.firstElementChild?.firstElementChild?.tagName === 'VIDEO') {
@@ -274,7 +272,7 @@ export default {
     }
     [collection-deets] {
         // background: linear-gradient(180deg, rgba(240,240,240,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 100%);
-        text-shadow: 10px 10px 0px rgb(255 255 255 / 20%);
+        text-shadow: 10px 10px 0px rgb(255 255 255 / 10%);
         [container] {
             padding: 0 32px 0 32px;
             display: flex;
