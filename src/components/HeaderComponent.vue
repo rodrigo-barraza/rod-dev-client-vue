@@ -341,19 +341,20 @@ header {
             position: absolute;
             bottom: 20px;
             background-color: #e8e8e8;
-            padding: 8px 32px;
+            padding: 4px 12px;
             border-radius: 30px;
             gap: 0;
             [social] {
                 a {
                     display: block;
                     border-radius: 8px;
-                    padding: 8px;
+                    padding: 4px;
                     [logo] {
                         display: block;
                         height: 30px;
                         width: 30px;
                         filter: grayscale(1) opacity(0.9);
+                        pointer-events: none;
                     }
                     &:hover {
                         text-decoration: none;

@@ -257,9 +257,11 @@ export default {
               color: black;
               [logo] {
                 filter: none;
+                pointer-events: none;
               }
               [social-name] {
                 color: white;
+                pointer-events: none;
               }
             }
             &:active {

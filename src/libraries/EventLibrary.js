@@ -57,9 +57,8 @@ function postEvent(category, action, label, value) {
 }
 
 const EventLibrary = {
-    postEventDuration: () => {
-        const duration = 1;
-        EventApiLibrary.postDuration(duration);
+    postSession: (duration, width, height) => {
+        EventApiLibrary.postSession(duration, width, height);
     },
     postEventSessionNew: (referrer, url) => {
         const category = 'session';

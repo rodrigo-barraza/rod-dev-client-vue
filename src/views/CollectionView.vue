@@ -22,7 +22,7 @@
             </div>
         </div>
         <div work
-        v-for="(work, workIndex) in currentCollection.works" v-bind:key="workIndex" :id="work.path" :class="currentCollection.orientation" 
+        v-for="(work, workIndex) in currentCollection.works" v-bind:key="workIndex" :id="work.path" :class="work.orientation || currentCollection.orientation" 
         itemscope itemtype="https://schema.org/CreativeWork" :itemid="`https://rod.dev${$route.fullPath}#${work.path}`" itemprop="hasPart">
             <div container>
                 <img v-if="work.imagePath" v-on:click="imageFullscreen($event, currentCollection, work)"

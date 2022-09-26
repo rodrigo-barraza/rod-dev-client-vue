@@ -42,6 +42,7 @@
 </template>
 
 <script>
+import lodash from 'lodash';
 import ArtCollectionsCollection from '@/collections/ArtCollectionsCollection';
 
 export default {
@@ -50,7 +51,7 @@ export default {
     },
     data() {
         return {
-            collections: ArtCollectionsCollection,
+            collections: lodash.shuffle(ArtCollectionsCollection),
         }
     },
     methods: {

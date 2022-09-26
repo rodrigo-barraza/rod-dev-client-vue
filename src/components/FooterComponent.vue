@@ -18,15 +18,17 @@
         <div footer-menu>
           <div>
             <div>
-              <div brand>
-                <div logo></div>
-                <h3>RODRIGO BARRAZA</h3>
+              <div>
+                <div brand>
+                  <div logo></div>
+                  <h3>RODRIGO BARRAZA</h3>
+                </div>
+                <p>Vancouver, Canada</p>
               </div>
-              <p>Vancouver, Canada</p>
               <p>© 2022 Rodrigo Barraza</p>
             </div>
           </div>
-          <div>
+          <div photography>
             <div>
               <h3>Photography</h3>
               <ul>
@@ -37,7 +39,7 @@
               </ul>
             </div>
           </div>
-          <div>
+          <div film>
             <div>
               <h3>Film</h3>
               <ul>
@@ -47,7 +49,7 @@
                 </li>
               </ul>
             </div>
-            <div>
+            <div ai>
               <h3>AI Art</h3>
               <ul>
                 <li
@@ -56,7 +58,7 @@
                 </li>
               </ul>
             </div>
-            <div>
+            <div animation>
               <h3>Animation</h3>
               <ul>
                 <li
@@ -65,7 +67,7 @@
                 </li>
               </ul>
             </div>
-            <div>
+            <div installation>
               <h3>Installation</h3>
               <ul>
                 <li
@@ -75,7 +77,7 @@
               </ul>
             </div>
           </div>
-          <div>
+          <div socials-new>
             <div>
               <h3>Socials</h3>
               <ul>
@@ -151,6 +153,11 @@ p {
       flex-direction: column;
       gap: 4px;
     }
+    &:first-of-type {
+      > div {
+        justify-content: space-between;
+      }
+    }
   }
   a {
     display: flex;
@@ -192,7 +199,7 @@ p {
   }
   ul {
     font-size: 16px;
-    gap: 2px;
+    gap: 4px;
     display: flex;
     flex-direction: column;
   }
@@ -222,6 +229,36 @@ p {
     }
   }
   @media (max-width: 400px) {
+  }
+  [photography] {
+    h3 {
+      color: #46d85d;
+    }
+  }
+  [film] {
+    h3 {
+      color: #fec010;
+    }
+  }
+  [ai] {
+    h3 {
+      color: #ff4e4e;
+    }
+  }
+  [animation] {
+    h3 {
+      color: #758aff;
+    }
+  }
+  [installation] {
+    h3 {
+      color: #e97300;
+    }
+  }
+  [socials-new] {
+    h3 {
+      color: #ffe50c;
+    }
   }
 }
 footer {

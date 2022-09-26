@@ -1,6 +1,6 @@
 <template>
   <!-- <nav></nav> -->
-  <div css-blue-stripe :style="stripeStyle" :class="stripeClass"></div>
+  <div stripe :style="stripeStyle" :class="stripeClass"></div>
   <header-component/>
   <!-- CollectionView doesn't seem to update when routed to this same view, so we have to assign a key to
   router-view to ensure that the component is always re-rendered when routed to -->
@@ -92,7 +92,7 @@ export default {
     setInterval(myGreeting2, 1000);
 
     function myGreeting2() {
-      EventLibrary.postEventDuration(1);
+      EventLibrary.postSession(1, screen.width, screen.height);
     }
 
     // Track Clicks
@@ -125,7 +125,7 @@ export default {
 
     function myGreeting() {
         const collectionDeets = document.querySelector("[collection-deets]");
-        const stripe = document.querySelector("[css-blue-stripe]");
+        const stripe = document.querySelector("[stripe]");
         const floaty = document.querySelector("header");
         // const height = collectionDeets.getBoundingClientRect().bottom + 40;
         // const windowHeight = window.innerHeight;
@@ -178,11 +178,11 @@ export default {
 }
 </script>
 <style lang="scss">
-[css-blue-stripe] {
+[stripe] {
     width: 100%;
     position: absolute!important;
     top: 0;
-    height: 300px;
+    height: 270px;
     z-index: -1;
     // background: linear-gradient(0.25turn, #351dc6, #25ddf5);
       background: black;
@@ -204,10 +204,10 @@ export default {
     }
     &.home {
       @media (max-width: 1432px) {
-        height: calc(7vw + 200px);
+        height: calc(8vw + 150px);
       }
       @media (max-width: 640px) {
-        height: calc(13vw + 200px);
+        height: calc(13vw + 150px);
       }
     }
     &.collection {

@@ -14,12 +14,14 @@ const DigestemApiLibrary = {
             throw error;
         });
     },
-    async postDuration(duration) {
+    async postSession(duration, width, height) {
         const method = 'post';
         const form = {
-            duration: duration
+            duration: duration,
+            width: width,
+            height: height,
         };
-        const url = `${this.RODRIGO_SERVICE}${this.EVENT_SERVICE}/duration`;
+        const url = `${this.RODRIGO_SERVICE}${this.EVENT_SERVICE}/session`;
         return AxiosWrapper.request(method, url, form)
         .then((response) => {
             return response;

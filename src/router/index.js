@@ -54,7 +54,7 @@ router.beforeEach(to => {
     if (to.name === 'collection') {
         const currentCollectionParam = to.params.collection;
         const currentCollection = lodash.find(ArtCollectionsCollection, {path: currentCollectionParam});
-        const moreCollections = lodash.reject(lodash.shuffle(ArtCollectionsCollection), { name: currentCollection.name }).slice(0, 3);
+        const moreCollections = lodash.reject(lodash.shuffle(ArtCollectionsCollection), { name: currentCollection.tittle }).slice(0, 3);
         to.meta.currentCollection = currentCollection;
         to.meta.moreCollections = moreCollections;
         documentTitle = `Rodrigo Barraza - ${to.meta.title} - ${currentCollection.title}`;
