@@ -127,8 +127,6 @@ export default {
         const collectionDeets = document.querySelector("[collection-deets]");
         const stripe = document.querySelector("[stripe]");
         const floaty = document.querySelector("header");
-        // const height = collectionDeets.getBoundingClientRect().bottom + 40;
-        // const windowHeight = window.innerHeight;
         const routeName = self.$route.name;
         if (routeName === 'collection') {
           const deetsHeight = collectionDeets?.offsetHeight;
@@ -139,13 +137,6 @@ export default {
         } else {
           stripe.removeAttribute("style");
         }
-        // console.log(height);
-
-        // console.log(collectionDeets);
-        // var top;
-        // var bottom = window.innerHeight - top - collectionDeets.height();
-        // console.log(bottom);
-        // console.log(height, windowHeight, deetsHeight + floatyHeight);
     }
   },
   unmounted() {

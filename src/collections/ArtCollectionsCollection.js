@@ -1070,14 +1070,14 @@ const ArtCollectionsCollection = [
                 description: '',
                 year: 2011,
             },
-            {
-                path: '_MG_9623',
-                imagePath: '_MG_9623',
-                title: 'Damask Violet',
-                medium: 'full-frame digital sensor',
-                description: '',
-                year: 2015,
-            },
+            // {
+            //     path: '_MG_9623',
+            //     imagePath: '_MG_9623',
+            //     title: 'Damask Violet',
+            //     medium: 'full-frame digital sensor',
+            //     description: '',
+            //     year: 2015,
+            // },
             // {
             //     path: '1N6A4983',
             //     imagePath: '1N6A4983',
@@ -1102,14 +1102,14 @@ const ArtCollectionsCollection = [
                 description: '',
                 year: 2010,
             },
-            {
-                path: 'rodrigoBarraza_1289',
-                imagePath: 'rodrigoBarraza_1289',
-                title: 'Blue and Pink',
-                medium: 'full-frame digital sensor',
-                description: '',
-                year: 2008,
-            },
+            // {
+            //     path: 'rodrigoBarraza_1289',
+            //     imagePath: 'rodrigoBarraza_1289',
+            //     title: 'Blue and Pink',
+            //     medium: 'full-frame digital sensor',
+            //     description: '',
+            //     year: 2008,
+            // },
         ]
     },
     {

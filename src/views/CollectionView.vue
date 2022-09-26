@@ -115,7 +115,6 @@ export default {
     },
     methods: {
         renderPath(e, collectionPath, imagePath) {
-            console.log(e, collectionPath, imagePath);
             // @/assets/collections/${currentCollection.path}/${work.imagePath}.jpg
             let path = require(`@/assets/collections/${collectionPath}/${imagePath}.jpg`);
             return path;
