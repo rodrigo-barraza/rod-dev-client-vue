@@ -166,7 +166,7 @@ export default {
         position: relative;
         // background-color: #f0f0f0;
         z-index: 2;
-        box-shadow: 0px 15px 30px -35px black;
+        // box-shadow: 0px 15px 30px -35px black;
         gap: 32px;
         display: flex;
         flex-direction: column;
@@ -189,7 +189,7 @@ export default {
             gap: 32px;
             video {
                 width: 100%;
-                max-height: 800px;
+                max-height: 90vh;
                 background: rgba(0,0,0,0.05);
             }
             [card] {
@@ -236,7 +236,7 @@ export default {
         //     }
         // }
         &:last-of-type {
-            background: linear-gradient(180deg, rgba(240,240,240,1) 0%, rgba(255,255,255,1) 90%, rgba(255,255,255,1) 100%);
+            // background: linear-gradient(180deg, rgba(240,240,240,0) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,1) 90%, rgba(255,255,255,1) 100%);
             // padding-bottom: 64px;
         }
         img {

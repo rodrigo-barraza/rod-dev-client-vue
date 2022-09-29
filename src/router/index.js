@@ -51,6 +51,7 @@ router.beforeEach(to => {
     let documentTitle;
     let documentDescription;
     let documentKeywords = 'testing, testing2';
+    console.log(ArtCollectionsCollection.length);
     if (to.name === 'collection') {
         const currentCollectionParam = to.params.collection;
         const currentCollection = lodash.find(ArtCollectionsCollection, {path: currentCollectionParam});

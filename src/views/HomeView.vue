@@ -113,7 +113,7 @@ export default {
     padding: 0 2vw;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: repeat(7, 37.5vw);
+    grid-template-rows: repeat(8, 37.5vw);
     flex-direction: row;
     flex-wrap: wrap;
     // row-gap: 16px;
