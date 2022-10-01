@@ -4,133 +4,140 @@
   xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 
 <url>
-  <loc>https://rod.dev/</loc>
+  <loc>https://www.rod.dev/</loc>
   <changefreq>daily</changefreq>
-  <priority>1.00</priority>
   <lastmod>2022-10-01</lastmod>
 </url>
 <url>
-  <loc>https://rod.dev/rodrigo-barraza/</loc>
+  <loc>https://www.rod.dev/rodrigo-barraza/</loc>
+  <lastmod>2022-10-01</lastmod>
   <changefreq>daily</changefreq>
-  <priority>0.70</priority>
 </url>
 <url>
-  <loc>https://rod.dev/collections/cops</loc>
+  <loc>https://www.rod.dev/collections/dreamwork</loc>
+  <lastmod>2022-10-01</lastmod>
   <changefreq>daily</changefreq>
-  <priority>0.80</priority> 
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/dreamwork/rodrigo-barraza-dreamwork-the-beach</image:loc>
+  </image:image>
 </url>
 <url>
-  <loc>https://rod.dev/collections/strolls</loc>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority> 
+  <loc>https://www.rod.dev/collections/cops</loc>
+  <lastmod>2022-10-01</lastmod>
+  <changefreq>daily</changefreq> 
 </url>
 <url>
-  <loc>https://rod.dev/collections/angela</loc>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority> 
+  <loc>https://www.rod.dev/collections/strolls</loc>
+  <lastmod>2022-10-01</lastmod>
+  <changefreq>daily</changefreq> 
 </url>
 <url>
-  <loc>https://rod.dev/collections/walks</loc>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority> 
+  <loc>https://www.rod.dev/collections/angela</loc>
+  <lastmod>2022-10-01</lastmod>
+  <changefreq>daily</changefreq> 
 </url>
 <url>
-  <loc>https://rod.dev/collections/persons</loc>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority> 
+  <loc>https://www.rod.dev/collections/walks</loc>
+  <lastmod>2022-10-01</lastmod>
+  <changefreq>daily</changefreq> 
 </url>
 <url>
-  <loc>https://rod.dev/collections/nature</loc>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority> 
+  <loc>https://www.rod.dev/collections/persons</loc>
+  <lastmod>2022-10-01</lastmod>
+  <changefreq>daily</changefreq> 
 </url>
 <url>
-  <loc>https://rod.dev/collections/urban</loc>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority> 
+  <loc>https://www.rod.dev/collections/nature</loc>
+  <lastmod>2022-10-01</lastmod>
+  <changefreq>daily</changefreq> 
 </url>
 <url>
-  <loc>https://rod.dev/collections/lollipop</loc>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority> 
+  <loc>https://www.rod.dev/collections/urban</loc>
+  <lastmod>2022-10-01</lastmod>
+  <changefreq>daily</changefreq> 
 </url>
 <url>
-  <loc>https://rod.dev/collections/aura-of-home</loc>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority> 
+  <loc>https://www.rod.dev/collections/lollipop</loc>
+  <lastmod>2022-10-01</lastmod>
+  <changefreq>daily</changefreq> 
 </url>
 <url>
-  <loc>https://rod.dev/collections/portraiture</loc>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority> 
+  <loc>https://www.rod.dev/collections/aura-of-home</loc>
+  <lastmod>2022-10-01</lastmod>
+  <changefreq>daily</changefreq> 
 </url>
 <url>
-  <loc>https://rod.dev/collections/cities</loc>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority> 
+  <loc>https://www.rod.dev/collections/portraiture</loc>
+  <lastmod>2022-10-01</lastmod>
+  <changefreq>daily</changefreq> 
 </url>
 <url>
-  <loc>https://rod.dev/collections/aerial</loc>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority> 
+  <loc>https://www.rod.dev/collections/cities</loc>
+  <lastmod>2022-10-01</lastmod>
+  <changefreq>daily</changefreq> 
 </url>
 <url>
-  <loc>https://rod.dev/collections/layers</loc>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority> 
+  <loc>https://www.rod.dev/collections/aerial</loc>
+  <lastmod>2022-10-01</lastmod>
+  <changefreq>daily</changefreq> 
 </url>
 <url>
-  <loc>https://rod.dev/collections/artifacts</loc>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority> 
+  <loc>https://www.rod.dev/collections/layers</loc>
+  <lastmod>2022-10-01</lastmod>
+  <changefreq>daily</changefreq> 
 </url>
 <url>
-  <loc>https://rod.dev/collections/slashed</loc>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority> 
-</url>
-
-<url>
-  <loc>https://rod.dev/collections/spotless</loc>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority> 
+  <loc>https://www.rod.dev/collections/artifacts</loc>
+  <lastmod>2022-10-01</lastmod>
+  <changefreq>daily</changefreq> 
 </url>
 <url>
-  <loc>https://rod.dev/collections/tv-date</loc>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority> 
-</url>
-<url>
-  <loc>https://rod.dev/collections/rip-apart</loc>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority> 
+  <loc>https://www.rod.dev/collections/slashed</loc>
+  <lastmod>2022-10-01</lastmod>
+  <changefreq>daily</changefreq> 
 </url>
 
 <url>
-  <loc>https://rod.dev/collections/tardigrades</loc>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority> 
+  <loc>https://www.rod.dev/collections/spotless</loc>
+  <lastmod>2022-10-01</lastmod>
+  <changefreq>daily</changefreq> 
 </url>
 <url>
-  <loc>https://rod.dev/collections/crystal-landscapes</loc>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority> 
+  <loc>https://www.rod.dev/collections/tv-date</loc>
+  <lastmod>2022-10-01</lastmod>
+  <changefreq>daily</changefreq> 
 </url>
 <url>
-  <loc>https://rod.dev/collections/mollusca</loc>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority> 
-</url>
-
-<url>
-  <loc>https://rod.dev/collections/ainimations</loc>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority> 
+  <loc>https://www.rod.dev/collections/rip-apart</loc>
+  <lastmod>2022-10-01</lastmod>
+  <changefreq>daily</changefreq> 
 </url>
 
 <url>
-  <loc>https://rod.dev/collections/super-mario</loc>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority> 
+  <loc>https://www.rod.dev/collections/tardigrades</loc>
+  <lastmod>2022-10-01</lastmod>
+  <changefreq>daily</changefreq> 
+</url>
+<url>
+  <loc>https://www.rod.dev/collections/crystal-landscapes</loc>
+  <lastmod>2022-10-01</lastmod>
+  <changefreq>daily</changefreq> 
+</url>
+<url>
+  <loc>https://www.rod.dev/collections/mollusca</loc>
+  <lastmod>2022-10-01</lastmod>
+  <changefreq>daily</changefreq> 
+</url>
+
+<url>
+  <loc>https://www.rod.dev/collections/ainimations</loc>
+  <lastmod>2022-10-01</lastmod>
+  <changefreq>daily</changefreq> 
+</url>
+
+<url>
+  <loc>https://www.rod.dev/collections/super-mario</loc>
+  <lastmod>2022-10-01</lastmod>
+  <changefreq>daily</changefreq> 
 </url>
 </urlset>

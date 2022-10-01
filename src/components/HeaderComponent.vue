@@ -165,7 +165,7 @@ header {
         left: 0;
         top: 0;
         height: 120px;
-        font-family: Ubuntu;
+        font-family: 'Ubuntu', sans-serif;
         background: none;
         transition: 0.33s all;
         display: flex;

@@ -169,6 +169,7 @@ export default {
 }
 </script>
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 [stripe] {
     width: 100%;
     position: absolute!important;
@@ -234,7 +235,7 @@ html {
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
         color: #2c3e50;
-        font-family: Ubuntu;
+        font-family: 'Ubuntu', sans-serif;
         > header {
             flex: 0 0 auto;
         }
@@ -275,7 +276,7 @@ body {
 // }
 a {
   font-weight: 300;
-  font-family: ubuntu;
+  font-family: 'Ubuntu', sans-serif;
   color: inherit;
   text-decoration: none;
   text-underline-offset: 1px;
