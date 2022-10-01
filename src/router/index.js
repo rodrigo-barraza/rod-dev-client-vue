@@ -60,7 +60,10 @@ router.beforeEach(to => {
         to.meta.moreCollections = moreCollections;
         documentTitle = `Rodrigo Barraza - ${to.meta.title} - ${currentCollection.title}`;
         documentDescription = currentCollection.description;
-        documentKeywords = currentCollection.keywords;
+        documentKeywords = currentCollection.documentKeywords;
+        if (currentCollection.documentKeywords) {
+          documentTitle = currentCollection.documentTitle;
+        }
     } else if (to.meta.title) {
         documentTitle = `Rodrigo Barraza - ${to.meta.title}`;
         documentDescription = "Default description";

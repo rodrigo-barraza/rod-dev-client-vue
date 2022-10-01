@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" 
+  xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+
+<url>
+  <loc>https://rod.dev/</loc>
+  <changefreq>daily</changefreq>
+  <priority>1.00</priority>
+  <lastmod>2022-10-01</lastmod>
+</url>
+<url>
+  <loc>https://rod.dev/rodrigo-barraza/</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://rod.dev/collections/cops</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority> 
+</url>
+<url>
+  <loc>https://rod.dev/collections/strolls</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority> 
+</url>
+<url>
+  <loc>https://rod.dev/collections/angela</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority> 
+</url>
+<url>
+  <loc>https://rod.dev/collections/walks</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority> 
+</url>
+<url>
+  <loc>https://rod.dev/collections/persons</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority> 
+</url>
+<url>
+  <loc>https://rod.dev/collections/nature</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority> 
+</url>
+<url>
+  <loc>https://rod.dev/collections/urban</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority> 
+</url>
+<url>
+  <loc>https://rod.dev/collections/lollipop</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority> 
+</url>
+<url>
+  <loc>https://rod.dev/collections/aura-of-home</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority> 
+</url>
+<url>
+  <loc>https://rod.dev/collections/portraiture</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority> 
+</url>
+<url>
+  <loc>https://rod.dev/collections/cities</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority> 
+</url>
+<url>
+  <loc>https://rod.dev/collections/aerial</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority> 
+</url>
+<url>
+  <loc>https://rod.dev/collections/layers</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority> 
+</url>
+<url>
+  <loc>https://rod.dev/collections/artifacts</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority> 
+</url>
+<url>
+  <loc>https://rod.dev/collections/slashed</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority> 
+</url>
+
+<url>
+  <loc>https://rod.dev/collections/spotless</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority> 
+</url>
+<url>
+  <loc>https://rod.dev/collections/tv-date</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority> 
+</url>
+<url>
+  <loc>https://rod.dev/collections/rip-apart</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority> 
+</url>
+
+<url>
+  <loc>https://rod.dev/collections/tardigrades</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority> 
+</url>
+<url>
+  <loc>https://rod.dev/collections/crystal-landscapes</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority> 
+</url>
+<url>
+  <loc>https://rod.dev/collections/mollusca</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority> 
+</url>
+
+<url>
+  <loc>https://rod.dev/collections/ainimations</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority> 
+</url>
+
+<url>
+  <loc>https://rod.dev/collections/super-mario</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority> 
+</url>
+</urlset>

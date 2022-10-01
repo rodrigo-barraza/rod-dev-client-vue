@@ -1,5 +1,10 @@
 const ArtCollectionsCollection = [
     {
+        // documentTitle: 'Tardigrades - AI art collection by Rodrigo Barraza',
+        documentTitle: 'Tardigrades, - AI art by Rodrigo Barraza',
+        // documentTitle: 'Monochrome Photography - Rodrigo barraza, Vancouver Photographer1234',
+        documentKeywords: 'tardigrade, tardigrada, ai art, rodrigo barraza, artificial intelligence, machine learning, clip-guided diffusion, disco diffusion',
+        documentDescription: 'Tardigrades is a series of aritificial intelligence generated images. A visual exploration into the nature of CLIP-guided diffusion.',
         title: 'Tardigrades',
         type: 'ai',
         medium: 'CLIP-guided diffusion, AI generated',
@@ -7,7 +12,6 @@ const ArtCollectionsCollection = [
         path: 'tardigrades',
         ekphrasis: 'Once men turned their thinking over to machines in the hope that this would set them free. But that only permitted other men with machines to enslave them.',
         description: 'This series of aritificial intelligence generated images is an exploration into the nature of CLIP-guided diffusion and the collection of neural network architectures that build upon it. Along side each piece is an ekphrasis, which has been composed by the use of GPT-3 autoregressive language models. Tardigrades (Tardigrada) were chosen as the subject to render.',
-        keywords: 'ai art, artificial intelligence, machine learning, tardigrade, tardigrada',
         works: [
             {
                 path: 'tardigrade-001',
@@ -56,6 +60,9 @@ const ArtCollectionsCollection = [
         ]
     },
     {
+        documentTitle: 'Dreamwork - Photography by Rodrigo Barraza',
+        documentKeywords: 'dreamwork, vancouver, photography, rodrigo barraza, film, medium format, hasselblad, analog, multiple exposure, slide, traditional, fine art',
+        documentDescription: 'Dreamwork is a collection of medium format photographs, surrounding the intangible subjects of memory, emotion and dreams.',
         title: 'Dreamwork',
         type: 'photography',
         medium: 'medium format color reversal film',
@@ -63,7 +70,6 @@ const ArtCollectionsCollection = [
         path: 'dreamwork',
         ekphrasis: 'Dreamwork; memories, emotions, dreams, and their intangibility. Memories develop as information is encoded, stored and retried. Emotions are brought on through assossiations. Dreams are a succession of concepts occuring involuntarily in the mind curing certain stages of sleep.',
         description: 'A collection of multiple exposure photographs, shot on medium format slide film. Dreamwork is a visual exploration on the fragility of memories, emotional responses, experience of dreams, and the intertwinedness these three topics share.',
-        keywords: 'rodrigo, barraza, film, photography, dream, memory, childhood, medium format, hasselblad, darkroom, analog, multiple exposure, slide, traditional, fine art, film, dreamwork',
         orientation: 'square',
         works: [
             {
@@ -114,6 +120,9 @@ const ArtCollectionsCollection = [
         ]
     },
     {
+        documentTitle: 'Cops - Photography by Rodrigo Barraza',
+        documentKeywords: 'cops, police officer, vancouver, photography, rodrigo barraza, black and white, film, 35mm',
+        documentDescription: 'xxx',
         title: 'Cops',
         type: 'photography',
         medium: '35mm black-and-white film',
@@ -149,7 +158,10 @@ const ArtCollectionsCollection = [
         ]
     },
     {
-        title: 'Color Stroll',
+        documentTitle: 'Strolls - Photography by Rodrigo Barraza',
+        documentKeywords: 'strolls, vancouver, photography, rodrigo barraza, film',
+        documentDescription: 'xxx',
+        title: 'Strolls',
         type: 'photography',
         medium: 'medium format color film',
         year: 2010,
@@ -217,6 +229,9 @@ const ArtCollectionsCollection = [
         ]
     },
     {
+        documentTitle: 'Angela - Photography by Rodrigo Barraza',
+        documentKeywords: 'angela, vancouver, photography, rodrigo barraza, film',
+        documentDescription: 'xxx',
         title: 'Angela',
         type: 'photography',
         medium: 'medium format film',
@@ -229,48 +244,51 @@ const ArtCollectionsCollection = [
             {
                 path: '2010-120-ilford-delta-400-angela-portrait-001',
                 imagePath: '2010-120-ilford-delta-400-angela-portrait-001',
-                title: 'Angela Flower',
+                title: 'Angela No.1',
                 medium: 'medium format black-and-white film',
                 year: 2010,
             },
             {
                 path: '2010-120-ilford-delta-400-angela-portrait-002',
                 imagePath: '2010-120-ilford-delta-400-angela-portrait-002',
-                title: 'Beam',
+                title: 'Angela No.2',
                 medium: 'medium format black-and-white film',
                 year: 2010,
             },
             {
                 path: '2009-120-ilford-delta-400-angela-full-body-001',
                 imagePath: '2009-120-ilford-delta-400-angela-full-body-001',
-                title: 'We',
+                title: 'Angela No.3',
                 medium: 'medium format black-and-white film',
                 year: 2010,
             },
             {
                 path: '2010-120-fuji-velvia-100-angelaBody',
                 imagePath: '2010-120-fuji-velvia-100-angelaBody',
-                title: 'Robson and Granville',
+                title: 'Angela No.4',
                 medium: 'medium format color negative film',
                 year: 2010,
             },
             {
                 path: 'fashion-medium-0003',
                 imagePath: 'fashion-medium-0003',
-                title: 'Alley River',
+                title: 'Angela No.5',
                 medium: 'medium format color negative film',
                 year: 2010,
             },
             {
                 path: '2010-120-fuji-pro-160s-angela',
                 imagePath: '2010-120-fuji-pro-160s-angela',
-                title: 'Dirty, Dangerous and Demeaning',
+                title: 'Angela No.6',
                 medium: 'medium format color reversal film',
                 year: 2010,
             },
         ]
     },
     {
+        documentTitle: 'Walks - Photography by Rodrigo Barraza',
+        documentKeywords: 'walks, vancouver, photography, rodrigo barraza, film',
+        documentDescription: 'xxx',
         title: 'Walks',
         type: 'photography',
         medium: 'medium format black-and-white film',
@@ -373,6 +391,9 @@ const ArtCollectionsCollection = [
         ]
     },
     {
+        documentTitle: 'Crystal Landscapes - AI Art by Rodrigo Barraza',
+        documentKeywords: 'crystal landscapes, ai art, rodrigo barraza',
+        documentDescription: 'xxx',
         title: 'Crystal Landscapes',
         type: 'ai',
         medium: 'CLIP-guided diffusion, AI generated',
@@ -442,6 +463,9 @@ const ArtCollectionsCollection = [
         ]
     },
     {
+        documentTitle: 'Persons - Photography by Rodrigo Barraza',
+        documentKeywords: 'persons, vancouver, photography, rodrigo barraza, film',
+        documentDescription: 'xxx',
         title: 'Persons',
         type: 'photography',
         medium: 'medium format color negative film',
@@ -524,15 +548,11 @@ const ArtCollectionsCollection = [
             },
         ]
     },
-    // {
-    //     imagePath: 'ink',
-    //     title: 'Ink',
-    //     type: 'photography',
-    //     medium: 'mixed media',
-    //     year: 2022,
-    //     path: 'tardigrades',
-    // },
     {
+        documentTitle: 'Spotless - Short Film by Rodrigo Barraza and Ewa Chruscicka',
+        documentKeywords: 'spotless, vancouver, short film, video, rodrigo barraza, 16mm, film',
+        documentDescription: 'xxx',
+        videoControls: true,
         imagePath: 'spotless',
         title: 'Spotless',
         type: 'film',
@@ -540,8 +560,7 @@ const ArtCollectionsCollection = [
         duration: '2 minutes, 59 seconds',
         year: 2012,
         path: 'spotless',
-        description: 'In collaboration with <a href="http://ewachruscicka.ca" target="_blank">Ewa Chruscicka</a>, Spotless is a 16mm short film shot in black-and-white stock. Ave Maria by Bach/Gounod in stereo sound.',
-        videoControls: true,
+        description: 'In collaboration with <a href="https://ewachruscicka.ca/" target="_blank">Ewa Chruscicka</a>, Spotless is a 16mm short film shot in black-and-white stock. Ave Maria by Bach/Gounod in stereo sound.',
         orientation: 'horizontal',
         works: [
             {
@@ -549,12 +568,16 @@ const ArtCollectionsCollection = [
                 videoPath: 'spotless',
                 title: 'Spotless',
                 medium: '16mm black-and-white film',
-                description: 'Spotless; 2minutes, 59seconds. A 16mm short film shot in black-and-white stock. Ave Maria by Bach/Gounod in stereo sound. In collaboration with <a href="http://ewachruscicka.ca" target="_blank">Ewa Chruscicka.</a>',
+                description: 'Spotless; 2minutes, 59seconds. A 16mm short film shot in black-and-white stock. Ave Maria by Bach/Gounod in stereo sound. In collaboration with <a href="https://ewachruscicka.ca/" target="_blank">Ewa Chruscicka.</a>',
                 year: 2011,
             },
         ]
     },
     {
+        documentTitle: 'TV Date - Music video by Rodrigo Barraza',
+        documentKeywords: 'tv date, petroleum by-product, music video, rodrigo barraza, video',
+        documentDescription: 'This music video was shot and produced for Vancouver-based band Petroleum By-Product.',
+        videoControls: true,
         imagePath: 'tv-date',
         title: 'TV Date',
         type: 'film',
@@ -562,7 +585,8 @@ const ArtCollectionsCollection = [
         duration: '3 minutes, 30 seconds',
         year: 2010,
         path: 'tv-date',
-        description: 'Digital video signal with stereo sound. A music video shot in high definition for local Vancouver band Petroleum By-Product. In collaboration with Director Davide Di Saro, Cinematographer Ewa Chruscicka, and Videographer Owen Ellis.',
+        ekphrasis: "Don't be disappointed in what you'll be seeing, I'm not very special, just a human being. You make me feel like I'm something quite outrageous. All I do is read the ads in yellow pages, and I'll sit all night all night by my TV screen.",
+        description: 'This music video was shot and produced for <a href="https://www.youtube.com/user/PetroleumByProduct" target="_blank">Petroleum By-Product</a>, a Canadian new wave synth pop trio from Vancouver, BC. Directed and edited by <a href="https://davidedisaro.work/" target="_blank">Davide Di Saro</a>, produced by <a href="https://www.youtube.com/user/SallyDige" target="_blank">Sally Dige</a>, cinematography by <a href="https://ewachruscicka.ca/" target="_blank">Ewa Chruscicka</a>, videography by Rodrigo Barraza, <a href="https://www.linkedin.com/in/proryanbetts" target="_blank">Ryan Betts</a> and <a href="https://www.instagram.com/owen_ellis" target="_blank">Owen Ellis</a>.',
         works: [
             {
                 path: 'tv-date',
@@ -574,6 +598,9 @@ const ArtCollectionsCollection = [
         ]
     },
     {
+        documentTitle: 'Rip Apart - Music video by Rodrigo Barraza',
+        documentKeywords: 'xxx',
+        documentDescription: 'xxx',
         videoControls: true,
         orientation: 'horizontal',
         imagePath: 'rip-apart',
@@ -583,27 +610,23 @@ const ArtCollectionsCollection = [
         medium: 'Digital video signal with stereo sound',
         duration: '4 minutes, 51 seconds',
         year: 2011,
-        description: '',
+        ekphrasis: "Who cares for you?",
+        description: 'This music video was shot and produced for <a href="https://www.youtube.com/user/PetroleumByProduct" target="_blank">Petroleum By-Product</a>, a Canadian new wave synth pop trio from Vancouver, BC. Directed and edited by <a href="https://www.instagram.com/kentweldon/" target="_blank">Katie Weldon</a>, produced by <a href="https://ewachruscicka.ca/" target="_blank">Ewa Chruscicka</a>, and videography by Rodrigo Barraza.',
         works: [
             {
                 path: 'rip-apart',
                 videoPath: 'rip-apart',
                 title: 'Rip Apart',
                 medium: 'Digital video signal with stereo sound',
-                description: 'Spotless; 2minutes, 59seconds. A 16mm short film shot in black-and-white stock. Ave Maria by Bach/Gounod in stereo sound. In collaboration with <a href="http://ewachruscicka.ca" target="_blank">Ewa Chruscicka.</a>',
+                description: 'Spotless; 2minutes, 59seconds. A 16mm short film shot in black-and-white stock. Ave Maria by Bach/Gounod in stereo sound. In collaboration with <a href="https://ewachruscicka.ca/" target="_blank">Ewa Chruscicka.</a>',
                 year: 2011,
             },
         ]
     },
-    // {
-    //     imagePath: 'manufactured-portraits',
-    //     title: 'Manufactured Portraits',
-    //     type: 'ai',
-    //     medium: 'generative art',
-    //     year: 2022,
-    //     path: 'tardigrades',
-    // },
     {
+        documentTitle: 'Nature - Photography by Rodrigo Barraza',
+        documentKeywords: 'xxx',
+        documentDescription: 'xxx',
         title: 'Nature',
         type: 'photography',
         medium: 'full-frame digital sensor and 35mm color reversal film',
@@ -670,6 +693,9 @@ const ArtCollectionsCollection = [
         ]
     },
     {
+        documentTitle: 'xxx',
+        documentKeywords: 'xxx',
+        documentDescription: 'xxx',
         title: 'Urban',
         type: 'photography',
         medium: 'full-frame digital sensor',
@@ -767,6 +793,9 @@ const ArtCollectionsCollection = [
         ],
     },
     {
+        documentTitle: 'Ainimations - AI Art by Rodrigo Barraza',
+        documentKeywords: 'xxx',
+        documentDescription: 'xxx',
         title: 'Ainimations',
         type: 'animation',
         medium: 'CLIP-guided diffusion, AI generated',
@@ -914,13 +943,16 @@ const ArtCollectionsCollection = [
         ]
     },
     {
+        documentTitle: 'Super Mario - Installation by Rodrigo Barraza',
+        documentKeywords: 'xxx',
+        documentDescription: 'xxx',
         imagePath: '20448-mario',
-        title: '204.48MB of Mario',
+        title: 'Super Mario',
         type: 'installation',
         medium: 'One hundred and fourty one 3½-inch colored floppy disks',
         year: 2007,
         path: '20448-mario',
-        description: 'An installation piece of 8-bit Super Mario. Composed of one hundred and fourty one 3½-inch floppy disks.',
+        description: 'This installation piece features 8-bit Super Mario. Composed of one hundred and fourty one 3½-inch floppy disks, this piece makes up for a total of 204.48Mb.',
         works: [
             {
                 path: '20448-mario',
@@ -933,6 +965,9 @@ const ArtCollectionsCollection = [
         ]
     },
     {
+        documentTitle: 'Mollusca - AI Art by Rodrigo Barraza',
+        documentKeywords: 'xxx',
+        documentDescription: 'xxx',
         title: 'Mollusca',
         type: 'ai',
         medium: 'CLIP-guided diffusion, AI generated',
@@ -966,6 +1001,9 @@ const ArtCollectionsCollection = [
         ]
     },
     {
+        documentTitle: 'Lollipop - Photography by Rodrigo Barraza',
+        documentKeywords: 'xxx',
+        documentDescription: 'xxx',
         title: 'Lollipop',
         type: 'photography',
         medium: 'medium format color reversal film',
@@ -999,12 +1037,15 @@ const ArtCollectionsCollection = [
         ]
     },
     {
+        documentTitle: 'Aura of Home - Photography by Rodrigo Barraza and Adam Johannesson',
+        documentKeywords: 'aura of home, vancouver, photography, rodrigo barraza, adam johannesson, home, film',
+        documentDescription: 'A series of film photographs, touching on the notion of what it means to be at home. In collaboration with Adam Johannesson.',
         title: 'Aura of Home',
         orientation: 'square',
         type: 'photography',
         medium: 'medium format color negative film',
         year: 2010,
-        path: 'the-aura-of-home',
+        path: 'aura-of-home',
         ekphrasis: "Waking up in the morning is the hardest part about losing someone. Something about sleep convinces you that you'll wake up with a fresh start, but every morning I wake up, and remember you're gone.",
         description: 'The Aura of Home is a series of medium format color negative film series, touching on the notions and ideas of what it means to be at home. In collaboration with <a href="https://www.instagram.com/audioappalled/" target="_blank">Adam Johannesson</a>.',
         works: [
@@ -1051,6 +1092,9 @@ const ArtCollectionsCollection = [
         ]
     },
     {
+        documentTitle: 'Portraiture - Photography by Rodrigo Barraza',
+        documentKeywords: 'xxx',
+        documentDescription: 'xxx',
         title: 'Portraiture',
         type: 'photography',
         medium: 'medium format film photography',
@@ -1247,6 +1291,9 @@ const ArtCollectionsCollection = [
         ]
     },
     {
+        documentTitle: 'Cities - Photography by Rodrigo Barraza',
+        documentKeywords: 'xxx',
+        documentDescription: 'xxx',
         title: 'Cities',
         type: 'photography',
         medium: 'photography',
@@ -1305,6 +1352,9 @@ const ArtCollectionsCollection = [
         ]
     },
     {
+        documentTitle: 'Aerial - Photography by Rodrigo Barraza',
+        documentKeywords: 'xxx',
+        documentDescription: 'xxx',
         title: 'Aerial',
         type: 'photography',
         medium: 'full-frame digital sensor',
@@ -1346,6 +1396,9 @@ const ArtCollectionsCollection = [
         ],
     },
     {
+        documentTitle: 'Layers - Photography by Rodrigo Barraza',
+        documentKeywords: 'xxx',
+        documentDescription: 'xxx',
         title: 'Layers',
         type: 'photography',
         medium: 'full-frame digital sensor',
@@ -1392,6 +1445,9 @@ const ArtCollectionsCollection = [
         ],
     },
     {
+        documentTitle: 'Artifacts - Photography by Rodrigo Barraza',
+        documentKeywords: 'xxx',
+        documentDescription: 'xxx',
         title: 'Artifacts',
         type: 'photography',
         medium: 'photography',
@@ -1497,6 +1553,9 @@ const ArtCollectionsCollection = [
         ],
     },
     {
+        documentTitle: 'Slashed - Photography by Rodrigo Barraza',
+        documentKeywords: 'xxx',
+        documentDescription: 'xxx',
         title: 'Slashed',
         type: 'photography',
         medium: 'medium format color negative film',

@@ -1,0 +1,21 @@
+Redirect 301 /walks https://rod.dev/collections/walks
+Redirect 301 /dreamwork https://rod.dev/collections/dreamwork
+Redirect 301 /rip-apart https://rod.dev/collections/rip-apart
+Redirect 301 /spotless https://rod.dev/collections/spotless
+Redirect 301 /the-aura-of-home https://rod.dev/collections/aura-of-home
+Redirect 301 /urban https://rod.dev/collections/urban
+Redirect 301 /person https://rod.dev/collections/persons
+Redirect 301 /faces https://rod.dev/collections/portraiture
+Redirect 301 /hallow https://rod.dev/collections/hallow
+Redirect 301 /plantae https://rod.dev/collections/nature
+Redirect 301 /tv-date https://rod.dev/collections/tv-date
+
+Redirect 301 /light https://rod.dev/
+Redirect 301 /imaginary-objects https://rod.dev
+Redirect 301 /imaginary-landscapes https://rod.dev
+Redirect 301 /ink https://rod.dev
+
+Redirect 301 /contact https://rod.dev/rodrigo-barraza
+Redirect 301 /who https://rod.dev/rodrigo-barraza
+
+Redirect 301 / https://rod.dev/
