@@ -102,19 +102,15 @@ export default {
         const works = this.currentCollection.works;
         const schemaArray = [];
 
-        // const collectionObject = {
-        //     "@context": "https://schema.org",
-        //     "@graph": [
-        //         {
-        //             "@id": `https://rod.dev/collections/${collection.path}`,
-        //             "@type": "Collection",
-        //             "name": collection.title,
-        //             "creator": "Rodrigo Barraza",
-        //             "hasPart": [
-        //             ]
-        //         }
-        //     ]
-        // }
+        const collectionObject = {
+            "@context": "https://schema.org",
+            "@id": `https://rod.dev/collections/${collection.path}`,
+            "@type": "Collection",
+            "name": collection.title,
+            "creator": "Rodrigo Barraza",
+            "hasPart": [
+            ]
+        }
 
         works.forEach((work) => {
             if (work.imagePath) {
@@ -143,7 +139,7 @@ export default {
                     "@type": "VideoObject",
                     "name": work.title,
                     "description": work.description,
-                    "thumbnailUrl": work.poster,
+                    "thumbnailUrl": UtilityLibrary.renderAssetPath(work.poster, collection.path), //fix this
                     "uploadDate": work.uploadDate,
                     "duration": moment.duration(work.duration, 'seconds').toISOString(),
                     "contentUrl": UtilityLibrary.renderAssetPath(work.videoPath, collection.path),
@@ -154,12 +150,26 @@ export default {
                     //     "userInteractionCount": 5647018
                     // }
                 }
-                schemaArray.push(videoObject);
+                const creativeWorkObject = {
+                    "@context": "https://schema.org/",
+                    "@type": "CreativeWork",
+                    "name": work.title,
+                    "author": "Rodrigo Barraza",
+                    "video": videoObject,
+                    // "@id": "http://www.worldcat.org/oclc/17105155",
+                    // "isPartOf": {
+                    //     "@id": "http://example.org/colls/68"
+                    // },
+                    dateCreated: work.uploadDate,
+                    abstract: work.description,
+                }
+                schemaArray.push(creativeWorkObject);
             }
         });
+        collectionObject.hasPart = schemaArray;
         const script = document.createElement('script');
         script.setAttribute('type', 'application/ld+json');
-        script.textContent = JSON.stringify(schemaArray);
+        script.textContent = JSON.stringify(collectionObject);
         document.head.appendChild(script);
     },
     mounted() {

@@ -153,7 +153,7 @@ export default {
                 width: 100%;
                 height: 100%;
                 object-fit: contain;
-                background: rgba(0,0,0,0.05);
+                background-color: rgba(0,0,0,0.1);
             }
             video {
                 top: 0;
@@ -163,6 +163,7 @@ export default {
                 height: 100%;
                 max-width: 100%;
                 transition: all 0.3s;
+                background-color: rgba(0, 0, 0, 0.1)
             }
             [theimage] {
                 background-size: contain;
