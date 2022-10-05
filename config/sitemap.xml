@@ -12,132 +12,654 @@
   <loc>https://www.rod.dev/rodrigo-barraza/</loc>
   <lastmod>2022-10-01</lastmod>
   <changefreq>daily</changefreq>
+  <image:image>
+    <image:loc>https://img.rod.dev/rodrigo-barraza-black-and-white-portrait.jpg</image:loc> 
+    <image:title>Portrait of Rodrigo Barraza</image:title>
+    <image:caption>A black and white photograph of Rodrigo Barraza.</image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
 </url>
 <url>
   <loc>https://www.rod.dev/collections/dreamwork</loc>
   <lastmod>2022-10-01</lastmod>
   <changefreq>daily</changefreq>
   <image:image>
-    <image:loc>https://img.rod.dev/collections/dreamwork/rodrigo-barraza-dreamwork-the-beach</image:loc>
+    <image:loc>https://img.rod.dev/collections/dreamwork/rodrigo-barraza-dreamwork-beach-medium-format-fuji-velvia-100.jpg</image:loc> 
+    <image:title>Dreamwork - The Beach</image:title>
+    <image:caption>Multiple exposure film photographs of the beach.</image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/dreamwork/rodrigo-barraza-dreamwork-yard-medium-format-fuji-velvia-100.jpg</image:loc> 
+    <image:title>Dreamwork - The Yard</image:title>
+    <image:caption>Multiple exposure film photographs of a fenced off yard.</image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/dreamwork/rodrigo-barraza-dreamwork-park-medium-format-fuji-provia-100f.jpg</image:loc> 
+    <image:title>Dreamwork - The Park</image:title>
+    <image:caption>Multiple exposure film photographs of a park.</image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/dreamwork/rodrigo-barraza-dreamwork-gas-station-medium-format-fuji-provia-100f.jpg</image:loc> 
+    <image:title>Dreamwork - The Gas Station</image:title>
+    <image:caption>Multiple exposure film photographs of a gas station.</image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
   </image:image>
 </url>
 <url>
   <loc>https://www.rod.dev/collections/cops</loc>
   <lastmod>2022-10-01</lastmod>
-  <changefreq>daily</changefreq> 
+  <changefreq>daily</changefreq>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/dreamwork/rodrigo-barraza-cops-serve-kodak-tmax-3200.jpg</image:loc> 
+    <image:title>Cops - Serve</image:title>
+    <image:caption>xxx</image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/dreamwork/rodrigo-barraza-cops-protect-kodak-tmax-P3200.jpg</image:loc> 
+    <image:title>Cops - Protect</image:title>
+    <image:caption>xxx</image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/dreamwork/rodrigo-barraza-cops-justice-kodak-tmax-P3200.jpg</image:loc> 
+    <image:title>Cops - Justice</image:title>
+    <image:caption>xxx</image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
 </url>
 <url>
   <loc>https://www.rod.dev/collections/strolls</loc>
   <lastmod>2022-10-01</lastmod>
-  <changefreq>daily</changefreq> 
+  <changefreq>daily</changefreq>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/dreamwork/strolls-stars-rodrigo-barraza.jpg</image:loc> 
+    <image:title>Strolls - Stars</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/dreamwork/strolls-gleam-rodrigo-barraza.jpg</image:loc> 
+    <image:title>Strolls - Gleam</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/dreamwork/strolls-nook-rodrigo-barraza.jpg</image:loc> 
+    <image:title>Strolls - Nook</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/dreamwork/strolls-wicker-chair-rodrigo-barraza.jpg</image:loc> 
+    <image:title>Strolls - Wicker Chair</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/dreamwork/strolls-metal-bench-rodrigo-barraza.jpg</image:loc> 
+    <image:title>Strolls - Metal Bench</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/dreamwork/strolls-lasers-rodrigo-barraza.jpg</image:loc> 
+    <image:title>Strolls - Lasers</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
 </url>
 <url>
   <loc>https://www.rod.dev/collections/angela</loc>
   <lastmod>2022-10-01</lastmod>
-  <changefreq>daily</changefreq> 
+  <changefreq>daily</changefreq>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/angela/rodrigo-barraza-angela-no1-medium-format-ilford-delta-400.jpg</image:loc> 
+    <image:title>Angela No.1</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/angela/rodrigo-barraza-angela-no2-medium-format-ilford-delta-400.jpg</image:loc> 
+    <image:title>Angela No.2</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/angela/rodrigo-barraza-angela-no3-medium-format-ilford-delta-400.jpg</image:loc> 
+    <image:title>Angela No.3</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/angela/rodrigo-barraza-angela-no4-medium-format-fuji-velvia-100.jpg</image:loc> 
+    <image:title>Angela No.4</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/angela/rodrigo-barraza-angela-no5-medium-format-fuji-velvia-100.jpg</image:loc> 
+    <image:title>Angela No.5</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/angela/rodrigo-barraza-angela-no6-medium-format-fuji-velvia-100.jpg</image:loc> 
+    <image:title>Angela No.6</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
 </url>
 <url>
   <loc>https://www.rod.dev/collections/walks</loc>
   <lastmod>2022-10-01</lastmod>
-  <changefreq>daily</changefreq> 
+  <changefreq>daily</changefreq>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/walks/walks-shower-rodrigo-barraza.jpg</image:loc> 
+    <image:title>Walks - Shower</image:title>
+    <image:caption>Overlooking the container ships, breakbulk carriers and tankers from English Bay, Vancouver.</image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+    <image:image>
+      <image:loc>https://img.rod.dev/collections/walks/walks-beams-rodrigo-barraza.jpg</image:loc> 
+      <image:title>Walks - Beams</image:title>
+      <image:caption>Spotlights at Sunset Beach for the Vancouver Winter Olympics.</image:caption>
+      <image:geo_location>Vancouver, Canada</image:geo_location>
+      <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://img.rod.dev/collections/walks/walks-we-rodrigo-barraza.jpg</image:loc> 
+      <image:title>Walks - We</image:title>
+      <image:caption>WE, a sculpture by Jaume Plensa.</image:caption>
+      <image:geo_location>Vancouver, Canada</image:geo_location>
+      <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://img.rod.dev/collections/walks/walks-robson-and-granville-rodrigo-barraza.jpg</image:loc> 
+      <image:title>Walks - Robson and Granville</image:title>
+      <image:caption>Two weeks of chaos, as people flood the streets in preperation for the Vancouver Winter Olympics.</image:caption>
+      <image:geo_location>Vancouver, Canada</image:geo_location>
+      <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://img.rod.dev/collections/walks/walks-alley-river-rodrigo-barraza.jpg</image:loc> 
+      <image:title>Walks - Shower</image:title>
+      <image:caption>Overlooking the container ships, breakbulk carriers and tankers from English Bay, Vancouver.</image:caption>
+      <image:geo_location>Vancouver, Canada</image:geo_location>
+      <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://img.rod.dev/collections/walks/walks-the-three-workers-rodrigo-barraza.jpg</image:loc> 
+      <image:title>Walks - The Three Workers</image:title>
+      <image:caption>Also known as the 3Ds; Dirty, Dangerous and Demanding is a North American neologism derived from the Japanese expression: kitanai, kiken, kitsui[1] (汚い "dirty", 危険 "dangerous", きつい "demanding"), and refers to certain kinds of labor often performed by unionized blue-collar workers.</image:caption>
+      <image:geo_location>Vancouver, Canada</image:geo_location>
+      <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+    </image:image>
+  </image:image>
 </url>
 <url>
   <loc>https://www.rod.dev/collections/persons</loc>
   <lastmod>2022-10-01</lastmod>
-  <changefreq>daily</changefreq> 
+  <changefreq>daily</changefreq>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/persons/rodrigo-barraza-persons-the-landlord-medium-format-fuji-provia-100f.jpg</image:loc> 
+    <image:title>The Landlord</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/persons/rodrigo-barraza-persons-the-writer-medium-format-fuji-provia-100f.jpg</image:loc> 
+    <image:title>The Writer</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/persons/rodrigo-barraza-persons-the-art-teacher-medium-format-fuji-provia-100f.jpg</image:loc> 
+    <image:title>The Art Teacher</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/persons/rodrigo-barraza-persons-the-vagabonds-medium-format-fuji-provia-100f.jpg</image:loc> 
+    <image:title>The Vagabonds</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/persons/rodrigo-barraza-persons-the-actor-medium-format-fuji-provia-100f.jpg</image:loc> 
+    <image:title>The Actor</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/persons/rodrigo-barraza-persons-the-courier-medium-format-fuji-provia-100f.jpg</image:loc> 
+    <image:title>The Courier</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/persons/rodrigo-barraza-persons-the-clerk-medium-format-fuji-provia-100f.jpg</image:loc> 
+    <image:title>The Clerk</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/persons/rodrigo-barraza-persons-the-engineer-medium-format-fuji-provia-100f.jpg</image:loc> 
+    <image:title>The Engineer</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
 </url>
 <url>
-  <loc>https://www.rod.dev/collections/nature</loc>
+  <loc>https://www.rod.dev/collections/natural</loc>
   <lastmod>2022-10-01</lastmod>
-  <changefreq>daily</changefreq> 
+  <changefreq>daily</changefreq>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/natural/rodrigo-barraza-natural-over-the-rainbow.jpg</image:loc> 
+    <image:title>Natural - Over The Rainbow</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/natural/rodrigo-barraza-natural-orange-cone.jpg</image:loc> 
+    <image:title>Natural - Orange Cone</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/natural/rodrigo-barraza-natural-seagull.jpg</image:loc> 
+    <image:title>Natural - Seagull</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/natural/rodrigo-barraza-natural-grass-blades.jpg</image:loc> 
+    <image:title>Natural - Grass Blades</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
 </url>
 <url>
   <loc>https://www.rod.dev/collections/urban</loc>
   <lastmod>2022-10-01</lastmod>
-  <changefreq>daily</changefreq> 
+  <changefreq>daily</changefreq>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/urban/rodrigo-barraza-urban-the-keefer-vancouver.jpg</image:loc> 
+    <image:title>Urban - The Keefer</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/urban/rodrigo-barraza-urban-startup.jpg</image:loc> 
+    <image:title>Urban - Startup</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/urban/rodrigo-barraza-urban-bc-stadium.jpg</image:loc> 
+    <image:title>Urban - BC Stadium</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/urban/rodrigo-barraza-urban-vintage-motorcycle.jpg</image:loc> 
+    <image:title>Urban - Vintage Motorcycle</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/urban/rodrigo-barraza-urban-santa-maria-lima-peru.jpg</image:loc> 
+    <image:title>Urban - Santa Maria</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/urban/rodrigo-barraza-urban-bichon-frise.jpg</image:loc> 
+    <image:title>Urban - Bichon Frise</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/urban/rodrigo-barraza-urban-false-creek.jpg</image:loc> 
+    <image:title>Urban - False Creek</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/urban/rodrigo-barraza-urban-trankslink.jpg</image:loc> 
+    <image:title>Urban - Translink</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/urban/rodrigo-barraza-urban-pavement.jpg</image:loc> 
+    <image:title>Urban - Pavement</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/urban/rodrigo-barraza-urban-bricks-and-windows.jpg</image:loc> 
+    <image:title>Urban - Bricks and Windows</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/urban/rodrigo-barraza-urban-the-back-alley.jpg</image:loc> 
+    <image:title>Urban - Back Alley</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
 </url>
 <url>
-  <loc>https://www.rod.dev/collections/lollipop</loc>
+  <loc>https://www.rod.dev/collections/lollipops</loc>
   <lastmod>2022-10-01</lastmod>
-  <changefreq>daily</changefreq> 
+  <changefreq>daily</changefreq>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/lollipop/rodrigo-barraza-lollipops-vanilla-medium-format-fuji-velvia-100.jpg</image:loc> 
+    <image:title>Lollipops - Vanilla</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/lollipop/rodrigo-barraza-lollipops-strawberry-medium-format-fuji-velvia-100.jpg</image:loc> 
+    <image:title>Lollipops - Strawberry</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/lollipop/rodrigo-barraza-lollipops-blue-raspberry-medium-format-fuji-velvia-100.jpg</image:loc> 
+    <image:title>Lollipops - Blue Raspberry</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
 </url>
 <url>
   <loc>https://www.rod.dev/collections/aura-of-home</loc>
   <lastmod>2022-10-01</lastmod>
-  <changefreq>daily</changefreq> 
+  <changefreq>daily</changefreq>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/aura-of-home/rodrigo-barraza-lollipops-blue-raspberry-medium-format-fuji-velvia-100.jpg</image:loc> 
+    <image:title>Lollipops - Blue Raspberry</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/aura-of-home/rodrigo-barraza-lollipops-blue-raspberry-medium-format-fuji-velvia-100.jpg</image:loc> 
+    <image:title>Lollipops - Blue Raspberry</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/aura-of-home/rodrigo-barraza-lollipops-blue-raspberry-medium-format-fuji-velvia-100.jpg</image:loc> 
+    <image:title>Lollipops - Blue Raspberry</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/aura-of-home/rodrigo-barraza-lollipops-blue-raspberry-medium-format-fuji-velvia-100.jpg</image:loc> 
+    <image:title>Lollipops - Blue Raspberry</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/aura-of-home/rodrigo-barraza-lollipops-blue-raspberry-medium-format-fuji-velvia-100.jpg</image:loc> 
+    <image:title>Lollipops - Blue Raspberry</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
 </url>
 <url>
   <loc>https://www.rod.dev/collections/portraiture</loc>
   <lastmod>2022-10-01</lastmod>
-  <changefreq>daily</changefreq> 
+  <changefreq>daily</changefreq>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/portraiture/rodrigo-barraza-portraiture-fine-goldkid-buni-kor.jpg</image:loc> 
+    <image:title>Portraiture - FINE</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/portraiture/rodrigo-barraza-portraiture-book-of-kings-cameron-crosby-tomislav-pejic.jpg</image:loc> 
+    <image:title>Portraiture - Book of Kings</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/portraiture/rodrigo-barraza-portraiture-hatch-door.jpg</image:loc> 
+    <image:title>Portraiture - Hatch Door</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/portraiture/rodrigo-barraza-portraiture-cultivating-mass.jpg</image:loc> 
+    <image:title>Portraiture - Cultivating Mass</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/portraiture/rodrigo-barraza-portraiture-pink-bricks.jpg</image:loc> 
+    <image:title>Portraiture - Pink Bricks</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/portraiture/rodrigo-barraza-portraiture-red-wires.jpg</image:loc> 
+    <image:title>Portraiture - Red Wires</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/portraiture/rodrigo-barraza-portraiture-weeping-shrub.jpg</image:loc> 
+    <image:title>Portraiture - Weeping Shrub</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/portraiture/rodrigo-barraza-portraiture-beret-and-beer.jpg</image:loc> 
+    <image:title>Portraiture - Beret and Beer</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/portraiture/rodrigo-barraza-portraiture-fern-and-gold.jpg</image:loc> 
+    <image:title>Portraiture - Fern and Gold</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/portraiture/rodrigo-barraza-portraiture-7up.jpg</image:loc> 
+    <image:title>Portraiture - 7up</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/portraiture/rodrigo-barraza-portraiture-slide-up.jpg</image:loc> 
+    <image:title>Portraiture - Slide Up</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/portraiture/rodrigo-barraza-portraiture-checkered-hearts.jpg</image:loc> 
+    <image:title>Portraiture - Checkered Hearts</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/portraiture/rodrigo-barraza-portraiture-spring-hike.jpg</image:loc> 
+    <image:title>Portraiture - Spring Hike</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/portraiture/rodrigo-barraza-portraiture-wedding.jpg</image:loc> 
+    <image:title>Portraiture - Wedding</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/portraiture/rodrigo-barraza-portraiture-happy-couple.jpg</image:loc> 
+    <image:title>Portraiture - Happy Couple</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/portraiture/rodrigo-barraza-portraiture-amar.jpg</image:loc> 
+    <image:title>Portraiture - Amar</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/portraiture/rodrigo-barraza-portraiture-jean-paul.jpg</image:loc> 
+    <image:title>Portraiture - Jean Paul</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
+  <image:image>
+    <image:loc>https://img.rod.dev/collections/portraiture/drigo-barraza-portraiture-jesse.jpg</image:loc> 
+    <image:title>Portraiture - Jesse</image:title>
+    <image:caption></image:caption>
+    <image:geo_location>Vancouver, Canada</image:geo_location>
+    <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
+  </image:image>
 </url>
 <url>
   <loc>https://www.rod.dev/collections/cities</loc>
   <lastmod>2022-10-01</lastmod>
-  <changefreq>daily</changefreq> 
+  <changefreq>daily</changefreq>
 </url>
 <url>
   <loc>https://www.rod.dev/collections/aerial</loc>
   <lastmod>2022-10-01</lastmod>
-  <changefreq>daily</changefreq> 
+  <changefreq>daily</changefreq>
 </url>
 <url>
   <loc>https://www.rod.dev/collections/layers</loc>
   <lastmod>2022-10-01</lastmod>
-  <changefreq>daily</changefreq> 
+  <changefreq>daily</changefreq>
 </url>
 <url>
   <loc>https://www.rod.dev/collections/artifacts</loc>
   <lastmod>2022-10-01</lastmod>
-  <changefreq>daily</changefreq> 
+  <changefreq>daily</changefreq>
 </url>
 <url>
   <loc>https://www.rod.dev/collections/slashed</loc>
   <lastmod>2022-10-01</lastmod>
-  <changefreq>daily</changefreq> 
+  <changefreq>daily</changefreq>
 </url>
 
 <url>
   <loc>https://www.rod.dev/collections/spotless</loc>
   <lastmod>2022-10-01</lastmod>
-  <changefreq>daily</changefreq> 
+  <changefreq>daily</changefreq>
 </url>
 <url>
   <loc>https://www.rod.dev/collections/tv-date</loc>
   <lastmod>2022-10-01</lastmod>
-  <changefreq>daily</changefreq> 
+  <changefreq>daily</changefreq>
 </url>
 <url>
   <loc>https://www.rod.dev/collections/rip-apart</loc>
   <lastmod>2022-10-01</lastmod>
-  <changefreq>daily</changefreq> 
+  <changefreq>daily</changefreq>
 </url>
 
 <url>
   <loc>https://www.rod.dev/collections/tardigrades</loc>
   <lastmod>2022-10-01</lastmod>
-  <changefreq>daily</changefreq> 
+  <changefreq>daily</changefreq>
 </url>
 <url>
   <loc>https://www.rod.dev/collections/crystal-landscapes</loc>
   <lastmod>2022-10-01</lastmod>
-  <changefreq>daily</changefreq> 
+  <changefreq>daily</changefreq>
 </url>
 <url>
   <loc>https://www.rod.dev/collections/mollusca</loc>
   <lastmod>2022-10-01</lastmod>
-  <changefreq>daily</changefreq> 
+  <changefreq>daily</changefreq>
 </url>
 
 <url>
   <loc>https://www.rod.dev/collections/ainimations</loc>
   <lastmod>2022-10-01</lastmod>
-  <changefreq>daily</changefreq> 
+  <changefreq>daily</changefreq>
 </url>
 
 <url>
   <loc>https://www.rod.dev/collections/super-mario</loc>
   <lastmod>2022-10-01</lastmod>
-  <changefreq>daily</changefreq> 
+  <changefreq>daily</changefreq>
 </url>
 </urlset>

@@ -1,10 +1,5 @@
 <template>
   <main collection-view>
-    <!-- <div title-one>
-        <div container>
-            <h1>{{currentCollection.title}}</h1>
-        </div>
-    </div> -->
     <div collection
     itemscope itemtype="https://schema.org/Collection" :itemid="`https://rod.dev${$route.fullPath}`">
         <div collection-deets>
@@ -14,11 +9,9 @@
                     <span itemprop="dateCreated">{{currentCollection.year}}</span>
                 </div>
                 <p>{{currentCollection.medium}}</p>
-                <p duration>{{currentCollection.duration}}</p>
+                <p duration>{{humanDuration(currentCollection.duration)}}</p>
                 <p v-if="currentCollection.ekphrasis" ekphrasis>{{currentCollection.ekphrasis}}</p>
                 <p v-if="currentCollection.description" itemprop="abstract" description v-html="currentCollection.description"></p>
-                <!-- <link v-for="(work, workIndex) in currentCollection.works" v-bind:key="workIndex"
-                itemprop="hasPart" itemscope itemtype="https://schema.org/CreativeWork" :itemid="work.path" /> -->
             </div>
         </div>
         <div work
@@ -27,7 +20,7 @@
             <div container>
                 <img v-if="work.imagePath" v-on:click="imageFullscreen($event, currentCollection, work)"
                 v-bind:key="work.title"
-                :src="renderPath($event, currentCollection.path, work.imagePath)"
+                :src="renderAssetPath(work.imagePath, currentCollection.path)"
                 :alt="work.description"
                 :title="`${currentCollection.title} - ${work.title}, ${work.medium}, ${work.year}. ${work.description}`"
                 itemprop="image"/>
@@ -35,7 +28,7 @@
                 :key="work.title"
                 v-if="work.videoPath"
                 itemprop="video">
-                    <source :src="require(`@/assets/collections/${currentCollection.path}/${work.videoPath}.mp4`)" type="video/mp4">
+                    <source :src="renderAssetPath(work.videoPath, currentCollection.path)" type="video/mp4">
                      Your browser does not support the video tag.
                 </video>
                 <div card v-if="currentCollection.works.length >= 2">
@@ -44,12 +37,11 @@
                         <span year itemprop="dateCreated">{{work.year}}</span>
                     </div>
                     <p>{{work.medium}}</p>
-                    <p v-if="work.duration">{{work.duration}}</p>
+                    <p v-if="work.duration">{{humanDuration(work.duration)}}</p>
                     <p ekphrasis v-if="work.ekphrasis">{{work.ekphrasis}}</p>
                     <p info itemprop="abstract" v-if="work.description" v-html="work.description"></p>
                 </div>
             </div>
-            <!-- <link itemprop="isPartOf" itemscope itemtype="https://schema.org/Collection" :itemid="$route.fullPath" /> -->
         </div>
     </div>
     <div container more-collections>
@@ -59,17 +51,12 @@
                 <router-link link :to="`/collections/${collection.path}`" 
                 @mouseover="onMouseover"
                 @mouseleave="onMouseleave">
-                    <!-- <div the-image>
-                        <img :src="require(`@/assets/${collection.imagePath}.jpg`)"/>
-                        <div the-name>{{collection.title}}</div>
-                    </div> -->
                     <div image>
-                        <img v-if="!collection.works[0].videoPath && collection.imagePath" :src="require(`@/assets/${collection.imagePath}.jpg`)"/>
-                        <img v-if="!collection.works[0].videoPath && !collection.imagePath" :src="require(`@/assets/collections/${collection.path}/${collection.works[0].imagePath}.jpg`)"/>
+                        <img v-if="!collection.works[0].videoPath && !collection.imagePath" :src="renderAssetPath(collection.works[0].imagePath, collection.path)"/>
                         <video v-if="collection.works[0].videoPath" muted loop
-                        itemprop="video"
-                        :poster="collection.imagePath ? require(`@/assets/${collection.imagePath}.jpg`) : ''">
-                            <source :src="require(`@/assets/collections/${collection.path}/${collection.works[0].videoPath}.mp4`)" type="video/mp4">
+                        itemprop="video" preload="metadata"
+                        :poster="collection.poster ? renderAssetPath(collection.poster, collection.path) : ''">
+                            <source :src="renderAssetPath(collection.works[0].videoPath, collection.path)" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                         <div overlay>
@@ -90,44 +77,114 @@
 
 <script>
 import lodash from 'lodash';
+import moment from 'moment';
 import EventLibrary from '@/libraries/EventLibrary';
+import UtilityLibrary from '@/libraries/UtilityLibrary';
 import ArtCollectionsCollection from '@/collections/ArtCollectionsCollection';
-// import ButtonComponent from '@/components/ButtonComponent';
 
 export default {
     name: 'CollectionView',
     components: {
-        // ButtonComponent,
     },
     data() {
         return {
             currentCollection: this.$route.meta.currentCollection,
             artCollections: lodash.shuffle(ArtCollectionsCollection),
             moreCollections: this.$route.meta.moreCollections,
+            renderAssetPath: UtilityLibrary.renderAssetPath,
+            s3Assets: false,
         }
     },
     beforeCreate() {
     },
     created() {
-        this.loadData();
+        const collection = this.currentCollection;
+        const works = this.currentCollection.works;
+        const schemaArray = [];
+
+        // const collectionObject = {
+        //     "@context": "https://schema.org",
+        //     "@graph": [
+        //         {
+        //             "@id": `https://rod.dev/collections/${collection.path}`,
+        //             "@type": "Collection",
+        //             "name": collection.title,
+        //             "creator": "Rodrigo Barraza",
+        //             "hasPart": [
+        //             ]
+        //         }
+        //     ]
+        // }
+
+        works.forEach((work) => {
+            if (work.imagePath) {
+                const imageObject = {
+                    "@context": "https://schema.org/",
+                    "@type": "ImageObject",
+                    "contentUrl": UtilityLibrary.renderAssetPath(work.imagePath, collection.path),
+                    "license": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+                    // "acquireLicensePage": "https://example.com/how-to-use-my-images"
+                }
+                const creativeWorkObject = {
+                    "@context": "https://schema.org/",
+                    "@type": "CreativeWork",
+                    "name": work.title,
+                    "author": "Rodrigo Barraza",
+                    "image": imageObject,
+                    // "@id": "http://www.worldcat.org/oclc/17105155",
+                    // "isPartOf": {
+                    //     "@id": "http://example.org/colls/68"
+                    // },
+                }
+                schemaArray.push(creativeWorkObject);
+            } else if (work.videoPath) {
+                const videoObject = {
+                    "@context": "https://schema.org",
+                    "@type": "VideoObject",
+                    "name": work.title,
+                    "description": work.description,
+                    "thumbnailUrl": work.poster,
+                    "uploadDate": work.uploadDate,
+                    "duration": moment.duration(work.duration, 'seconds').toISOString(),
+                    "contentUrl": UtilityLibrary.renderAssetPath(work.videoPath, collection.path),
+                    // "embedUrl": "https://www.example.com/embed/123",
+                    // "interactionStatistic": {
+                    //     "@type": "InteractionCounter",
+                    //     "interactionType": { "@type": "WatchAction" },
+                    //     "userInteractionCount": 5647018
+                    // }
+                }
+                schemaArray.push(videoObject);
+            }
+        });
+        const script = document.createElement('script');
+        script.setAttribute('type', 'application/ld+json');
+        script.textContent = JSON.stringify(schemaArray);
+        document.head.appendChild(script);
     },
     mounted() {
     },
     methods: {
-        renderPath(e, collectionPath, imagePath) {
-            // @/assets/collections/${currentCollection.path}/${work.imagePath}.jpg
-            let path = require(`@/assets/collections/${collectionPath}/${imagePath}.jpg`);
-            return path;
+        humanDuration(durationInSeconds) {
+            var minutes = moment.duration(durationInSeconds, 'seconds').minutes();
+            var seconds = moment.duration(durationInSeconds, 'seconds').seconds();
+            var humanDurationString = '';
+            if (seconds && !minutes) {
+                humanDurationString = `${seconds} ${seconds === 1 ? 'second' : 'seconds'}`;
+            } else if (minutes && !seconds) {
+                humanDurationString = `${minutes} ${minutes === 1 ? 'minute' : 'minutes'}`
+            } else if (minutes && seconds) {
+                humanDurationString = `${minutes} ${minutes === 1 ? 'minute' : 'minutes'} ${seconds} ${seconds === 1 ? 'second' : 'seconds'}`
+            }
+            return humanDurationString;
         },
         imageFullscreen(event, collection, work) {
             event.srcElement.requestFullscreen();
-            EventLibrary.postEventImageFullscreen(`/${collection.path}/${work.imagePath}.jpg`);
+            EventLibrary.postEventImageFullscreen(`/${collection.path}/${work.imagePath}`);
         },
         copyText(text) {
             const hashPath = `${window.location.origin}${window.location.pathname}#${text}`;
             navigator.clipboard.writeText(hashPath);
-        },
-        loadData() {
         },
         onMouseover(event) {
             if (event.target.firstElementChild?.firstElementChild?.tagName === 'VIDEO') {
@@ -141,20 +198,6 @@ export default {
         },
     },
     watch: {
-        // '$route': {
-        //     handler: function() {
-        //         function clearSource(item) {
-        //             item.src = '';
-        //         }
-        //         const allCollectionImages = document.querySelectorAll('[work] img');
-        //         allCollectionImages.forEach(clearSource);
-        //         setTimeout(this.loadData, 1);
-        //         // if (newRoute === 'collection') {
-        //         // }
-        //     },
-        //     deep: true,
-        //     immediate: true
-        // }
     }
 }
 </script>
@@ -215,10 +258,13 @@ export default {
                     display: flex;
                     flex-wrap: wrap;
                     gap: 0px 8px;
+                    display: inline-block;
+                    width: 100%;
                     h2 {
                         display: inline;
                     }
                     [year] {
+                        margin-left: 8px;
                         font-weight: 100;
                         @media (max-width: 1432px) {
                             font-size: calc(1.35vw + 13px);

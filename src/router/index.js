@@ -50,8 +50,11 @@ const router = createRouter({
 router.beforeEach(to => {
     let documentTitle;
     let documentDescription;
-    let documentKeywords = 'testing, testing2';
-    console.log(ArtCollectionsCollection.length);
+    let documentKeywords = '';
+    const ldJsonScript = document.querySelector('script[type="application/ld+json"]');
+    if (ldJsonScript) {
+      ldJsonScript.remove();
+    }
     if (to.name === 'collection') {
         const currentCollectionParam = to.params.collection;
         const currentCollection = lodash.find(ArtCollectionsCollection, {path: currentCollectionParam});
@@ -59,7 +62,7 @@ router.beforeEach(to => {
         to.meta.currentCollection = currentCollection;
         to.meta.moreCollections = moreCollections;
         documentTitle = `Rodrigo Barraza - ${to.meta.title} - ${currentCollection.title}`;
-        documentDescription = currentCollection.description;
+        documentDescription = currentCollection.documentDescription;
         documentKeywords = currentCollection.documentKeywords;
         if (currentCollection.documentKeywords) {
           documentTitle = currentCollection.documentTitle;

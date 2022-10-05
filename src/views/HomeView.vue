@@ -12,20 +12,20 @@
             <router-link image :to="`/collections/${collection.path}`"
             @mouseover="onMouseover"
             @mouseleave="onMouseleave">
-                <!-- <div theimage :style="{ 'background-image': 'url('+ require(`@/assets/${collection.imagePath}.jpg`) + ')' }"> -->
+                <!-- <div theimage :style="{ 'background-image': 'url('+ require(`@/assets/${collection.thumbnail}.jpg`) + ')' }"> -->
                 <div theimage>
-                    <img v-if="!collection.works[0].videoPath && collection.imagePath" :src="require(`@/assets/${collection.imagePath}.jpg`)"
+                    <img v-if="!collection.works[0].videoPath && collection.thumbnail" :src="renderAssetPath(collection.thumbnail, collection.path)"
                     :alt="collection.description"
                     :title="`Rodrigo Barraza, ${collection.title}, ${collection.medium}, ${collection.year}. ${collection.description}`"/>
 
-                    <img v-if="!collection.works[0].videoPath && !collection.imagePath" :src="require(`@/assets/collections/${collection.path}/${collection.works[0].imagePath}.jpg`)"
+                    <img v-if="!collection.works[0].videoPath && !collection.thumbnail" :src="renderAssetPath(collection.works[0].imagePath, collection.path)"
                     :alt="collection.description"
                     :title="`Rodrigo Barraza, ${collection.title}, ${collection.medium}, ${collection.year}. ${collection.description}`"/>
 
                     <video v-if="collection.works[0].videoPath" muted loop
                     itemprop="video"
-                    :poster="collection.imagePath ? require(`@/assets/${collection.imagePath}.jpg`) : ''">
-                        <source :src="require(`@/assets/collections/${collection.path}/${collection.works[0].videoPath}.mp4`)" type="video/mp4">
+                    :poster="collection.poster ? renderAssetPath(collection.poster, collection.path) : ''">
+                        <source :src="renderAssetPath(collection.works[0].videoPath, collection.path)" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                     
@@ -42,8 +42,9 @@
 </template>
 
 <script>
-import lodash from 'lodash';
+// import lodash from 'lodash';
 import ArtCollectionsCollection from '@/collections/ArtCollectionsCollection';
+import UtilityLibrary from '@/libraries/UtilityLibrary';
 
 export default {
     name: 'HomeView',
@@ -51,7 +52,10 @@ export default {
     },
     data() {
         return {
-            collections: lodash.shuffle(ArtCollectionsCollection),
+            collections: ArtCollectionsCollection,
+            renderAssetPath: UtilityLibrary.renderAssetPath,
+            // collections: lodash.sortBy(ArtCollectionsCollection, ['year']),
+            // collections: lodash.shuffle(ArtCollectionsCollection),
         }
     },
     methods: {
@@ -75,7 +79,7 @@ export default {
 <style scoped lang="scss">
 
 .home {
-  font-family: Ubuntu;
+  font-family: 'Ubuntu', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -113,7 +117,7 @@ export default {
     padding: 0 2vw;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: repeat(8, 37.5vw);
+    grid-template-rows: repeat(9, 37.5vw);
     flex-direction: row;
     flex-wrap: wrap;
     // row-gap: 16px;

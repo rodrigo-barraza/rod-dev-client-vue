@@ -7,7 +7,7 @@ Redirect 301 /urban https://rod.dev/collections/urban
 Redirect 301 /person https://rod.dev/collections/persons
 Redirect 301 /faces https://rod.dev/collections/portraiture
 Redirect 301 /hallow https://rod.dev/collections/hallow
-Redirect 301 /plantae https://rod.dev/collections/nature
+Redirect 301 /plantae https://rod.dev/collections/natural
 Redirect 301 /tv-date https://rod.dev/collections/tv-date
 
 Redirect 301 /light https://rod.dev/
