@@ -1,45 +1,41 @@
 <template>
   <main collection-view>
-    <div collection
-    itemscope itemtype="https://schema.org/Collection" :itemid="`https://rod.dev${$route.fullPath}`">
+    <div collection>
         <div collection-deets>
             <div container>
                 <div>
-                    <h1 itemprop="name">{{currentCollection.title}}</h1>
-                    <span itemprop="dateCreated">{{currentCollection.year}}</span>
+                    <h1>{{currentCollection.title}}</h1>
+                    <span>{{currentCollection.year}}</span>
                 </div>
                 <p>{{currentCollection.medium}}</p>
                 <p duration>{{humanDuration(currentCollection.duration)}}</p>
                 <p v-if="currentCollection.ekphrasis" ekphrasis>{{currentCollection.ekphrasis}}</p>
-                <p v-if="currentCollection.description" itemprop="abstract" description v-html="currentCollection.description"></p>
+                <p v-if="currentCollection.description" description v-html="currentCollection.description"></p>
             </div>
         </div>
         <div work
-        v-for="(work, workIndex) in currentCollection.works" v-bind:key="workIndex" :id="work.path" :class="work.orientation || currentCollection.orientation" 
-        itemscope itemtype="https://schema.org/CreativeWork" :itemid="`https://rod.dev${$route.fullPath}#${work.path}`" itemprop="hasPart">
+        v-for="(work, workIndex) in currentCollection.works" v-bind:key="workIndex" :id="work.path" :class="work.orientation || currentCollection.orientation">
             <div container>
                 <img v-if="work.imagePath" v-on:click="imageFullscreen($event, currentCollection, work)"
                 v-bind:key="work.title"
                 :src="renderAssetPath(work.imagePath, currentCollection.path)"
                 :alt="work.description"
-                :title="`${currentCollection.title} - ${work.title}, ${work.medium}, ${work.year}. ${work.description}`"
-                itemprop="image"/>
+                :title="`${currentCollection.title} - ${work.title}, ${work.medium}, ${work.year}. ${work.description}`"/>
                 <video id="oneVideo" autoplay muted :controls="currentCollection.videoControls" loop poster=""
                 :key="work.title"
-                v-if="work.videoPath"
-                itemprop="video">
+                v-if="work.videoPath">
                     <source :src="renderAssetPath(work.videoPath, currentCollection.path)" type="video/mp4">
                      Your browser does not support the video tag.
                 </video>
                 <div card v-if="currentCollection.works.length >= 2">
                     <div>
-                        <h2 itemprop="name">{{work.title}}</h2>
-                        <span year itemprop="dateCreated">{{work.year}}</span>
+                        <h2>{{work.title}}</h2>
+                        <span year>{{work.year}}</span>
                     </div>
                     <p>{{work.medium}}</p>
                     <p v-if="work.duration">{{humanDuration(work.duration)}}</p>
                     <p ekphrasis v-if="work.ekphrasis">{{work.ekphrasis}}</p>
-                    <p info itemprop="abstract" v-if="work.description" v-html="work.description"></p>
+                    <p info v-if="work.description" v-html="work.description"></p>
                 </div>
             </div>
         </div>
@@ -54,7 +50,7 @@
                     <div image>
                         <img v-if="!collection.works[0].videoPath && !collection.imagePath" :src="renderAssetPath(collection.works[0].imagePath, collection.path)"/>
                         <video v-if="collection.works[0].videoPath" muted loop
-                        itemprop="video" preload="metadata"
+                     preload="metadata"
                         :poster="collection.poster ? renderAssetPath(collection.poster, collection.path) : ''">
                             <source :src="renderAssetPath(collection.works[0].videoPath, collection.path)" type="video/mp4">
                             Your browser does not support the video tag.
@@ -92,85 +88,14 @@ export default {
             artCollections: lodash.shuffle(ArtCollectionsCollection),
             moreCollections: this.$route.meta.moreCollections,
             renderAssetPath: UtilityLibrary.renderAssetPath,
+            generateCollectionSchema: UtilityLibrary.generateCollectionSchema,
             s3Assets: false,
         }
     },
     beforeCreate() {
     },
     created() {
-        const collection = this.currentCollection;
-        const works = this.currentCollection.works;
-        const schemaArray = [];
-
-        const collectionObject = {
-            "@context": "https://schema.org",
-            "@id": `https://rod.dev/collections/${collection.path}`,
-            "@type": "Collection",
-            "name": collection.title,
-            "creator": "Rodrigo Barraza",
-            "hasPart": [
-            ]
-        }
-
-        works.forEach((work) => {
-            if (work.imagePath) {
-                const imageObject = {
-                    "@context": "https://schema.org/",
-                    "@type": "ImageObject",
-                    "contentUrl": UtilityLibrary.renderAssetPath(work.imagePath, collection.path),
-                    "license": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
-                    // "acquireLicensePage": "https://example.com/how-to-use-my-images"
-                }
-                const creativeWorkObject = {
-                    "@context": "https://schema.org/",
-                    "@type": "CreativeWork",
-                    "name": work.title,
-                    "author": "Rodrigo Barraza",
-                    "image": imageObject,
-                    // "@id": "http://www.worldcat.org/oclc/17105155",
-                    // "isPartOf": {
-                    //     "@id": "http://example.org/colls/68"
-                    // },
-                }
-                schemaArray.push(creativeWorkObject);
-            } else if (work.videoPath) {
-                const videoObject = {
-                    "@context": "https://schema.org",
-                    "@type": "VideoObject",
-                    "name": work.title,
-                    "description": work.description,
-                    "thumbnailUrl": UtilityLibrary.renderAssetPath(work.poster, collection.path), //fix this
-                    "uploadDate": work.uploadDate,
-                    "duration": moment.duration(work.duration, 'seconds').toISOString(),
-                    "contentUrl": UtilityLibrary.renderAssetPath(work.videoPath, collection.path),
-                    // "embedUrl": "https://www.example.com/embed/123",
-                    // "interactionStatistic": {
-                    //     "@type": "InteractionCounter",
-                    //     "interactionType": { "@type": "WatchAction" },
-                    //     "userInteractionCount": 5647018
-                    // }
-                }
-                const creativeWorkObject = {
-                    "@context": "https://schema.org/",
-                    "@type": "CreativeWork",
-                    "name": work.title,
-                    "author": "Rodrigo Barraza",
-                    "video": videoObject,
-                    // "@id": "http://www.worldcat.org/oclc/17105155",
-                    // "isPartOf": {
-                    //     "@id": "http://example.org/colls/68"
-                    // },
-                    dateCreated: work.uploadDate,
-                    abstract: work.description,
-                }
-                schemaArray.push(creativeWorkObject);
-            }
-        });
-        collectionObject.hasPart = schemaArray;
-        const script = document.createElement('script');
-        script.setAttribute('type', 'application/ld+json');
-        script.textContent = JSON.stringify(collectionObject);
-        document.head.appendChild(script);
+        this.generateCollectionSchema(this.currentCollection)
     },
     mounted() {
     },
