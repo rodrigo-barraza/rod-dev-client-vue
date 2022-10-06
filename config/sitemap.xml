@@ -20,6 +20,31 @@
     <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
   </image:image>
 </url>
+
+<url>
+  <loc>https://www.rod.dev/rodrigo-barraza/</loc>
+  <lastmod>2022-10-01</lastmod>
+  <changefreq>daily</changefreq>
+  <video:video>
+    <video:content_loc></video:content_loc> 
+    <video:gallery_loc></video:gallery_loc>
+    <video:thumbnail_loc></video:thumbnail_loc>
+    <video:title></video:title>
+    <video:description></video:description>
+
+    <video:duration></video:duration>
+    <video:publication_date></video:publication_date>
+    <video:category></video:category>
+    <video:family_friendly></video:family_friendly>
+
+    duration
+    publication_date
+    category
+    family_friendly
+    gallery_loc
+  </video:video>
+</url>
+
 <url>
   <loc>https://www.rod.dev/collections/dreamwork</loc>
   <lastmod>2022-10-01</lastmod>

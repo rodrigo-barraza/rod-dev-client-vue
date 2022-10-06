@@ -89,6 +89,7 @@ export default {
             moreCollections: this.$route.meta.moreCollections,
             renderAssetPath: UtilityLibrary.renderAssetPath,
             generateCollectionSchema: UtilityLibrary.generateCollectionSchema,
+            createXml: UtilityLibrary.generateSitemap,
             s3Assets: false,
         }
     },
@@ -98,6 +99,7 @@ export default {
         this.generateCollectionSchema(this.currentCollection)
     },
     mounted() {
+        this.createXml();
     },
     methods: {
         humanDuration(durationInSeconds) {

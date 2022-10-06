@@ -59,7 +59,7 @@
               </ul>
             </div>
             <div animation>
-              <h3>Animation</h3>
+              <h3>AI Animation</h3>
               <ul>
                 <li
                 v-for="(collection, collectionIndex) in collectionsAnimation" v-bind:key="collectionIndex">
