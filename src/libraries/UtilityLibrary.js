@@ -2,7 +2,7 @@ import moment from 'moment';
 import ArtCollectionsCollection from '@/collections/ArtCollectionsCollection';
 import ViewsCollection from '@/collections/ViewsCollection';
 
-const useS3 = true;
+const useS3 = false;
 const UtilityLibrary = {
     renderAssetPath(assetPath, collectionPath) {
         let path = `/`;
@@ -15,7 +15,7 @@ const UtilityLibrary = {
         }
         let fullPath;
         if (useS3) {
-            fullPath = `https://img.rod.dev${path}`
+            fullPath = `https://assets.rod.dev${path}`
         } else {
             fullPath = require(`@/assets${path}`);
         }

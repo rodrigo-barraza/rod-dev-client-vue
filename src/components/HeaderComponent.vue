@@ -14,7 +14,7 @@
         <div container>
             <div name>
                 <router-link title="Rodrigo Barraza" to="/" v-on:click="closeMobileMenu">
-                    <div logo :class="[{'loading': isDocumentLoading === true}]">
+                    <div logo :style="{'background-image': 'url('+ require('@/assets/images/logo-rodrigo-animated.gif') + ')'}">
                     </div>
                     <div text>
                         RODRIGO BARRAZA
@@ -66,6 +66,7 @@
 <script>
 import EventLibrary from '@/libraries/EventLibrary';
 import SocialsCollection from '@/collections/SocialsCollection';
+import UtilityLibrary from '@/libraries/UtilityLibrary';
 
 export default {
     name: 'HeaderComponent',
@@ -78,6 +79,7 @@ export default {
             isMobileMenuOpen: false,
             socialsCollection: SocialsCollection,
             isDocumentLoading: true,
+            renderAssetPath: UtilityLibrary.renderAssetPath,
         }
     },
     created() {
@@ -188,12 +190,11 @@ header {
                     [logo] {
                         flex: 0 0 32px;
                         height: 32px;
-                        background-image: url("@/assets/logo-rodrigo.png");
                         background-size: 100%;
                         image-rendering: pixelated;
                         pointer-events: none;
                         &.loading {
-                            background-image: url("@/assets/logo-animated.gif");
+                            background-image: url("@/assets/images/logo-rodrigo-animated.gif");
                         }
                     }
                     [text] {
@@ -205,7 +206,7 @@ header {
                     }
                     &:hover {
                         [logo] {
-                            background-image: url("@/assets/logo-animated.gif");
+                            background-image: url("@/assets/images/logo-rodrigo-animated.gif");
                         }
                     }
                     @media (max-width: 400px) {

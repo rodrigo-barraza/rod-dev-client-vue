@@ -3,7 +3,7 @@
     <div container>
       <div layout>
         <div sidebar>
-          <img v-on:mouseover="hoverPortrait" :style="{ 'transform': `rotate(${portraitRotateDegrees}deg)`}" :src="require(`@/assets/about-portrait.jpg`)"
+          <img v-on:mouseover="hoverPortrait" :style="{ 'transform': `rotate(${portraitRotateDegrees}deg)`}" :src="renderAssetPath('images/about-portrait.jpg')"
             alt="A black and white photograph of Rodrigo Barraza"
             title="A black and white photograph of Rodrigo Barraza"
             itemprop="image"/>
@@ -40,7 +40,7 @@
           </div>
           <div bottom>
             <div extra-info>
-              <div collection v-for="(collection, collectionIndex) in aboutCollections" v-bind:key="collectionIndex" :itemprop="collection.name == 'institutions' ? 'alumniOf' : null" itemscope :itemtype="collection.name == 'institutions' ? 'https://schema.org/CollegeOrUniversity' : null">
+              <div collection v-for="(collection, collectionIndex) in aboutCollection" v-bind:key="collectionIndex" :itemprop="collection.name == 'institutions' ? 'alumniOf' : null" itemscope :itemtype="collection.name == 'institutions' ? 'https://schema.org/CollegeOrUniversity' : null">
                 <div title>{{collection.name}}</div>
                 <div object 
                 v-for="(object, objectIndex) in collection.collections" v-bind:key="objectIndex">
@@ -68,6 +68,8 @@
 
 <script>
 import SocialsCollection from '@/collections/SocialsCollection';
+import AboutCollection from '@/collections/AboutCollection';
+import UtilityLibrary from '@/libraries/UtilityLibrary';
 
 export default {
     name: 'WorkView',
@@ -75,91 +77,10 @@ export default {
     },
     data() {
         return {
+          renderAssetPath: UtilityLibrary.renderAssetPath,
           portraitRotateDegrees: 0,
           socials: SocialsCollection,
-          aboutCollections: [
-            {
-              name: 'institutions',
-              collections: [
-                {
-                  name: 'Bachelor of Fine Arts in Photography',
-                  year: '2011',
-                  venue: 'Emily Carr University of Art + Design',
-                  location: 'Vancouver, Canada'
-                },
-              ]
-            },
-            {
-              name: 'Recent Code',
-              collections: [
-                {
-                  name: 'Pristine Disco Diffusion',
-                  year: 'Ongoing',
-                  venue: 'Google Colab Notebook',
-                  url: 'https://colab.research.google.com/github/rodrigo-barraza/pristine-disco-diffusion/blob/master/rodrigos-pristine-disco-diffusion.ipynb',
-                },
-              ]
-            },
-            {
-              name: 'Group Exhibitions',
-              collections: [
-                {
-                  name: 'Fotografías del Mundo',
-                  year: '2019',
-                  venue: 'Museo de Arte de Lima',
-                  location: 'Lima, Peru',
-                },
-                {
-                  name: 'Five Rooms Photography Exhibition',
-                  year: '2011',
-                  venue: 'The Waldorf Hotel',
-                  location: 'Vancouver, Canada',
-                },
-                {
-                  name: 'Graduation Degree Exhibition',
-                  year: '2011',
-                  venue: 'Emily Carr University of Art & Design',
-                  location: 'Vancouver, Canada',
-                },
-                {
-                  name: 'Selfish Motives and Panchromatic Desires',
-                  year: '2010',
-                  venue: 'Anti-Social Gallery',
-                  location: 'Vancouver, Canada',
-                },
-              ]
-            },
-            {
-              name: 'cinematography',
-              collections: [
-                {
-                  name: 'Spotless',
-                  year: '2012',
-                  venue: 'director',
-                  location: 'short film',
-                  url: '/collections/spotless',
-                },
-                {
-                  name: 'Book of Kings',
-                  year: '2011',
-                  venue: 'cinematographer',
-                  location: 'short film',
-                },
-                {
-                  name: 'Rip Apart',
-                  year: '2010',
-                  venue: 'lighting technician',
-                  location: 'music video',
-                },
-                {
-                  name: 'TV Date',
-                  year: '2010',
-                  venue: 'lighting technician',
-                  location: 'music video',
-                },
-              ]
-            },
-          ],
+          aboutCollection: AboutCollection,
         }
     },
     created() {
