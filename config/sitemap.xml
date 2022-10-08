@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
-    <loc>https://rod.dev/</loc>
+    <loc>https://www.rod.dev/</loc>
     <lastmod>2022-10-07</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
-    <loc>https://rod.dev/rodrigo-barraza</loc>
+    <loc>https://www.rod.dev/rodrigo-barraza</loc>
     <lastmod>2022-10-07</lastmod>
     <changefreq>daily</changefreq>
     <image:image>
@@ -18,7 +18,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://rod.dev/collection/tardigrades</loc>
+    <loc>https://www.rod.dev/collection/tardigrades</loc>
     <lastmod>2022-10-05</lastmod>
     <changefreq>daily</changefreq>
     <image:image>
@@ -58,7 +58,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://rod.dev/collection/mollusca</loc>
+    <loc>https://www.rod.dev/collection/mollusca</loc>
     <lastmod>2022-10-05</lastmod>
     <changefreq>daily</changefreq>
     <image:image>
@@ -84,7 +84,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://rod.dev/collection/crystal-landscapes</loc>
+    <loc>https://www.rod.dev/collection/crystal-landscapes</loc>
     <lastmod>2022-10-05</lastmod>
     <changefreq>daily</changefreq>
     <image:image>
@@ -124,7 +124,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://rod.dev/collection/ainimations</loc>
+    <loc>https://www.rod.dev/collection/ainimations</loc>
     <lastmod>2022-10-05</lastmod>
     <changefreq>daily</changefreq>
     <video:video>
@@ -305,7 +305,7 @@
     </video:video>
   </url>
   <url>
-    <loc>https://rod.dev/collection/dreamwork</loc>
+    <loc>https://www.rod.dev/collection/dreamwork</loc>
     <lastmod>2022-10-05</lastmod>
     <changefreq>daily</changefreq>
     <image:image>
@@ -338,7 +338,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://rod.dev/collection/cops</loc>
+    <loc>https://www.rod.dev/collection/cops</loc>
     <lastmod>2022-10-05</lastmod>
     <changefreq>daily</changefreq>
     <image:image>
@@ -364,7 +364,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://rod.dev/collection/strolls</loc>
+    <loc>https://www.rod.dev/collection/strolls</loc>
     <lastmod>2022-10-05</lastmod>
     <changefreq>daily</changefreq>
     <image:image>
@@ -411,7 +411,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://rod.dev/collection/angela</loc>
+    <loc>https://www.rod.dev/collection/angela</loc>
     <lastmod>2022-10-05</lastmod>
     <changefreq>daily</changefreq>
     <image:image>
@@ -458,7 +458,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://rod.dev/collection/walks</loc>
+    <loc>https://www.rod.dev/collection/walks</loc>
     <lastmod>2022-10-05</lastmod>
     <changefreq>daily</changefreq>
     <image:image>
@@ -505,7 +505,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://rod.dev/collection/persons</loc>
+    <loc>https://www.rod.dev/collection/persons</loc>
     <lastmod>2022-10-05</lastmod>
     <changefreq>daily</changefreq>
     <image:image>
@@ -566,7 +566,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://rod.dev/collection/spotless</loc>
+    <loc>https://www.rod.dev/collection/spotless</loc>
     <lastmod>2022-10-05</lastmod>
     <changefreq>daily</changefreq>
     <video:video>
@@ -582,7 +582,7 @@
     </video:video>
   </url>
   <url>
-    <loc>https://rod.dev/collection/tv-date</loc>
+    <loc>https://www.rod.dev/collection/tv-date</loc>
     <lastmod>2022-10-05</lastmod>
     <changefreq>daily</changefreq>
     <video:video>
@@ -598,7 +598,7 @@
     </video:video>
   </url>
   <url>
-    <loc>https://rod.dev/collection/rip-apart</loc>
+    <loc>https://www.rod.dev/collection/rip-apart</loc>
     <lastmod>2022-10-05</lastmod>
     <changefreq>daily</changefreq>
     <video:video>
@@ -614,7 +614,7 @@
     </video:video>
   </url>
   <url>
-    <loc>https://rod.dev/collection/natural</loc>
+    <loc>https://www.rod.dev/collection/natural</loc>
     <lastmod>2022-10-05</lastmod>
     <changefreq>daily</changefreq>
     <image:image>
@@ -647,7 +647,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://rod.dev/collection/urban</loc>
+    <loc>https://www.rod.dev/collection/urban</loc>
     <lastmod>2022-10-05</lastmod>
     <changefreq>daily</changefreq>
     <image:image>
@@ -729,7 +729,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://rod.dev/collection/floppy-mario</loc>
+    <loc>https://www.rod.dev/collection/floppy-mario</loc>
     <lastmod>2022-10-05</lastmod>
     <changefreq>daily</changefreq>
     <image:image>
@@ -741,7 +741,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://rod.dev/collection/lollipops</loc>
+    <loc>https://www.rod.dev/collection/lollipops</loc>
     <lastmod>2022-10-05</lastmod>
     <changefreq>daily</changefreq>
     <image:image>
@@ -767,7 +767,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://rod.dev/collection/layers</loc>
+    <loc>https://www.rod.dev/collection/layers</loc>
     <lastmod>2022-10-05</lastmod>
     <changefreq>daily</changefreq>
     <image:image>
@@ -800,7 +800,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://rod.dev/collection/aura-of-home</loc>
+    <loc>https://www.rod.dev/collection/aura-of-home</loc>
     <lastmod>2022-10-05</lastmod>
     <changefreq>daily</changefreq>
     <image:image>
@@ -840,7 +840,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://rod.dev/collection/portraiture</loc>
+    <loc>https://www.rod.dev/collection/portraiture</loc>
     <lastmod>2022-10-05</lastmod>
     <changefreq>daily</changefreq>
     <image:image>
@@ -971,7 +971,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://rod.dev/collection/cities</loc>
+    <loc>https://www.rod.dev/collection/cities</loc>
     <lastmod>2022-10-05</lastmod>
     <changefreq>daily</changefreq>
     <image:image>
@@ -1018,7 +1018,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://rod.dev/collection/aerial</loc>
+    <loc>https://www.rod.dev/collection/aerial</loc>
     <lastmod>2022-10-05</lastmod>
     <changefreq>daily</changefreq>
     <image:image>
@@ -1051,7 +1051,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://rod.dev/collection/artifacts</loc>
+    <loc>https://www.rod.dev/collection/artifacts</loc>
     <lastmod>2022-10-05</lastmod>
     <changefreq>daily</changefreq>
     <image:image>
@@ -1140,7 +1140,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://rod.dev/collection/slashed</loc>
+    <loc>https://www.rod.dev/collection/slashed</loc>
     <lastmod>2022-10-05</lastmod>
     <changefreq>daily</changefreq>
     <image:image>

@@ -2,7 +2,7 @@ import AxiosWrapper from '@/wrappers/AxiosWrapper';
 
 const DigestemApiLibrary = {
     // RODRIGO_SERVICE: 'http://localhost:9090/',
-    RODRIGO_SERVICE: 'https://apis.rod.dev/',
+    RODRIGO_SERVICE: 'https://api.rod.dev/',
     SESSION_SERVICE: 'session-service',
     async postEvent(form) {
         const method = 'post';
