@@ -181,7 +181,6 @@ p {
     [logo] {
       flex: 0 0 20px;
       height: 20px;
-      background-image: url("@/assets/images/logo-rodrigo.png");
       background-size: 100%;
       image-rendering: pixelated;
       pointer-events: none;
@@ -192,9 +191,6 @@ p {
     &:hover {
       text-decoration: underline;
       text-underline-offset: 4px;
-      [logo] {
-        background-image: url("@/assets/images/logo-rodrigo-animated.gif");
-      }
     }
   }
   ul {

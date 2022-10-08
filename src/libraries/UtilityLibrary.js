@@ -2,7 +2,7 @@ import moment from 'moment';
 import ArtCollectionsCollection from '@/collections/ArtCollectionsCollection';
 import ViewsCollection from '@/collections/ViewsCollection';
 
-const useS3 = false;
+const useS3 = true;
 const UtilityLibrary = {
     renderAssetPath(assetPath, collectionPath) {
         let path = `/`;
@@ -111,7 +111,7 @@ const UtilityLibrary = {
             const changefreqElement = doc.createElement('changefreq');
 
             locElement.innerHTML =  `https://rod.dev${route.path}`;
-            lastmodElement.innerHTML = '2022-10-05';
+            lastmodElement.innerHTML = '2022-10-07';
             changefreqElement.innerHTML = 'daily';
 
             urlElement.appendChild(locElement);
@@ -127,7 +127,7 @@ const UtilityLibrary = {
                     const imageGeoLocationElement = doc.createElement("image:geo_location");
                     const imageLicenseElement = doc.createElement("image:license");
 
-                    imageLocElement.innerHTML = this.renderAssetPath(image.path);
+                    imageLocElement.innerHTML = this.renderAssetPath(`images/${image.path}`);
                     imageTitleElement.innerHTML = image.title;
                     imageCaptionElement.innerHTML = image.caption;
                     imageGeoLocationElement.innerHTML = image.geoLocation || 'Vancouver, Canada';

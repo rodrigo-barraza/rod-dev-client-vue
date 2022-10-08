@@ -2,6 +2,7 @@
 import lodash from 'lodash';
 import { createRouter, createWebHistory } from 'vue-router'
 import ArtCollectionsCollection from '@/collections/ArtCollectionsCollection';
+import ViewsCollection from '@/collections/ViewsCollection';
 import SEOConstants from '@/constants/SEOConstants';
 import HomeView from '../views/HomeView.vue'
 import CollectionView from '../views/CollectionView.vue'
@@ -67,6 +68,11 @@ router.beforeEach(to => {
         if (currentCollection.documentKeywords) {
           documentTitle = currentCollection.documentTitle;
         }
+    } else if (to.name === 'home' || to.name === 'about') {
+      const view = lodash.find(ViewsCollection, {'name': to.name});
+      documentTitle = view.documentTitle;
+      documentDescription = view.documentDescription;
+      documentKeywords = view.documentKeywords;
     } else if (to.meta.title) {
         documentTitle = `Rodrigo Barraza - ${to.meta.title}`;
         documentDescription = "Default description";

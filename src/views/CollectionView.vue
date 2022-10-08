@@ -99,7 +99,7 @@ export default {
         this.generateCollectionSchema(this.currentCollection)
     },
     mounted() {
-        this.createXml();
+        // this.createXml();
     },
     methods: {
         humanDuration(durationInSeconds) {
@@ -289,6 +289,9 @@ export default {
                 text-align: center;
                 line-height: 26px;
                 text-align: justify;
+            }
+            [ekphrasis] {
+                color: #9a9a9a;
             }
         }
     }

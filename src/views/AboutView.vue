@@ -3,7 +3,7 @@
     <div container>
       <div layout>
         <div sidebar>
-          <img v-on:mouseover="hoverPortrait" :style="{ 'transform': `rotate(${portraitRotateDegrees}deg)`}" :src="renderAssetPath('images/about-portrait.jpg')"
+          <img v-on:mouseover="hoverPortrait" :style="{ 'transform': `rotate(${portraitRotateDegrees}deg)`}" :src="renderAssetPath('images/rodrigo-barraza-black-and-white-portrait.jpg')"
             alt="A black and white photograph of Rodrigo Barraza"
             title="A black and white photograph of Rodrigo Barraza"
             itemprop="image"/>

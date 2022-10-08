@@ -3,15 +3,15 @@ const ViewsCollection = [
         path: '/',
         name: 'home',
         documentTitle: 'Rodrigo Barraza: Photographer, Software Engineer, Artist',
-        documentKeywords: 'rodrigo barraza, vancouver, photographer, graphic, design, portfolio, wedding, portrait, boudoir, portrait, art, monochrome',
-        documentDescription: 'Visual portfolio of Rodrigo Barraza, a Vancouver-based photographer, software engineer and artist.',
+        documentKeywords: 'rodrigo, barraza, rodrigo barraza, vancouver, photographer, software engineer, artist, ai artist, software consultant, vancouver photographer',
+        documentDescription: 'Portfolio of Rodrigo Barraza, a Vancouver-based photographer, software engineer and artist.',
     },
     {
         path: '/rodrigo-barraza',
         name: 'about',
-        documentTitle: 'Rodrigo Barraza: Photographer, Software Engineer, Artist',
-        documentKeywords: 'rodrigo barraza, vancouver, photographer, graphic, design, portfolio, wedding, portrait, boudoir, portrait, art, monochrome',
-        documentDescription: 'Visual portfolio of Rodrigo Barraza, a Vancouver-based photographer, software engineer and artist.',
+        documentTitle: `The Photographer, Software Engineer, Artist: Rodrigo Barraza`,
+        documentKeywords: 'rodrigo, barraza, rodrigo barraza, vancouver, photographer, software engineer, artist, ai artist, animator, emily carr university',
+        documentDescription: 'About Rodrigo Barraza, a Vancouver-based photographer, software engineer and artist.',
         images: [
             {
                 title: 'Portrait of Rodrigo Barraza',

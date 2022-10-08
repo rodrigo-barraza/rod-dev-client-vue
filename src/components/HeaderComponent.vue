@@ -14,7 +14,7 @@
         <div container>
             <div name>
                 <router-link title="Rodrigo Barraza" to="/" v-on:click="closeMobileMenu">
-                    <div logo :style="{'background-image': 'url('+ require('@/assets/images/logo-rodrigo-animated.gif') + ')'}">
+                    <div logo>
                     </div>
                     <div text>
                         RODRIGO BARRAZA
@@ -193,9 +193,6 @@ header {
                         background-size: 100%;
                         image-rendering: pixelated;
                         pointer-events: none;
-                        &.loading {
-                            background-image: url("@/assets/images/logo-rodrigo-animated.gif");
-                        }
                     }
                     [text] {
                         flex: 0 0 auto;
@@ -203,11 +200,6 @@ header {
                         justify-content: flex-start;
                         align-items: center;
                         pointer-events: none;
-                    }
-                    &:hover {
-                        [logo] {
-                            background-image: url("@/assets/images/logo-rodrigo-animated.gif");
-                        }
                     }
                     @media (max-width: 400px) {
                         [logo] {

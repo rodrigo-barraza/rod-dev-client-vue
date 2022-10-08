@@ -42,7 +42,7 @@
 </template>
 
 <script>
-// import lodash from 'lodash';
+import lodash from 'lodash';
 import ArtCollectionsCollection from '@/collections/ArtCollectionsCollection';
 import UtilityLibrary from '@/libraries/UtilityLibrary';
 
@@ -52,10 +52,10 @@ export default {
     },
     data() {
         return {
-            collections: ArtCollectionsCollection,
+            // collections: ArtCollectionsCollection,
             renderAssetPath: UtilityLibrary.renderAssetPath,
             // collections: lodash.sortBy(ArtCollectionsCollection, ['year']),
-            // collections: lodash.shuffle(ArtCollectionsCollection),
+            collections: lodash.shuffle(ArtCollectionsCollection),
         }
     },
     methods: {
@@ -117,12 +117,9 @@ export default {
     padding: 0 2vw;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: repeat(9, 37.5vw);
+    grid-template-rows: repeat(8, 37.5vw);
     flex-direction: row;
     flex-wrap: wrap;
-    // row-gap: 16px;
-    // column-gap: 64px;
-    // padding: 40px;
     gap: 2vw;
     [image-container] {
         box-sizing: border-box;
@@ -148,7 +145,6 @@ export default {
             gap: 12px;
             img {
                 transition: all 0.3s;
-                // width: calc(25vw);
                 display: flex;
                 width: 100%;
                 height: 100%;
@@ -198,7 +194,6 @@ export default {
                 }
             }
             [description] {
-                // flex: 0 0 40px;
                 font-weight: 400;
                 color: rgba(0,0,0,0.5);
                 font-size: 14px;
@@ -207,7 +202,6 @@ export default {
                 transition: all 0.2s;
                 width: auto;
                 display: flex;
-                // background: white;
                 padding: 0px;
             }
             &:hover {
@@ -230,70 +224,11 @@ export default {
                 opacity: 1;
             }
         }
-        &:nth-of-type(3n+1) {
-            // padding: 4vw 1vw 1vw 0;
-        }
-        &:nth-of-type(3n+2) {
-            // padding: 0 1vw 4vw 1vw;
-        }
-        &:nth-of-type(3n+3) {
-            // padding: 4vw 1vw 0 1vw;
-        }
-        &:nth-of-type(3n+2) {
-            [image] {
-                // background-image: url("../assets/1.jpg");
-            }
-        }
-        &:nth-of-type(1) {
-            [image] {
-                // background-image: url("../assets/1.jpg");
-            }
-        }
-        &:nth-of-type(2) {
-            [image] {
-                // background-image: url("../assets/2.jpg");   
-            }
-        }
-        &:nth-of-type(3) {
-            [image] {
-                // background-image: url("../assets/3.jpg");   
-            }
-        }
-        &:nth-of-type(4) {
-            [image] {
-                // background-image: url("../assets/4.jpg");   
-            }
-        }
-        &:nth-of-type(5) {
-            [image] {
-                // background-image: url("../assets/5.jpg");   
-            }
-        }
-        &:nth-of-type(6) {
-            [image] {
-                // background-image: url("../assets/6.jpg");   
-            }
-        }
-        &:nth-of-type(7) {
-            [image] {
-                // background-image: url("../assets/7.jpg");   
-            }
-        }
-        &:nth-of-type(8) {
-            [image] {
-                // background-image: url("../assets/8.jpg");   
-            }
-        }
-        &:nth-of-type(9) {
-            [image] {
-                // background-image: url("../assets/9.jpg");   
-            }
-        }
     }
     
     @media (max-width: 640px) {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: repeat(11, 50vw);
+        grid-template-rows: repeat(12, 50vw);
     }
 }
 
@@ -307,10 +242,8 @@ export default {
     bottom: 0;
     .right {
         background-color: rgba(0,0,0,.05);
-        // background-image: url("../assets/right.jpg");
     }
     .left {
-        // background-image: url("../assets/left.jpg");
         background-position: top right;
     }
 }
