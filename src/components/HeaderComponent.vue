@@ -24,9 +24,6 @@
             <nav full>
                 <ul>
                     <li ai-art><router-link to="/" active-class="active" v-on:click="closeMobileMenu('/collections')">Collections</router-link></li>
-                    <!-- <li ai-art><router-link to="/ai-art"  active-class="active">AI Art</router-link></li>
-                    <li photography><router-link to="/photography"  active-class="active">Photography</router-link></li> -->
-                    <!-- <li photography><router-link to="/photography"  active-class="active">NFT Collections</router-link></li> -->
                     <li about><router-link to="/rodrigo-barraza" active-class="active" v-on:click="closeMobileMenu('/rodrigo-barraza')">About</router-link></li>
                 </ul>
             </nav>
@@ -36,13 +33,6 @@
                     <span v-if="isMobileMenuOpen">✖</span>
                 </div>
             </div>
-            <nav mini>
-                <ul>
-                    <li ai-art><router-link to="/ai-art" active-class="active">AI Art</router-link></li>
-                    <li photography><router-link to="/photography" active-class="active">Photography</router-link></li>
-                    <li about><router-link to="/rodrigo-barraza" active-class="active">About</router-link></li>
-                </ul>
-            </nav>
         </div>
     </div>
     <div overlay v-if="isMobileMenuOpen">
@@ -234,9 +224,6 @@ header {
                             border-radius: 24px;
                         }
                     }
-                }
-                &[mini] {
-                    display: none;
                 }
             }
             [hamburger] {

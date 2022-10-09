@@ -98,7 +98,7 @@ const UtilityLibrary = {
         const routes = ViewsCollection;
         const collections = ArtCollectionsCollection;
         const doc = document.implementation.createDocument('', '', null);
-        //create the outer tag
+        
         const urlsetElement = doc.createElement("urlset");
         urlsetElement.setAttribute("xmlns", "http://www.sitemaps.org/schemas/sitemap/0.9");
         urlsetElement.setAttribute("xmlns:image", "http://www.google.com/schemas/sitemap-image/1.1");
