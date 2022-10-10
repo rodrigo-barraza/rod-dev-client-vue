@@ -2,8 +2,4 @@ User-agent: *
 Allow: /
 crawl-delay: 10
 
-# Disallow PetalBot
-User-agent: PetalBot
-Disallow: /
-
-Sitemap: https://www.rod.dev/sitemap.xml
+Sitemap: https://rod.dev/sitemap.xml

@@ -152,7 +152,7 @@ const UtilityLibrary = {
             const lastmodElement = doc.createElement('lastmod');
             const changefreqElement = doc.createElement('changefreq');
 
-            locElement.innerHTML =  `https://rod.dev/collection/${collection.path}`;
+            locElement.innerHTML =  `https://rod.dev/collections/${collection.path}`;
             lastmodElement.innerHTML = '2022-10-05';
             changefreqElement.innerHTML = 'daily';
 

@@ -2,10 +2,10 @@
   <header :class="[routeName]">
     <div stripe :style="stripeStyle" :class="stripeClass">
         <!-- <video id="background-video" autoplay loop muted>
-            <source src="https://assets.rod.dev/collections/ainimations/rodrigo-barraza-ainimations-ai-art-animation-tropical-desert.mp4
-" type="video/mp4">
+            <source src="" type="video/mp4">
         Your browser does not support the video tag.
         </video> -->
+        <!-- <img src=""/> -->
     </div>
     <div fixed></div>
     <div floaty :class="[{'tiny': isPageYOffsetAtZero > 35}, routeName]">
