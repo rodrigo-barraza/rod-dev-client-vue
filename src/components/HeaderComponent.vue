@@ -1,5 +1,6 @@
 <template>
   <header :class="[routeName]">
+    <div stripe :style="stripeStyle" :class="stripeClass"></div>
     <div fixed>
         <div background>
             <!-- <video id="background-video" autoplay muted>
@@ -64,6 +65,8 @@ export default {
     },
     data() {
         return {
+            stripeStyle: '',
+            stripeClass: '',
             isPageYOffsetAtZero: 0,
             routeName: '',
             isMobileMenuOpen: false,
@@ -81,6 +84,9 @@ export default {
                 this.isDocumentLoading = true;
             }
         };
+        window.addEventListener('resize', () => {
+           this.setStripeProperties();
+        });
     },
     methods: {
         isScrolling() {
@@ -97,15 +103,51 @@ export default {
         closeMobileMenu() {
             this.isMobileMenuOpen = false;
         },
+        setStripeProperties() {
+            const self = this;
+            const route = this.$route;
+            
+            const letsStripeStyle = function() {
+                const style = {};
+                const stripe = document.querySelector("[stripe]");
+                const floaty = document.querySelector("header");
+                const collectionDeets = document.querySelector("[collection-deets]");
+                if (route.name === 'collection' && !collectionDeets) {
+                    letsStripeStyle(route);
+                } else if (route.name === 'collection') {
+                    const deetsHeight = collectionDeets?.offsetHeight;
+                    const floatyHeight = floaty?.offsetHeight;
+                    stripe.setAttribute("style",`height:${deetsHeight + floatyHeight + 80}px`);
+                    if (route.params?.collection === 'dreamwork') {
+                        // style['background'] = 'linear-gradient(0.5turn, #7eab8f, #e9f3ea)';
+                    }
+                } else if (route.name === 'about') {
+                    stripe.setAttribute("style",'height:300px');
+                } else {
+                    stripe.removeAttribute("style");
+                }
+                self.stripeClass = `${route.name}`;
+                self.stripeStyle = style;
+            }
+            
+            const timeoutTimer = setTimeout(function () {
+                letsStripeStyle();
+                clearTimeout(timeoutTimer);
+            }, 100);
+        },
     },
-    watch: { 
-     '$route.name': {
-        handler: function(routeName) {
-           this.routeName = routeName;
+    watch: {
+     '$route': {
+        handler: function(route) {
+           this.routeName = route.name;
            const backgroundVideo = document.getElementById('background-video');
            if (backgroundVideo) {
             backgroundVideo.play();
            }
+           this.setStripeProperties(route);
+           
+            this.stripeClass = `${route.name} opacityZero`;
+
         },
         deep: true,
         immediate: true
@@ -118,6 +160,65 @@ export default {
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
+}
+
+// .fadeIn {
+//     animation: fadein 1s;
+// }
+.opacityZero {
+    opacity: 0;
+}
+.opacityOne {
+    opacity: 1;
+}
+        // animation: fadein 1s;
+[stripe] {
+    // animation: fadein 1s;
+    width: 100%;
+    position: absolute!important;
+    top: 0;
+    height: 270px;
+    z-index: -1;
+    // background: linear-gradient(0.25turn, #351dc6, #25ddf5);
+    background: black;
+    overflow: hidden;
+    transition: all 1s ease-in-out;
+    &:after {
+      content: "";
+      display: block;
+      width: 110%;
+      height: 100px;
+      left: 0;
+      position: absolute;
+      right: 0;
+      bottom: -100px;
+      transform: rotate(-2deg);
+      background-color: #f0f0f0;
+      transition: all 1s;
+      transform-origin: 0;
+    }
+    &.home {
+      @media (max-width: 1432px) {
+        height: calc(8vw + 150px);
+      }
+      @media (max-width: 640px) {
+        height: calc(13vw + 150px);
+      }
+    }
+    &.collection {
+      // background: linear-gradient(0.5turn, #d28bff, #87f1ff);
+      // linear-gradient(0.5turn, #d28bff, #87f1ff)
+      // linear-gradient(0.5turn, #bb8578, #cdff87)
+      // linear-gradient(0.5turn, #585858, #f2f2f2)
+      // linear-gradient(0.5turn, #7eab8f, #e9f3ea) dreamwork
+      // linear-gradient(0.5turn, #0270cb, #cce0f1) tv-date
+    }
+    &.about {
+      &:after {
+        transform: rotate(2deg);
+        transform-origin: 100%;
+      }
+    }
 }
 
 header {
@@ -219,7 +320,6 @@ header {
                             font-size: 18px;
                         }
                         &[about] {
-                            // background: black;
                             color: white;
                             border-radius: 24px;
                         }
@@ -245,27 +345,6 @@ header {
             background: black;
             color: white;
             box-shadow: 0px 0px 10px -5px black;
-            
-            // [container] {
-            //     nav {
-            //         ul {
-            //             li {
-            //                 background: black;
-            //                 color: white;
-            //                 padding: 8px;
-            //                 border-radius: 12px;
-            //             }
-            //         }
-            //     }
-            //     [name] {
-            //         div {
-            //             background: black;
-            //             color: white;
-            //             padding: 8px;
-            //             border-radius: 12px;
-            //         }
-            //     }
-            // }
         }
         @media (max-width: 640px) {
             [container] {
@@ -285,8 +364,6 @@ header {
                     }
                     [hamburger] {
                         font-size: 18px;
-                        div {
-                        }
                     }
                 }
             }
