@@ -1,16 +1,13 @@
 <template>
   <header :class="[routeName]">
-    <div stripe :style="stripeStyle" :class="stripeClass"></div>
-    <div fixed>
-        <div background>
-            <!-- <video id="background-video" autoplay muted>
-                <source :src="require('@/assets/ai-art-video-done.mp4')" type="video/mp4">
-            Your browser does not support the video tag.
-            </video> -->
-        </div>
-        <!-- <div stripe>
-        </div> -->
+    <div stripe :style="stripeStyle" :class="stripeClass">
+        <!-- <video id="background-video" autoplay loop muted>
+            <source src="https://assets.rod.dev/collections/ainimations/rodrigo-barraza-ainimations-ai-art-animation-tropical-desert.mp4
+" type="video/mp4">
+        Your browser does not support the video tag.
+        </video> -->
     </div>
+    <div fixed></div>
     <div floaty :class="[{'tiny': isPageYOffsetAtZero > 35}, routeName]">
         <div container>
             <div name>
@@ -171,18 +168,19 @@ export default {
 .opacityOne {
     opacity: 1;
 }
-        // animation: fadein 1s;
 [stripe] {
-    // animation: fadein 1s;
     width: 100%;
     position: absolute!important;
     top: 0;
     height: 270px;
     z-index: -1;
-    // background: linear-gradient(0.25turn, #351dc6, #25ddf5);
     background: black;
+    // background: linear-gradient(0.25turn, #351dc6, #25ddf5);
     overflow: hidden;
     transition: all 1s ease-in-out;
+    [video] {
+        width: 100%;
+    }
     &:after {
       content: "";
       display: block;
