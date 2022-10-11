@@ -71,12 +71,14 @@ const AboutCollection = [
           year: '2010',
           venue: 'lighting technician',
           location: 'music video',
+          url: '/collections/rip-apart',
         },
         {
           name: 'TV Date',
           year: '2010',
           venue: 'lighting technician',
           location: 'music video',
+          url: '/collections/tv-date',
         },
       ]
     },

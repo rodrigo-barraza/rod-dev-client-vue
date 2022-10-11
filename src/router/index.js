@@ -2,6 +2,7 @@
 import lodash from 'lodash';
 import { createRouter, createWebHistory } from 'vue-router'
 import ArtCollectionsCollection from '@/collections/ArtCollectionsCollection';
+import UtilityLibrary from '@/libraries/UtilityLibrary';
 import ViewsCollection from '@/collections/ViewsCollection';
 import SEOConstants from '@/constants/SEOConstants';
 import HomeView from '../views/HomeView.vue'
@@ -56,6 +57,12 @@ router.beforeEach(to => {
     if (ldJsonScript) {
       ldJsonScript.remove();
     }
+    if (to.name === 'home') {
+      UtilityLibrary.generateCollectionsSchema();
+    }
+    if (to.name === 'about') {
+      UtilityLibrary.generateAboutSchema();
+    }
     if (to.name === 'collection') {
         const currentCollectionParam = to.params.collection;
         const currentCollection = lodash.find(ArtCollectionsCollection, {path: currentCollectionParam});
@@ -68,6 +75,7 @@ router.beforeEach(to => {
         if (currentCollection.documentKeywords) {
           documentTitle = currentCollection.documentTitle;
         }
+        UtilityLibrary.generateCollectionSchema(currentCollection);
     } else if (to.name === 'home' || to.name === 'about') {
       const view = lodash.find(ViewsCollection, {'name': to.name});
       documentTitle = view.documentTitle;

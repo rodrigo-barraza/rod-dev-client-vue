@@ -30,7 +30,7 @@
           </div>
           <div photography>
             <div>
-              <h3>Photography</h3>
+              <h1>Photography</h1>
               <ul>
                 <li
                 v-for="(collection, collectionIndex) in collectionsPhotography" v-bind:key="collectionIndex">
@@ -41,7 +41,7 @@
           </div>
           <div film>
             <div>
-              <h3>Film</h3>
+              <h1>Film</h1>
               <ul>
                 <li
                 v-for="(collection, collectionIndex) in collectionsFilm" v-bind:key="collectionIndex">
@@ -50,7 +50,7 @@
               </ul>
             </div>
             <div ai>
-              <h3>AI Art</h3>
+              <h1>AI Art</h1>
               <ul>
                 <li
                 v-for="(collection, collectionIndex) in collectionsAI" v-bind:key="collectionIndex">
@@ -59,7 +59,7 @@
               </ul>
             </div>
             <div animation>
-              <h3>AI Animation</h3>
+              <h1>AI Animation</h1>
               <ul>
                 <li
                 v-for="(collection, collectionIndex) in collectionsAnimation" v-bind:key="collectionIndex">
@@ -68,7 +68,7 @@
               </ul>
             </div>
             <div installation>
-              <h3>Installation</h3>
+              <h1>Installation</h1>
               <ul>
                 <li
                 v-for="(collection, collectionIndex) in collectionsOther" v-bind:key="collectionIndex">
@@ -79,7 +79,7 @@
           </div>
           <div socials-new>
             <div>
-              <h3>Socials</h3>
+              <h1>Socials</h1>
               <ul>
                 <li social
                 v-for="(social, socialIndex) in socials" v-bind:key="socialIndex" :class="social.type">
@@ -199,7 +199,7 @@ p {
     display: flex;
     flex-direction: column;
   }
-  h3 {
+  h1 {
     font-weight: 500;
     font-size: 16px;
   }
@@ -220,39 +220,39 @@ p {
     > div:first-of-type {
       grid-column: 1/2;
     }
-    h3, ul {
+    h1, ul {
       font-size: 5vw;
     }
   }
   @media (max-width: 400px) {
   }
   [photography] {
-    h3 {
+    h1 {
       color: #46d85d;
     }
   }
   [film] {
-    h3 {
+    h1 {
       color: #fec010;
     }
   }
   [ai] {
-    h3 {
+    h1 {
       color: #ff4e4e;
     }
   }
   [animation] {
-    h3 {
+    h1 {
       color: #758aff;
     }
   }
   [installation] {
-    h3 {
+    h1 {
       color: #e97300;
     }
   }
   [socials-new] {
-    h3 {
+    h1 {
       color: #ffe50c;
     }
   }

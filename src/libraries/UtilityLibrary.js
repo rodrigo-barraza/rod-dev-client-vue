@@ -1,6 +1,7 @@
 import moment from 'moment';
 import ArtCollectionsCollection from '@/collections/ArtCollectionsCollection';
 import ViewsCollection from '@/collections/ViewsCollection';
+import AboutCollection from '@/collections/AboutCollection';
 
 const useS3 = true;
 const UtilityLibrary = {
@@ -20,6 +21,52 @@ const UtilityLibrary = {
             fullPath = require(`@/assets${path}`);
         }
         return fullPath;
+    },
+    generateCollectionsSchema() {
+        console.log('home schema');
+    },
+    generateAboutSchema() {
+        const imageObject = {
+            "@context": "https://schema.org/",
+            "@type": "ImageObject",
+            "contentUrl": UtilityLibrary.renderAssetPath('images/rodrigo-barraza-black-and-white-portrait.jpg'),
+            "license": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+            // "acquireLicensePage": "https://example.com/how-to-use-my-images"
+        }
+        const postalAddressObject = {
+            "@context": "https://schema.org/",
+            "@type": "PostalAddress",
+            "addressLocality": "Vancouver",
+            "addressRegion": "British Columbia",
+            "addressCountry": "Canada"
+        }
+        const personObject = {
+            "@context": "https://schema.org",
+            "@id": `https://rod.dev/about-rodrigo`,
+            "@type": "Person",
+            "image": imageObject,
+            "givenName": "Rodrigo",
+            "familyName": "Barraza",
+            "description": "Photographer, software engineer and artist based out of Vancouver, British Columbia, Canada.",
+            "jobTitle": "photographer, software engineer, artist",
+            "address:": postalAddressObject,
+        }
+
+        AboutCollection.forEach((about) => {
+            if (about.name === 'institutions') {
+                const collageOrUniversityObject = {
+                    "@context": "https://schema.org",
+                    "@type": "CollegeOrUniversity",
+                    "name": "Emily Carr University of Art + Design",
+                }
+                personObject.alumniOf = collageOrUniversityObject;
+            }
+        })
+        
+        const script = document.createElement('script');
+        script.setAttribute('type', 'application/ld+json');
+        script.textContent = JSON.stringify(personObject);
+        document.head.appendChild(script);
     },
     generateCollectionSchema(collection) {
         const works = collection.works;

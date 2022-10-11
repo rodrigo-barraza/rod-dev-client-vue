@@ -1,15 +1,14 @@
 <template>
-  <main about-view itemprop="creator" itemscope itemtype="http://schema.org/Person">
+  <main about-view>
     <div container>
       <div layout>
         <div sidebar>
           <img v-on:mouseover="hoverPortrait" :style="{ 'transform': `rotate(${portraitRotateDegrees}deg)`}" :src="renderAssetPath('images/rodrigo-barraza-black-and-white-portrait.jpg')"
             alt="A black and white photograph of Rodrigo Barraza"
-            title="A black and white photograph of Rodrigo Barraza"
-            itemprop="image"/>
+            title="A black and white photograph of Rodrigo Barraza"/>
           <!-- <div name>Rodrigo Barraza</div> -->
           <div socials>
-            <div title>Socials</div>
+            <h1 title>Socials</h1>
             <a social v-for="(social, socialIndex) in socials" v-bind:key="socialIndex" :class="social.type" :href="social.url" target="_blank">
               <div logo>{{social.type}}</div>
               <!-- <div social-name>{{social.username}}</div> -->
@@ -27,7 +26,7 @@
             <!-- </div> -->
             <div text>
               <div about-info>
-                <p><span full-name><span itemprop="givenName">Rodrigo</span> <span itemprop="familyName">Barraza</span></span> is <span itemprop="description">a <span itemprop="jobTitle">software engineer</span>, <span itemprop="jobTitle">artist</span> and <span itemprop="jobTitle">photographer</span> based out of <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="addressLocality">Vancouver</span>, <span itemprop="addressRegion">British Columbia</span>, <span itemprop="addressCountry">Canada</span></span></span>. He emerged as an internet artist who works in a variety of media and focuses on photography, AI art, film, animation, visual design and illustration.</p>
+                <p><span full-name>Rodrigo Barraza</span> is a software engineer, artist and photographer based out of Vancouver, British Columbia, Canada. He emerged as an internet artist who works in a variety of media and focuses on photography, AI art, film, animation, visual design and illustration.</p>
 
                 <p>Rodrigo grew up with an interest in visual media and started out as a young animator and illustrator in 2001. He soon started experimenting with film photography, videography, game development and graphic design. In recent years, he has focused on the analog and digital photographic arts. Combining his passion for software development, and with the rise of artificial intelligence media since 2017, he has pivoted his practice to algorithmic and generative art, and generative artificial media through the use of CLIP-driven image synthesis. Rodrigo holds a BFA in Photography from the Emily Carr University of Art + Design in Vancouver, Canada.</p>
 
@@ -40,8 +39,8 @@
           </div>
           <div bottom>
             <div extra-info>
-              <div collection v-for="(collection, collectionIndex) in aboutCollection" v-bind:key="collectionIndex" :itemprop="collection.name == 'institutions' ? 'alumniOf' : null" itemscope :itemtype="collection.name == 'institutions' ? 'https://schema.org/CollegeOrUniversity' : null">
-                <div title>{{collection.name}}</div>
+              <div collection v-for="(collection, collectionIndex) in aboutCollection" v-bind:key="collectionIndex">
+                <h1 title>{{collection.name}}</h1>
                 <div object 
                 v-for="(object, objectIndex) in collection.collections" v-bind:key="objectIndex">
                   <p v-if="object.url">
@@ -53,7 +52,7 @@
                     <span>{{object.year}}</span>
                   </p>
                   <p>
-                    <span :itemprop="collection.name == 'institutions' ? 'name' : null" v-if="object.venue">{{object.venue}}</span>
+                    <span v-if="object.venue">{{object.venue}}</span>
                     <span v-if="object.location">{{object.location}}</span>
                   </p>
                 </div>

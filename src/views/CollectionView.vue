@@ -61,7 +61,7 @@
                         </div>
                     </div>
                     <div description>
-                        <div><span title>{{collection.title}}</span> <span year>{{collection.year}}</span></div>
+                        <div><h1 title>{{collection.title}}</h1> <span year>{{collection.year}}</span></div>
                         <div><span medium>{{collection.medium}}</span></div>
                     </div>
                 </router-link>
@@ -88,7 +88,6 @@ export default {
             artCollections: lodash.shuffle(ArtCollectionsCollection),
             moreCollections: this.$route.meta.moreCollections,
             renderAssetPath: UtilityLibrary.renderAssetPath,
-            generateCollectionSchema: UtilityLibrary.generateCollectionSchema,
             createXml: UtilityLibrary.generateSitemap,
             s3Assets: false,
         }
@@ -96,7 +95,6 @@ export default {
     beforeCreate() {
     },
     created() {
-        this.generateCollectionSchema(this.currentCollection)
     },
     mounted() {
         // this.createXml();
@@ -487,6 +485,7 @@ export default {
                     [title] {
                         font-size: 18px;
                         font-weight: 400;
+                        display: inline;
                     }
                     [year] {
                         font-size: 18px;

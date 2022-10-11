@@ -12,11 +12,8 @@
         <div container>
             <div name>
                 <router-link title="Rodrigo Barraza" to="/" v-on:click="closeMobileMenu">
-                    <div logo>
-                    </div>
-                    <div text>
-                        RODRIGO BARRAZA
-                    </div>
+                    <div logo></div>
+                    <div text>RODRIGO BARRAZA</div>
                 </router-link>
             </div>
             <nav full>
