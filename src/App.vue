@@ -34,11 +34,11 @@ export default {
     } else {
       EventLibrary.postEventSessionNew(document.referrer, window.location.href);
     }
-    // setInterval(postSession, 1000);
+    setInterval(postSession, 1000);
 
-    // function postSession() {
-    //   EventLibrary.postSession(1, screen.width, screen.height);
-    // }
+    function postSession() {
+      EventLibrary.postSession(1, screen.width, screen.height);
+    }
 
     const head = document.head;
     const style = document.createElement('style');
