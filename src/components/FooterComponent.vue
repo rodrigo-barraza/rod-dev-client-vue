@@ -136,127 +136,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-p {
-  color: white;
-}
-[footer-menu] {
-  padding: 64px 0;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  text-align: left;
-  gap: 24px 0;
-  > div {
-    display: grid;
-    gap: 8px;
-    > div {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    &:first-of-type {
-      > div {
-        justify-content: space-between;
-      }
-    }
-  }
-  a {
-    display: flex;
-    align-items: center;
-    [logo] {
-      width: 20px;
-      height: 20px;
-      display: inline-block;
-      filter: grayscale(1) opacity(0.8);
-    }
-    &:hover {
-      [logo] {
-        filter: grayscale(0) opacity(1);
-      }
-    }
-  }
-  [brand] {
-    display: flex;
-    gap: 4px;
-    cursor: pointer;
-    [logo] {
-      flex: 0 0 20px;
-      height: 20px;
-      background-size: 100%;
-      image-rendering: pixelated;
-      pointer-events: none;
-    }
-    h3 {
-      font-weight: 400;
-    }
-    &:hover {
-      text-decoration: underline;
-      text-underline-offset: 4px;
-    }
-  }
-  ul {
-    font-size: 16px;
-    gap: 4px;
-    display: flex;
-    flex-direction: column;
-  }
-  h1 {
-    font-weight: 500;
-    font-size: 16px;
-  }
-  @media (max-width: 1432px) {
-  }
-  @media (max-width: 1200px) {
-  }
-  @media (max-width: 960px) {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, auto);
-    > div:first-of-type {
-      grid-column: 1/4;
-    }
-  }
-  @media (max-width: 640px) {
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(4, auto);
-    > div:first-of-type {
-      grid-column: 1/2;
-    }
-    h1, ul {
-      font-size: 5vw;
-    }
-  }
-  @media (max-width: 400px) {
-  }
-  [photography] {
-    h1 {
-      color: #46d85d;
-    }
-  }
-  [film] {
-    h1 {
-      color: #fec010;
-    }
-  }
-  [ai] {
-    h1 {
-      color: #ff4e4e;
-    }
-  }
-  [animation] {
-    h1 {
-      color: #758aff;
-    }
-  }
-  [installation] {
-    h1 {
-      color: #e97300;
-    }
-  }
-  [socials-new] {
-    h1 {
-      color: #ffe50c;
-    }
-  }
-}
 footer {
   margin-top: 50px;
   overflow: hidden;
@@ -284,7 +163,6 @@ footer {
     bottom: 0;
   }
   [container] {
-    // position: absolute;
     left: 0;
     right: 0;
     top: 0;
@@ -324,6 +202,127 @@ footer {
               }
           }
       }
+  }
+  p {
+    color: white;
+  }
+  [footer-menu] {
+    padding: 64px 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: left;
+    gap: 24px 0;
+    > div {
+      display: grid;
+      gap: 8px;
+      > div {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      &:first-of-type {
+        > div {
+          justify-content: space-between;
+        }
+      }
+    }
+    a {
+      display: flex;
+      align-items: center;
+      [logo] {
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        filter: grayscale(1) opacity(0.8);
+      }
+      &:hover {
+        [logo] {
+          filter: grayscale(0) opacity(1);
+        }
+      }
+    }
+    [brand] {
+      display: flex;
+      gap: 4px;
+      cursor: pointer;
+      [logo] {
+        flex: 0 0 20px;
+        height: 20px;
+        background-size: 100%;
+        image-rendering: pixelated;
+        pointer-events: none;
+      }
+      h3 {
+        font-weight: 400;
+      }
+      &:hover {
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+    }
+    ul {
+      font-size: 16px;
+      gap: 4px;
+      display: flex;
+      flex-direction: column;
+    }
+    h1 {
+      font-weight: 500;
+      font-size: 16px;
+    }
+    @media (max-width: 1432px) {
+    }
+    @media (max-width: 1200px) {
+    }
+    @media (max-width: 960px) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, auto);
+      > div:first-of-type {
+        grid-column: 1/4;
+      }
+    }
+    @media (max-width: 640px) {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(4, auto);
+      > div:first-of-type {
+        grid-column: 1/2;
+      }
+      h1, ul {
+        font-size: 5vw;
+      }
+    }
+    @media (max-width: 400px) {
+    }
+    [photography] {
+      h1 {
+        color: #46d85d;
+      }
+    }
+    [film] {
+      h1 {
+        color: #fec010;
+      }
+    }
+    [ai] {
+      h1 {
+        color: #ff4e4e;
+      }
+    }
+    [animation] {
+      h1 {
+        color: #758aff;
+      }
+    }
+    [installation] {
+      h1 {
+        color: #e97300;
+      }
+    }
+    [socials-new] {
+      h1 {
+        color: #ffe50c;
+      }
+    }
   }
 }
 </style>

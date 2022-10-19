@@ -154,6 +154,9 @@ html {
         flex: 1 1 100%;
         display: flex;
         background-color: #f0f0f0;
+        height: 100%;
+        padding: 0;
+        margin: 0;
     #app {
         flex: 1 1 100%;
         display: flex;
@@ -189,12 +192,6 @@ html {
   box-sizing: border-box;
 }
 
-body {
-  height: 100%;
-  padding: 0;
-  margin: 0;
-}
-
 a {
   font-weight: 300;
   font-family: 'Ubuntu', sans-serif;
@@ -210,9 +207,31 @@ a {
       text-decoration: underline;
   }
 }
-p {
+
+h1, h2, h3, h4, h5, p {
+  text-align: left;
   margin: 0;
   padding: 0;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 600;
+  color: black;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 500;
+  color: black;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+p {
   font-size: 18px;
   color: black;
   font-weight: 100;
@@ -235,29 +254,6 @@ p {
         color: #b86cd3;
     }
   }
-}
-
-h1, h2, h3, h4, h5, p {
-  text-align: left;
-}
-
-h1, h2, h3, h4, h5 {
-  padding: 0;
-  margin: 0;
-}
-h1 {
-  font-size: 48px;
-  font-weight: 600;
-  color: black;
-}
-h2 {
-  font-size: 32px;
-  font-weight: 500;
-  color: black;
-}
-ul {
-  padding: 0;
-  margin: 0;
 }
 
 @media (max-width: 1432px) {
