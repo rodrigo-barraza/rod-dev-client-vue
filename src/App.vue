@@ -58,6 +58,8 @@ export default {
     [social].github [logo] {
         background-image: url("${UtilityLibrary.renderAssetPath('icons/github.png')}");
         background-size: 100%;
+        background-color: white;
+        border-radius: 100%;
     }
     [social].deviantart [logo] {
         background-image: url("${UtilityLibrary.renderAssetPath('icons/deviantart.png')}");
@@ -137,10 +139,7 @@ export default {
       delete event['returnValue'];
       return "Do you really want to close?"
     }
-  },
-  unmounted() {
-    console.log('unmounting');
-  },  
+  }, 
 }
 </script>
 <style lang="scss">

@@ -11,10 +11,10 @@ const AboutCollection = [
       ]
     },
     {
-      name: 'Recent Code',
+      name: 'Recent Projects',
       collections: [
         {
-          name: 'Pristine Disco Diffusion',
+          name: 'Pristine Diffusion',
           year: 'Ongoing',
           venue: 'Google Colab Notebook',
           url: 'https://colab.research.google.com/github/rodrigo-barraza/pristine-disco-diffusion/blob/master/rodrigos-pristine-disco-diffusion.ipynb',

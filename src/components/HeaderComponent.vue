@@ -19,6 +19,7 @@
             <nav full>
                 <ul>
                     <li ai-art><router-link to="/" active-class="active" v-on:click="closeMobileMenu('/collections')">Collections</router-link></li>
+                    <li ai-art><router-link to="/projects" active-class="active" v-on:click="closeMobileMenu('/projects')">Projects</router-link></li>
                     <li about><router-link to="/rodrigo-barraza" active-class="active" v-on:click="closeMobileMenu('/rodrigo-barraza')">About</router-link></li>
                 </ul>
             </nav>
@@ -34,6 +35,7 @@
         <nav shrink>
             <ul>
                 <li ai-art><router-link to="/" v-on:click="closeMobileMenu('/collections')" active-class="active">Collections</router-link></li>
+                <li ai-art><router-link to="/projects" v-on:click="closeMobileMenu('/projects')" active-class="active">Projects</router-link></li>
                 <li about><router-link to="/rodrigo-barraza" v-on:click="closeMobileMenu('/rodrigo-barraza')" active-class="active">About</router-link></li>
             </ul>
         </nav>
@@ -117,9 +119,16 @@ export default {
                     }
                 } else if (route.name === 'about') {
                     stripe.setAttribute("style",'height:300px');
+                } else if (route.name === 'projects') {
+                    stripe.setAttribute("style",'height:200px');
                 } else {
                     stripe.removeAttribute("style");
                 }
+                // }  else if (route.name === 'ai-experiments') {
+                //     stripe.setAttribute("style",'height:160px; background:rgba(0,0,0,0.15)');
+                // } else {
+                //     stripe.removeAttribute("style");
+                // }
                 self.stripeClass = `${route.name}`;
                 self.stripeStyle = style;
             }
@@ -134,6 +143,9 @@ export default {
      '$route': {
         handler: function(route) {
            this.routeName = route.name;
+           if (route.name === 'ai-experiments') {
+            this.routeName = `micro ${route.name}`
+           }
            const backgroundVideo = document.getElementById('background-video');
            if (backgroundVideo) {
             backgroundVideo.play();
@@ -416,6 +428,23 @@ header {
                     }
                 }
             }
+        }
+    }
+    &.micro {
+        height: 0;
+        [stripe] {
+            height: 220px;
+            background: #e3e3e3;
+            color: white;
+        }
+        [floaty] {
+            height: 48px;
+            background: black;
+            color: white;
+            box-shadow: 0px 0px 10px -5px black;
+        }
+        [fixed] {
+            height: 48px;
         }
     }
 }

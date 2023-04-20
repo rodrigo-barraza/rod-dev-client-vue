@@ -3,7 +3,13 @@ const ArtCollectionsCollection = [
         type: 'instagram',
         name: 'Instagram',
         username: 'rodrigo.dreams',
-        url: 'https://www.instagram.com/rodrigo.dreams'
+        url: 'https://www.instagram.com/rawdreygo'
+    },
+    {
+        type: 'github',
+        name: 'Github',
+        username: 'rodrigo-barraza',
+        url: 'https://github.com/rodrigo-barraza'
     },
     // {
     //     type: 'foundationapp',

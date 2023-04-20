@@ -8,6 +8,8 @@ import SEOConstants from '@/constants/SEOConstants';
 import HomeView from '../views/HomeView.vue'
 import CollectionView from '../views/CollectionView.vue'
 import AboutView from '../views/AboutView.vue'
+import ProjectsView from '../views/ProjectsView.vue'
+import TestView from '../views/TestView.vue'
 
 const routes = [
   {
@@ -32,11 +34,27 @@ const routes = [
     }
   },
   {
+    path: '/projects',
+    name: 'projects',
+    component: ProjectsView,
+    meta: {
+      title: 'Projects'
+    }
+  },
+  {
     path: '/rodrigo-barraza',
     name: 'about',
     component: AboutView,
     meta: {
       title: 'About'
+    }
+  },
+  {
+    path: '/the-disco-diffusion-bible',
+    name: 'ai-experiments',
+    component: TestView,
+    meta: {
+      title: 'The Disco Diffusion Bible'
     }
   },
 ]
